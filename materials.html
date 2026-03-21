@@ -72,17 +72,21 @@
   table { width: 100%; border-collapse: collapse; margin: 16px 0; }
   th { text-align: left; font-size: 12px; font-weight: 600; color: #9b9a97; text-transform: uppercase; letter-spacing: 0.04em; padding: 6px 10px; border-bottom: 1px solid #e8e7e4; }
   td { padding: 8px 10px; font-size: 14px; border-bottom: 1px solid #f1f0ee; }
-  .toggle { margin: 8px 0; }
-  .toggle summary { cursor: pointer; font-weight: 500; padding: 6px 0; list-style: none; }
-  .toggle summary::before { content: '▸ '; color: #9b9a97; }
-  .toggle[open] summary::before { content: '▾ '; }
-  .toggle .toggle-content { padding: 8px 0 8px 20px; }
+  details { margin: 8px 0; }
+  details summary { cursor: pointer; font-weight: 500; padding: 6px 0; }
+  details .toggle-content { padding: 8px 0 8px 20px; }
   code { background: #f7f6f3; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: 'SFMono-Regular', Menlo, monospace; }
-  .steps { counter-reset: step; }
+  .steps { margin: 16px 0; }
   .step-item { display: flex; gap: 14px; margin-bottom: 12px; align-items: flex-start; }
   .step-num { width: 24px; height: 24px; border-radius: 50%; background: #f7f6f3; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #9b9a97; flex-shrink: 0; margin-top: 2px; }
   .step-item strong { display: block; margin-bottom: 2px; }
   .step-item span { font-size: 14px; color: #6b6b6b; }
+  .nav-blocks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 24px 0; }
+  .nav-block { border: 1px solid #e8e7e4; border-radius: 8px; padding: 16px; text-decoration: none; transition: background 0.15s; text-align: center; }
+  .nav-block:hover { background: #f7f6f3; }
+  .nav-block .nav-icon { font-size: 24px; margin-bottom: 8px; }
+  .nav-block .nav-title { font-size: 14px; font-weight: 600; color: #37352f; }
+  .nav-block .nav-desc { font-size: 12px; color: #9b9a97; margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -94,161 +98,261 @@
 
 <div class="callout yellow">
   <span class="callout-icon">📌</span>
-  <p><strong>Презентация:</strong> <a href="https://nikashtefan.github.io/kvorum-intensive/" target="_blank">nikashtefan.github.io/kvorum-intensive</a><br>Навигация стрелками, <code>F</code> — полный экран</p>
+  <p><strong>Презентация:</strong> <a href="https://nikashtefan.github.io/kvorum-intensive/" target="_blank">открыть презентацию</a> · навигация стрелками, <code>F</code> — полный экран</p>
 </div>
 
-<!-- ДЕНЬ 1 -->
-<h2>📅 День 1 — Инструменты и принципы</h2>
+<!-- НАВИГАЦИЯ -->
+<div class="nav-blocks">
+  <a href="#day1" class="nav-block">
+    <div class="nav-icon">📅</div>
+    <div class="nav-title">День 1</div>
+    <div class="nav-desc">Инструменты и принципы</div>
+  </a>
+  <a href="#day2" class="nav-block">
+    <div class="nav-icon">🚀</div>
+    <div class="nav-title">День 2</div>
+    <div class="nav-desc">Агенты и практика</div>
+  </a>
+  <a href="#useful" class="nav-block">
+    <div class="nav-icon">🛠</div>
+    <div class="nav-title">Полезное</div>
+    <div class="nav-desc">Ссылки, оплата, VPN</div>
+  </a>
+</div>
 
-<h3>🎥 Видео</h3>
+<!-- ═══════════════════════════════════ -->
+<!--  ДЕНЬ 1                             -->
+<!-- ═══════════════════════════════════ -->
+
+<h2 id="day1">📅 День 1 — Инструменты и принципы</h2>
+
+<h3>🎥 Запись</h3>
 <div class="callout blue">
   <span class="callout-icon">🎬</span>
-  <p>Запись первого дня — скоро будет здесь</p>
+  <p>Видео — скоро будет здесь</p>
 </div>
 
-<h3>📋 Выжимка дня</h3>
+<h3>📋 Выжимка</h3>
+
+<details>
+  <summary>Что такое вайбкодинг</summary>
+  <div class="toggle-content">
+    <p>Способ разработки, при котором ты формулируешь задачу текстом — получаешь готовую реализацию от AI. Используется для прототипов, лендингов, автоматизации, внутренних инструментов.</p>
+    <p>Смысл — максимально сократить путь от идеи до результата.</p>
+  </div>
+</details>
+
+<details>
+  <summary>Как меняется процесс разработки</summary>
+  <div class="toggle-content">
+    <p><strong>Было:</strong> идея → ТЗ → дизайн → разработка → деплой</p>
+    <p><strong>Стало:</strong> идея → ресёрч через AI → генерация решения → доработка → деплой</p>
+    <p>Часть этапов схлопывается, скорость сильно растёт.</p>
+  </div>
+</details>
+
+<details>
+  <summary>Два подхода к инструментам</summary>
+  <div class="toggle-content">
+    <p><strong>1. Replit / Bolt / Lovable</strong> — вставляешь описание, получаешь интерфейс, правишь в диалоге. Быстрый результат, меньше контроля.</p>
+    <p><strong>2. Claude + Cursor</strong> — формулируешь задачу, работаешь итерациями, контролируешь логику. Больше гибкости.</p>
+  </div>
+</details>
+
+<details>
+  <summary>Примеры которые показали</summary>
+  <div class="toggle-content">
+    <ul>
+      <li><strong>Deal Control</strong> — CRM для риэлторов (Глеб)</li>
+      <li><strong>Литбот</strong> — Telegram-бот для изучения литературы (Ника)</li>
+      <li><strong>Salary Report</strong> — анализ зарплат, вся логика на фронте</li>
+      <li><strong>Бот AI Trendwatching</strong> — живой кейс на интенсиве</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>5 принципов работы с LLM</summary>
+  <div class="toggle-content">
+    <div class="steps">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div><strong>Не ставь задачу — определи критерии результата</strong><br><span>Объясни что такое «хорошо» и «плохо»</span></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div><strong>Учи модель, а не командуй</strong><br><span>Давай примеры хорошего и плохого результата</span></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div><strong>Первый результат всегда плохой — итерируй</strong><br><span>На 3–4 итерации сходится</span></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div><strong>Проси модель проверять саму себя</strong><br><span>«Найди ошибки, исправь»</span></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">5</div>
+        <div><strong>Ограничения важнее свободы</strong><br><span>Опиши рамки — модель выдаст предсказуемый результат</span></div>
+      </div>
+    </div>
+    <div class="callout green">
+      <span class="callout-icon">💡</span>
+      <p>Не проси LLM сделать задачу — научи его понимать, что такое хороший результат.</p>
+    </div>
+  </div>
+</details>
+
+<details>
+  <summary>Что важно учитывать</summary>
+  <div class="toggle-content">
+    <ul>
+      <li>Результат сильно зависит от формулировки задачи</li>
+      <li>AI ускоряет реализацию, но не заменяет продумывание логики</li>
+      <li>Сложные продукты всё равно требуют декомпозиции</li>
+    </ul>
+  </div>
+</details>
+
+<h3>📝 Домашнее задание</h3>
+
+<div class="steps">
+  <div class="step-item">
+    <div class="step-num">1</div>
+    <div><strong>Выбери идею</strong><br><span>Рабочая задача, личный проект — любая</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">2</div>
+    <div><strong>Установи Claude в Cursor по инструкции</strong><br><span>Инструкция в чате группы, займёт 10 минут</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">3</div>
+    <div><strong>Напиши ТЗ в Claude</strong><br><span>«Хочу сделать [X]. Помоги написать ТЗ, задай вопросы»</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">4</div>
+    <div><strong>Зарелизь на прод через Railway</strong><br><span>Не надо идеально — пусть работает</span></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════ -->
+<!--  ДЕНЬ 2                             -->
+<!-- ═══════════════════════════════════ -->
+
+<h2 id="day2">🚀 День 2 — Агенты и практика</h2>
+
+<h3>🎥 Запись</h3>
+<div class="callout blue">
+  <span class="callout-icon">🎬</span>
+  <p>Видео — скоро будет здесь</p>
+</div>
+
+<h3>📋 Программа дня</h3>
 <ul>
-  <li>Разобрали что такое вайбкодинг и почему это не хайп</li>
-  <li>Показали реальные кейсы: Deal Control, Литбот, Salary Report</li>
-  <li>Прошли по пайплайну: Идея → ТЗ → Разработка → Данные → Запуск</li>
-  <li>Разобрали инструменты: Claude / Cursor, Replit / Bolt / Lovable, Supabase, Railway</li>
-  <li>5 принципов работы с LLM</li>
-  <li>Живой кейс — бот AI Trendwatching</li>
+  <li>Разбор домашнего задания</li>
+  <li>AI-агенты — что это и где применять</li>
+  <li>Практика — строим проекты</li>
+  <li>Показ результатов</li>
+  <li>Личная система обучения через AI</li>
 </ul>
 
-<h3>🛠 Инструменты — ссылки</h3>
+<div class="callout yellow">
+  <span class="callout-icon">📦</span>
+  <p>Выжимка и материалы появятся после занятия</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════ -->
+<!--  ПОЛЕЗНОЕ                           -->
+<!-- ═══════════════════════════════════ -->
+
+<h2 id="useful">🛠 Полезное</h2>
+
+<h3>Инструменты</h3>
 
 <table>
   <tr><th>Инструмент</th><th>Ссылка</th><th>Зачем</th></tr>
-  <tr><td><strong>Claude</strong></td><td><a href="https://claude.ai" target="_blank">claude.ai</a></td><td>AI-модель — думать, код, ТЗ, отладка</td></tr>
-  <tr><td><strong>Cursor</strong></td><td><a href="https://cursor.com" target="_blank">cursor.com</a></td><td>Редактор кода с AI внутри</td></tr>
-  <tr><td><strong>Replit</strong></td><td><a href="https://replit.com" target="_blank">replit.com</a></td><td>Код в браузере — универсальный</td></tr>
-  <tr><td><strong>Bolt</strong></td><td><a href="https://bolt.new" target="_blank">bolt.new</a></td><td>Лендинг за 2–5 минут</td></tr>
-  <tr><td><strong>Lovable</strong></td><td><a href="https://lovable.dev" target="_blank">lovable.dev</a></td><td>Приложения с пользователями и данными</td></tr>
+  <tr><td><strong>Claude</strong></td><td><a href="https://claude.ai" target="_blank">claude.ai</a></td><td>AI-модель — думать, код, ТЗ</td></tr>
+  <tr><td><strong>Cursor</strong></td><td><a href="https://cursor.com" target="_blank">cursor.com</a></td><td>Редактор кода с AI</td></tr>
+  <tr><td><strong>Replit</strong></td><td><a href="https://replit.com" target="_blank">replit.com</a></td><td>Код в браузере</td></tr>
+  <tr><td><strong>Bolt</strong></td><td><a href="https://bolt.new" target="_blank">bolt.new</a></td><td>Лендинг за минуты</td></tr>
+  <tr><td><strong>Lovable</strong></td><td><a href="https://lovable.dev" target="_blank">lovable.dev</a></td><td>Приложения с данными</td></tr>
   <tr><td><strong>Supabase</strong></td><td><a href="https://supabase.com" target="_blank">supabase.com</a></td><td>База данных</td></tr>
-  <tr><td><strong>Railway</strong></td><td><a href="https://railway.app" target="_blank">railway.app</a></td><td>Деплой ботов и бэкенда</td></tr>
-  <tr><td><strong>Vercel</strong></td><td><a href="https://vercel.com" target="_blank">vercel.com</a></td><td>Деплой сайтов и лендингов</td></tr>
-  <tr><td><strong>ChatGPT</strong></td><td><a href="https://chatgpt.com" target="_blank">chatgpt.com</a></td><td>AI от OpenAI</td></tr>
+  <tr><td><strong>Railway</strong></td><td><a href="https://railway.app" target="_blank">railway.app</a></td><td>Деплой ботов</td></tr>
+  <tr><td><strong>Vercel</strong></td><td><a href="https://vercel.com" target="_blank">vercel.com</a></td><td>Деплой сайтов</td></tr>
 </table>
 
-<h3>💰 Стоимость</h3>
+<h3>Стоимость</h3>
 <table>
   <tr><th>Сервис</th><th>Бесплатно</th><th>Платно</th></tr>
-  <tr><td>Claude Pro</td><td>30 сообщений/день</td><td>$20/мес — все модели + Claude Code</td></tr>
-  <tr><td>Cursor</td><td>2 недели Pro (триал)</td><td>$20/мес</td></tr>
-  <tr><td>Replit</td><td>Есть бесплатный tier</td><td>От $25/мес</td></tr>
+  <tr><td>Claude Pro</td><td>30 сообщений/день</td><td>$20/мес</td></tr>
+  <tr><td>Cursor</td><td>2 недели триал</td><td>$20/мес</td></tr>
+  <tr><td>Replit</td><td>Есть</td><td>От $25/мес</td></tr>
   <tr><td>Bolt</td><td>Ограниченно</td><td>По токенам</td></tr>
-  <tr><td>Lovable</td><td>Есть бесплатный tier</td><td>От $20/мес</td></tr>
+  <tr><td>Lovable</td><td>Есть</td><td>От $20/мес</td></tr>
   <tr><td>Supabase</td><td>Да</td><td>От $25/мес</td></tr>
   <tr><td>Railway</td><td>$5 кредит</td><td>По использованию</td></tr>
   <tr><td>Vercel</td><td>Да</td><td>От $20/мес</td></tr>
 </table>
 
-<h3>🔑 5 принципов работы с LLM</h3>
-
-<div class="steps">
-  <div class="step-item">
-    <div class="step-num">1</div>
-    <div><strong>Не ставь задачу — определи критерии результата</strong><br><span>Сначала объясни что такое «хорошо» и «плохо». У тебя не хватит токенов описать задачу идеально — но хватит описать критерии.</span></div>
-  </div>
-  <div class="step-item">
-    <div class="step-num">2</div>
-    <div><strong>Учи модель, а не командуй</strong><br><span>Давай примеры хорошего и плохого результата. Ты учишь модель понимать задачу.</span></div>
-  </div>
-  <div class="step-item">
-    <div class="step-num">3</div>
-    <div><strong>Первый результат всегда плохой — итерируй</strong><br><span>На 3–4 итерации сходится к хорошему результату. Это нормально.</span></div>
-  </div>
-  <div class="step-item">
-    <div class="step-num">4</div>
-    <div><strong>Проси модель проверять саму себя</strong><br><span>«Найди ошибки, найди искажения, найди пробелы — исправь»</span></div>
-  </div>
-  <div class="step-item">
-    <div class="step-num">5</div>
-    <div><strong>Ограничения важнее свободы</strong><br><span>Без ограничений = океан плохих решений. Опиши рамки — модель выдаст предсказуемый результат.</span></div>
-  </div>
-</div>
+<h3>💳 Оплата из России</h3>
 
 <div class="callout green">
-  <span class="callout-icon">💡</span>
-  <p><strong>Главный вывод:</strong> не проси LLM сделать задачу — научи его понимать, что такое хороший результат.</p>
+  <span class="callout-icon">🏆</span>
+  <p><strong>МТС Платежи — рекомендуем.</strong> <a href="https://payment.mts.ru/tools/categories/ai" target="_blank">payment.mts.ru</a> — выбираете AI-сервис, оплачиваете через СБП. Готово за 15 минут.</p>
 </div>
 
-<h3>🔄 Пайплайн</h3>
-<p><code>💡 Идея</code> → <code>📄 ТЗ</code> → <code>🛠 Разработка</code> → <code>💾 Данные</code> → <code>🚀 Запуск</code></p>
-
-<p><strong>Два пути:</strong></p>
-<ul>
-  <li><strong>Путь Replit:</strong> ChatGPT/Claude (ТЗ) → Replit/Bolt (всё в одном) → Supabase/Sheets → встроенный хостинг</li>
-  <li><strong>Путь Claude:</strong> Claude (ТЗ + реализация) → Supabase/Sheets → Vercel/Railway</li>
-</ul>
-
-<div class="divider"></div>
-
-<!-- ДОМАШКА -->
-<h2>📝 Домашнее задание</h2>
-
-<div class="steps">
-  <div class="step-item">
-    <div class="step-num">1</div>
-    <div><strong>Выбери идею</strong><br><span>Рабочая задача, личный проект, гипотеза — любая. Главное что она твоя.</span></div>
+<details>
+  <summary>Другие способы</summary>
+  <div class="toggle-content">
+    <p><strong>Сервис-посредник:</strong> Oplatym.ru, Oplatim.com — рубли через СБП, комиссия 300–500 руб.</p>
+    <p><strong>Виртуальная карта:</strong> Плати по миру, Aifory Pro, PST.net</p>
+    <p><strong>Друзья с зарубежной картой</strong></p>
   </div>
-  <div class="step-item">
-    <div class="step-num">2</div>
-    <div><strong>Установи Claude в Cursor по инструкции</strong><br><span>Займёт 10 минут</span></div>
-  </div>
-  <div class="step-item">
-    <div class="step-num">3</div>
-    <div><strong>Напиши ТЗ в Claude</strong><br><span>«Хочу сделать [X]. Помоги мне написать ТЗ, задай вопросы.» — Claude всё сделает сам</span></div>
-  </div>
-  <div class="step-item">
-    <div class="step-num">4</div>
-    <div><strong>Зарелизь на прод через Railway</strong><br><span>Опубликуй результат — пусть работает. Не надо делать идеально.</span></div>
-  </div>
-</div>
+</details>
 
-<div class="callout yellow">
-  <span class="callout-icon">📩</span>
-  <p>Инструкция по установке Claude в Cursor — в чате группы</p>
-</div>
+<h3>🔒 VPN</h3>
 
-<div class="divider"></div>
+<table>
+  <tr><th>Сервис</th><th>VPN</th></tr>
+  <tr><td>Cursor</td><td><span class="tag green">не нужен</span></td></tr>
+  <tr><td>Claude</td><td><span class="tag red">нужен</span></td></tr>
+  <tr><td>ChatGPT</td><td><span class="tag red">нужен</span></td></tr>
+  <tr><td>Lovable, Bolt</td><td><span class="tag orange">может потребоваться</span></td></tr>
+  <tr><td>Supabase, Vercel</td><td><span class="tag green">обычно не нужен</span></td></tr>
+</table>
 
-<!-- СТАРТОВЫЙ ПРОМПТ -->
-<h2>🚀 Стартовый промпт для Claude</h2>
+<p>Бесплатные: <strong>Outline VPN</strong>, <strong>Amnezia VPN</strong></p>
 
-<div class="callout">
-  <span class="callout-icon">💬</span>
-  <p>Скопируй и вставь в Claude:</p>
-</div>
+<h3>🚀 Стартовый промпт</h3>
 
-<div style="background: #f7f6f3; border-radius: 4px; padding: 16px; font-family: 'SFMono-Regular', Menlo, monospace; font-size: 13px; line-height: 1.7; margin: 8px 0; white-space: pre-wrap;">Привет! Я хочу сделать [ОПИШИ ИДЕЮ В 1-2 ПРЕДЛОЖЕНИЯХ].
+<div style="background: #f7f6f3; border-radius: 4px; padding: 16px; font-family: 'SFMono-Regular', Menlo, monospace; font-size: 13px; line-height: 1.7; margin: 8px 0; white-space: pre-wrap;">Привет! Я хочу сделать [ОПИШИ ИДЕЮ].
 
 Помоги мне:
-1. Задай мне вопросы чтобы понять задачу глубже
+1. Задай вопросы чтобы понять задачу глубже
 2. Напиши короткое ТЗ на основе моих ответов
-3. Предложи с чего начать реализацию
+3. Предложи с чего начать
 
 Формат ТЗ:
 - Для кого этот продукт
 - Какую задачу решает
-- Что должен уметь (список функций)
+- Что должен уметь
 - Что НЕ нужно в первой версии
 - Как выглядит успешный результат</div>
 
-<div class="divider"></div>
-
-<!-- НАШИ КЕЙСЫ -->
-<h2>📦 Наши кейсы</h2>
+<h3>📦 Наши кейсы</h3>
 
 <a href="https://b2b-agent-deal-contr-ock2.bolt.host" target="_blank" class="link-card">
   <span class="link-icon">🏠</span>
-  <div><div class="link-text">Deal Control — CRM для риэлторов</div><div class="link-url">Cursor + Supabase · Глеб</div></div>
+  <div><div class="link-text">Deal Control — CRM для риэлторов</div><div class="link-url">Глеб · Cursor + Supabase</div></div>
 </a>
 
 <a href="https://literarybot-production.up.railway.app/login" target="_blank" class="link-card">
   <span class="link-icon">📚</span>
-  <div><div class="link-text">Литбот — Telegram-бот для изучения литературы</div><div class="link-url">Cursor + Railway · Ника · @literary_3bot</div></div>
+  <div><div class="link-text">Литбот — бот для изучения литературы</div><div class="link-url">Ника · Cursor + Railway · @literary_3bot</div></div>
 </a>
 
 <a href="https://getsalary.netlify.app/" target="_blank" class="link-card">
@@ -260,51 +364,6 @@
   <span class="link-icon">🌐</span>
   <div><div class="link-text">Лендинг Кворум</div><div class="link-url">Cursor + Vercel</div></div>
 </a>
-
-<div class="divider"></div>
-
-<!-- ОПЛАТА -->
-<h2>💳 Оплата из России</h2>
-
-<div class="callout green">
-  <span class="callout-icon">🏆</span>
-  <p><strong>МТС Платежи — рекомендуем.</strong> Заходите на <a href="https://payment.mts.ru/tools/categories/ai" target="_blank">payment.mts.ru</a>, выбираете AI-сервис, оплачиваете через СБП. Готово за 15 минут.</p>
-</div>
-
-<details class="toggle">
-  <summary>Другие способы оплаты</summary>
-  <div class="toggle-content">
-    <p><strong>Сервис-посредник:</strong> Telegram-бот, рубли через СБП. Комиссия 300–500 руб. Oplatym.ru, Oplatim.com</p>
-    <p><strong>Виртуальная карта:</strong> Выпускается онлайн за 10–30 мин. Плати по миру, Aifory Pro, PST.net</p>
-    <p><strong>Друзья с зарубежной картой:</strong> Попросите оплатить подписку, переведите рубли</p>
-  </div>
-</details>
-
-<div class="divider"></div>
-
-<!-- VPN -->
-<h2>🔒 VPN</h2>
-
-<table>
-  <tr><th>Сервис</th><th>VPN</th></tr>
-  <tr><td>Cursor</td><td><span class="tag green">не нужен</span></td></tr>
-  <tr><td>Claude</td><td><span class="tag red">нужен</span></td></tr>
-  <tr><td>ChatGPT</td><td><span class="tag red">нужен</span></td></tr>
-  <tr><td>Lovable, Bolt</td><td><span class="tag orange">может потребоваться</span></td></tr>
-  <tr><td>Supabase, Vercel</td><td><span class="tag green">обычно не нужен</span></td></tr>
-</table>
-
-<p><strong>Бесплатные VPN:</strong> Outline VPN, Amnezia VPN</p>
-
-<div class="divider"></div>
-
-<!-- ДЕНЬ 2 -->
-<h2>📅 День 2 — Практика и агенты</h2>
-
-<div class="callout blue">
-  <span class="callout-icon">📆</span>
-  <p>22 марта, 10:00–14:00. Разбор ДЗ · AI-агенты · Строим проекты · Личная система обучения</p>
-</div>
 
 <div class="divider"></div>
 
