@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кворум — Материалы интенсива</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+    background: #fff;
+    color: #37352f;
+    line-height: 1.6;
+    padding: 0 20px;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 0 120px;
+  }
+  .icon { font-size: 48px; margin-bottom: 12px; }
+  h1 { font-size: 40px; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
+  .subtitle { font-size: 16px; color: #9b9a97; margin-bottom: 40px; }
+  h2 { font-size: 24px; font-weight: 600; margin-top: 48px; margin-bottom: 16px; padding-top: 12px; border-top: 1px solid #e8e7e4; }
+  h3 { font-size: 18px; font-weight: 600; margin-top: 28px; margin-bottom: 10px; }
+  p { margin-bottom: 12px; color: #37352f; }
+  a { color: #37352f; text-decoration: underline; text-decoration-color: rgba(55,53,47,0.4); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: #37352f; }
+  ul { list-style: none; margin-bottom: 16px; }
+  ul li { position: relative; padding-left: 24px; margin-bottom: 6px; }
+  ul li::before { content: '•'; position: absolute; left: 8px; color: #9b9a97; }
+  .callout {
+    background: #f7f6f3;
+    border-radius: 4px;
+    padding: 16px 16px 16px 48px;
+    position: relative;
+    margin: 16px 0;
+  }
+  .callout .callout-icon { position: absolute; left: 16px; top: 16px; font-size: 18px; }
+  .callout p { margin-bottom: 0; }
+  .callout.yellow { background: #fef8e7; }
+  .callout.blue { background: #e8f4f8; }
+  .callout.green { background: #edf8e8; }
+  .link-card {
+    border: 1px solid #e8e7e4;
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .link-card:hover { background: #f7f6f3; }
+  .link-card .link-icon { font-size: 20px; flex-shrink: 0; }
+  .link-card .link-text { font-size: 14px; color: #37352f; font-weight: 500; }
+  .link-card .link-url { font-size: 12px; color: #9b9a97; }
+  .divider { height: 1px; background: #e8e7e4; margin: 32px 0; }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 4px;
+  }
+  .tag.red { background: #fbe4e4; color: #93291e; }
+  .tag.green { background: #dbeddb; color: #1e6231; }
+  .tag.blue { background: #d3e5ef; color: #183b56; }
+  .tag.orange { background: #faebdd; color: #93591e; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th { text-align: left; font-size: 12px; font-weight: 600; color: #9b9a97; text-transform: uppercase; letter-spacing: 0.04em; padding: 6px 10px; border-bottom: 1px solid #e8e7e4; }
+  td { padding: 8px 10px; font-size: 14px; border-bottom: 1px solid #f1f0ee; }
+  .toggle { margin: 8px 0; }
+  .toggle summary { cursor: pointer; font-weight: 500; padding: 6px 0; list-style: none; }
+  .toggle summary::before { content: '▸ '; color: #9b9a97; }
+  .toggle[open] summary::before { content: '▾ '; }
+  .toggle .toggle-content { padding: 8px 0 8px 20px; }
+  code { background: #f7f6f3; padding: 2px 6px; border-radius: 3px; font-size: 13px; font-family: 'SFMono-Regular', Menlo, monospace; }
+  .steps { counter-reset: step; }
+  .step-item { display: flex; gap: 14px; margin-bottom: 12px; align-items: flex-start; }
+  .step-num { width: 24px; height: 24px; border-radius: 50%; background: #f7f6f3; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #9b9a97; flex-shrink: 0; margin-top: 2px; }
+  .step-item strong { display: block; margin-bottom: 2px; }
+  .step-item span { font-size: 14px; color: #6b6b6b; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="icon">✨</div>
+<h1>Кворум — Интенсив по вайбкодингу</h1>
+<p class="subtitle">21–22 марта 2026 · Материалы для участников</p>
+
+<div class="callout yellow">
+  <span class="callout-icon">📌</span>
+  <p><strong>Презентация:</strong> <a href="https://nikashtefan.github.io/kvorum-intensive/" target="_blank">nikashtefan.github.io/kvorum-intensive</a><br>Навигация стрелками, <code>F</code> — полный экран</p>
+</div>
+
+<!-- ДЕНЬ 1 -->
+<h2>📅 День 1 — Инструменты и принципы</h2>
+
+<h3>🎥 Видео</h3>
+<div class="callout blue">
+  <span class="callout-icon">🎬</span>
+  <p>Запись первого дня — скоро будет здесь</p>
+</div>
+
+<h3>📋 Выжимка дня</h3>
+<ul>
+  <li>Разобрали что такое вайбкодинг и почему это не хайп</li>
+  <li>Показали реальные кейсы: Deal Control, Литбот, Salary Report</li>
+  <li>Прошли по пайплайну: Идея → ТЗ → Разработка → Данные → Запуск</li>
+  <li>Разобрали инструменты: Claude / Cursor, Replit / Bolt / Lovable, Supabase, Railway</li>
+  <li>5 принципов работы с LLM</li>
+  <li>Живой кейс — бот AI Trendwatching</li>
+</ul>
+
+<h3>🛠 Инструменты — ссылки</h3>
+
+<table>
+  <tr><th>Инструмент</th><th>Ссылка</th><th>Зачем</th></tr>
+  <tr><td><strong>Claude</strong></td><td><a href="https://claude.ai" target="_blank">claude.ai</a></td><td>AI-модель — думать, код, ТЗ, отладка</td></tr>
+  <tr><td><strong>Cursor</strong></td><td><a href="https://cursor.com" target="_blank">cursor.com</a></td><td>Редактор кода с AI внутри</td></tr>
+  <tr><td><strong>Replit</strong></td><td><a href="https://replit.com" target="_blank">replit.com</a></td><td>Код в браузере — универсальный</td></tr>
+  <tr><td><strong>Bolt</strong></td><td><a href="https://bolt.new" target="_blank">bolt.new</a></td><td>Лендинг за 2–5 минут</td></tr>
+  <tr><td><strong>Lovable</strong></td><td><a href="https://lovable.dev" target="_blank">lovable.dev</a></td><td>Приложения с пользователями и данными</td></tr>
+  <tr><td><strong>Supabase</strong></td><td><a href="https://supabase.com" target="_blank">supabase.com</a></td><td>База данных</td></tr>
+  <tr><td><strong>Railway</strong></td><td><a href="https://railway.app" target="_blank">railway.app</a></td><td>Деплой ботов и бэкенда</td></tr>
+  <tr><td><strong>Vercel</strong></td><td><a href="https://vercel.com" target="_blank">vercel.com</a></td><td>Деплой сайтов и лендингов</td></tr>
+  <tr><td><strong>ChatGPT</strong></td><td><a href="https://chatgpt.com" target="_blank">chatgpt.com</a></td><td>AI от OpenAI</td></tr>
+</table>
+
+<h3>💰 Стоимость</h3>
+<table>
+  <tr><th>Сервис</th><th>Бесплатно</th><th>Платно</th></tr>
+  <tr><td>Claude Pro</td><td>30 сообщений/день</td><td>$20/мес — все модели + Claude Code</td></tr>
+  <tr><td>Cursor</td><td>2 недели Pro (триал)</td><td>$20/мес</td></tr>
+  <tr><td>Replit</td><td>Есть бесплатный tier</td><td>От $25/мес</td></tr>
+  <tr><td>Bolt</td><td>Ограниченно</td><td>По токенам</td></tr>
+  <tr><td>Lovable</td><td>Есть бесплатный tier</td><td>От $20/мес</td></tr>
+  <tr><td>Supabase</td><td>Да</td><td>От $25/мес</td></tr>
+  <tr><td>Railway</td><td>$5 кредит</td><td>По использованию</td></tr>
+  <tr><td>Vercel</td><td>Да</td><td>От $20/мес</td></tr>
+</table>
+
+<h3>🔑 5 принципов работы с LLM</h3>
+
+<div class="steps">
+  <div class="step-item">
+    <div class="step-num">1</div>
+    <div><strong>Не ставь задачу — определи критерии результата</strong><br><span>Сначала объясни что такое «хорошо» и «плохо». У тебя не хватит токенов описать задачу идеально — но хватит описать критерии.</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">2</div>
+    <div><strong>Учи модель, а не командуй</strong><br><span>Давай примеры хорошего и плохого результата. Ты учишь модель понимать задачу.</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">3</div>
+    <div><strong>Первый результат всегда плохой — итерируй</strong><br><span>На 3–4 итерации сходится к хорошему результату. Это нормально.</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">4</div>
+    <div><strong>Проси модель проверять саму себя</strong><br><span>«Найди ошибки, найди искажения, найди пробелы — исправь»</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">5</div>
+    <div><strong>Ограничения важнее свободы</strong><br><span>Без ограничений = океан плохих решений. Опиши рамки — модель выдаст предсказуемый результат.</span></div>
+  </div>
+</div>
+
+<div class="callout green">
+  <span class="callout-icon">💡</span>
+  <p><strong>Главный вывод:</strong> не проси LLM сделать задачу — научи его понимать, что такое хороший результат.</p>
+</div>
+
+<h3>🔄 Пайплайн</h3>
+<p><code>💡 Идея</code> → <code>📄 ТЗ</code> → <code>🛠 Разработка</code> → <code>💾 Данные</code> → <code>🚀 Запуск</code></p>
+
+<p><strong>Два пути:</strong></p>
+<ul>
+  <li><strong>Путь Replit:</strong> ChatGPT/Claude (ТЗ) → Replit/Bolt (всё в одном) → Supabase/Sheets → встроенный хостинг</li>
+  <li><strong>Путь Claude:</strong> Claude (ТЗ + реализация) → Supabase/Sheets → Vercel/Railway</li>
+</ul>
+
+<div class="divider"></div>
+
+<!-- ДОМАШКА -->
+<h2>📝 Домашнее задание</h2>
+
+<div class="steps">
+  <div class="step-item">
+    <div class="step-num">1</div>
+    <div><strong>Выбери идею</strong><br><span>Рабочая задача, личный проект, гипотеза — любая. Главное что она твоя.</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">2</div>
+    <div><strong>Установи Claude в Cursor по инструкции</strong><br><span>Займёт 10 минут</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">3</div>
+    <div><strong>Напиши ТЗ в Claude</strong><br><span>«Хочу сделать [X]. Помоги мне написать ТЗ, задай вопросы.» — Claude всё сделает сам</span></div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">4</div>
+    <div><strong>Зарелизь на прод через Railway</strong><br><span>Опубликуй результат — пусть работает. Не надо делать идеально.</span></div>
+  </div>
+</div>
+
+<div class="callout yellow">
+  <span class="callout-icon">📩</span>
+  <p>Инструкция по установке Claude в Cursor — в чате группы</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- СТАРТОВЫЙ ПРОМПТ -->
+<h2>🚀 Стартовый промпт для Claude</h2>
+
+<div class="callout">
+  <span class="callout-icon">💬</span>
+  <p>Скопируй и вставь в Claude:</p>
+</div>
+
+<div style="background: #f7f6f3; border-radius: 4px; padding: 16px; font-family: 'SFMono-Regular', Menlo, monospace; font-size: 13px; line-height: 1.7; margin: 8px 0; white-space: pre-wrap;">Привет! Я хочу сделать [ОПИШИ ИДЕЮ В 1-2 ПРЕДЛОЖЕНИЯХ].
+
+Помоги мне:
+1. Задай мне вопросы чтобы понять задачу глубже
+2. Напиши короткое ТЗ на основе моих ответов
+3. Предложи с чего начать реализацию
+
+Формат ТЗ:
+- Для кого этот продукт
+- Какую задачу решает
+- Что должен уметь (список функций)
+- Что НЕ нужно в первой версии
+- Как выглядит успешный результат</div>
+
+<div class="divider"></div>
+
+<!-- НАШИ КЕЙСЫ -->
+<h2>📦 Наши кейсы</h2>
+
+<a href="https://b2b-agent-deal-contr-ock2.bolt.host" target="_blank" class="link-card">
+  <span class="link-icon">🏠</span>
+  <div><div class="link-text">Deal Control — CRM для риэлторов</div><div class="link-url">Cursor + Supabase · Глеб</div></div>
+</a>
+
+<a href="https://literarybot-production.up.railway.app/login" target="_blank" class="link-card">
+  <span class="link-icon">📚</span>
+  <div><div class="link-text">Литбот — Telegram-бот для изучения литературы</div><div class="link-url">Cursor + Railway · Ника · @literary_3bot</div></div>
+</a>
+
+<a href="https://getsalary.netlify.app/" target="_blank" class="link-card">
+  <span class="link-icon">💰</span>
+  <div><div class="link-text">Salary Report — анализ зарплат</div><div class="link-url">Cursor + Python</div></div>
+</a>
+
+<a href="https://nikashtefan.github.io/kvorum-landing/" target="_blank" class="link-card">
+  <span class="link-icon">🌐</span>
+  <div><div class="link-text">Лендинг Кворум</div><div class="link-url">Cursor + Vercel</div></div>
+</a>
+
+<div class="divider"></div>
+
+<!-- ОПЛАТА -->
+<h2>💳 Оплата из России</h2>
+
+<div class="callout green">
+  <span class="callout-icon">🏆</span>
+  <p><strong>МТС Платежи — рекомендуем.</strong> Заходите на <a href="https://payment.mts.ru/tools/categories/ai" target="_blank">payment.mts.ru</a>, выбираете AI-сервис, оплачиваете через СБП. Готово за 15 минут.</p>
+</div>
+
+<details class="toggle">
+  <summary>Другие способы оплаты</summary>
+  <div class="toggle-content">
+    <p><strong>Сервис-посредник:</strong> Telegram-бот, рубли через СБП. Комиссия 300–500 руб. Oplatym.ru, Oplatim.com</p>
+    <p><strong>Виртуальная карта:</strong> Выпускается онлайн за 10–30 мин. Плати по миру, Aifory Pro, PST.net</p>
+    <p><strong>Друзья с зарубежной картой:</strong> Попросите оплатить подписку, переведите рубли</p>
+  </div>
+</details>
+
+<div class="divider"></div>
+
+<!-- VPN -->
+<h2>🔒 VPN</h2>
+
+<table>
+  <tr><th>Сервис</th><th>VPN</th></tr>
+  <tr><td>Cursor</td><td><span class="tag green">не нужен</span></td></tr>
+  <tr><td>Claude</td><td><span class="tag red">нужен</span></td></tr>
+  <tr><td>ChatGPT</td><td><span class="tag red">нужен</span></td></tr>
+  <tr><td>Lovable, Bolt</td><td><span class="tag orange">может потребоваться</span></td></tr>
+  <tr><td>Supabase, Vercel</td><td><span class="tag green">обычно не нужен</span></td></tr>
+</table>
+
+<p><strong>Бесплатные VPN:</strong> Outline VPN, Amnezia VPN</p>
+
+<div class="divider"></div>
+
+<!-- ДЕНЬ 2 -->
+<h2>📅 День 2 — Практика и агенты</h2>
+
+<div class="callout blue">
+  <span class="callout-icon">📆</span>
+  <p>22 марта, 10:00–14:00. Разбор ДЗ · AI-агенты · Строим проекты · Личная система обучения</p>
+</div>
+
+<div class="divider"></div>
+
+<p style="color: #9b9a97; font-size: 14px; text-align: center; margin-top: 40px;">
+  Кворум · <a href="https://t.me/nikshtefan" target="_blank">@nikshtefan</a> · <a href="https://t.me/hardeev" target="_blank">@hardeev</a>
+</p>
+
+</div>
+</body>
+</html>
