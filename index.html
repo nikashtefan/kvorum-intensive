@@ -897,6 +897,7 @@
 
 <!-- NAV -->
 <div class="nav">
+  <button onclick="toggleFullscreen()" title="На весь экран" style="font-size:12px;">⛶</button>
   <button onclick="prev()">←</button>
   <span class="slide-counter" id="counter">1 / 28</span>
   <button onclick="next()">→</button>
@@ -920,9 +921,19 @@
   function next() { show(cur + 1); }
   function prev() { show(cur - 1); }
 
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
   document.addEventListener('keydown', e => {
+    if (e.key === 'f' || e.key === 'F') { e.preventDefault(); toggleFullscreen(); }
     if (['ArrowRight','ArrowDown',' '].includes(e.key)) { e.preventDefault(); next(); }
     if (['ArrowLeft','ArrowUp'].includes(e.key)) { e.preventDefault(); prev(); }
+    if (e.key === 'Escape' && document.fullscreenElement) { document.exitFullscreen(); }
   });
 
   let sx = 0;
