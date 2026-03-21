@@ -87,6 +87,27 @@
   .nav-block .nav-icon { font-size: 24px; margin-bottom: 8px; }
   .nav-block .nav-title { font-size: 14px; font-weight: 600; color: #37352f; }
   .nav-block .nav-desc { font-size: 12px; color: #9b9a97; margin-top: 4px; }
+
+  /* SECTION BLOCKS */
+  .section-block {
+    border-radius: 12px;
+    padding: 28px 28px 20px;
+    margin: 24px -28px;
+  }
+  .section-block h2 { border-top: none; margin-top: 0; padding-top: 0; }
+  .section-block h3:first-of-type { margin-top: 8px; }
+  .section-day1 { background: #faf8f5; border: 1px solid #efe9df; }
+  .section-day2 { background: #f5f8fa; border: 1px solid #dfe9ef; }
+  .section-useful { background: #f5faf6; border: 1px solid #dfefdf; }
+
+  .hw-block {
+    background: #fef8e7;
+    border: 2px solid #f5d76e;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .hw-block h3 { margin-top: 0; color: #8a6d00; }
 </style>
 </head>
 <body>
@@ -98,7 +119,7 @@
 
 <div class="callout yellow">
   <span class="callout-icon">📌</span>
-  <p><strong>Презентация:</strong> <a href="https://nikashtefan.github.io/kvorum-intensive/" target="_blank">открыть презентацию</a> · навигация стрелками, <code>F</code> — полный экран</p>
+  <p><strong>Презентация:</strong> <a href="https://nikashtefan.github.io/kvorum-intensive/" target="_blank">открыть презентацию</a></p>
 </div>
 
 <!-- НАВИГАЦИЯ -->
@@ -124,6 +145,7 @@
 <!--  ДЕНЬ 1                             -->
 <!-- ═══════════════════════════════════ -->
 
+<div class="section-block section-day1">
 <h2 id="day1">📅 День 1 — Инструменты и принципы</h2>
 
 <h3>🎥 Запись</h3>
@@ -214,26 +236,29 @@
   </div>
 </details>
 
-<h3>📝 Домашнее задание</h3>
-
-<div class="steps">
-  <div class="step-item">
-    <div class="step-num">1</div>
-    <div><strong>Выбери идею</strong><br><span>Рабочая задача, личный проект — любая</span></div>
-  </div>
-  <div class="step-item">
-    <div class="step-num">2</div>
-    <div><strong>Установи Claude в Cursor по инструкции</strong><br><span>Инструкция в чате группы, займёт 10 минут</span></div>
-  </div>
-  <div class="step-item">
-    <div class="step-num">3</div>
-    <div><strong>Напиши ТЗ в Claude</strong><br><span>«Хочу сделать [X]. Помоги написать ТЗ, задай вопросы»</span></div>
-  </div>
-  <div class="step-item">
-    <div class="step-num">4</div>
-    <div><strong>Зарелизь на прод через Railway</strong><br><span>Не надо идеально — пусть работает</span></div>
+<div class="hw-block">
+  <h3>📝 Домашнее задание</h3>
+  <div class="steps">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div><strong>Выбери идею</strong><br><span>Рабочая задача, личный проект — любая</span></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div><strong>Установи Claude в Cursor по инструкции</strong><br><span>Инструкция в чате группы, займёт 10 минут</span></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div><strong>Напиши ТЗ в Claude</strong><br><span>«Хочу сделать [X]. Помоги написать ТЗ, задай вопросы»</span></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div><strong>Зарелизь на прод через Railway</strong><br><span>Не надо идеально — пусть работает</span></div>
+    </div>
   </div>
 </div>
+
+</div><!-- end section-day1 -->
 
 <div class="divider"></div>
 
@@ -241,6 +266,7 @@
 <!--  ДЕНЬ 2                             -->
 <!-- ═══════════════════════════════════ -->
 
+<div class="section-block section-day2">
 <h2 id="day2">🚀 День 2 — Агенты и практика</h2>
 
 <h3>🎥 Запись</h3>
@@ -263,12 +289,15 @@
   <p>Выжимка и материалы появятся после занятия</p>
 </div>
 
+</div><!-- end section-day2 -->
+
 <div class="divider"></div>
 
 <!-- ═══════════════════════════════════ -->
 <!--  ПОЛЕЗНОЕ                           -->
 <!-- ═══════════════════════════════════ -->
 
+<div class="section-block section-useful">
 <h2 id="useful">🛠 Полезное</h2>
 
 <h3>Инструменты</h3>
@@ -364,6 +393,8 @@
   <span class="link-icon">🌐</span>
   <div><div class="link-text">Лендинг Кворум</div><div class="link-url">Cursor + Vercel</div></div>
 </a>
+
+</div><!-- end section-useful -->
 
 <div class="divider"></div>
 
