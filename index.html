@@ -892,7 +892,7 @@
         <li><strong>/deploy</strong> — задеплоить проект</li>
         <li><strong>/idea</strong> — оценить бизнес-идею</li>
         <li class="arrow">Ты вызываешь <strong>сама</strong> когда нужно</li>
-        <li class="arrow">Как кнопка — нажала, получила результат</li>
+        <li class="arrow">Как кнопка — нажал, получил результат</li>
       </ul>
     </div>
     <div>
@@ -938,38 +938,7 @@
   </div>
 </div>
 
-<!-- 28. БАЗЫ ДАННЫХ -->
-<div class="slide" data-day="День 2">
-  <div class="label">Хранение данных</div>
-  <h2>Когда какую базу данных выбрать</h2>
-  <div class="cards gap-sm">
-    <div class="card">
-      <div class="name">JSON-файл</div>
-      <div class="desc">Самое простое. Данные прямо в файле рядом с кодом. До 100 записей, 1 пользователь.</div>
-      <div class="example">→ прототип, MVP на один день</div>
-    </div>
-    <div class="card">
-      <div class="name">Google Sheets</div>
-      <div class="desc">Удобно видеть данные глазами. До 500 строк. Но медленно (1-2 сек на запрос) и лимиты API.</div>
-      <div class="example">→ квиз-бот, сбор заявок, CRM на минималках</div>
-    </div>
-    <div class="card">
-      <div class="name">SQLite</div>
-      <div class="desc">Файловая БД — быстро, просто, бесплатно. Но только 1 сервер, нет доступа извне.</div>
-      <div class="example">→ бот с историей, локальный проект</div>
-    </div>
-    <div class="card accent">
-      <div class="name">Supabase (PostgreSQL)</div>
-      <div class="desc">Полноценная облачная БД. Бесплатно до 500 МБ. Быстро, надёжно, есть UI для просмотра.</div>
-      <div class="example">→ продакшн-бот, много пользователей, нужна надёжность</div>
-    </div>
-  </div>
-  <div class="box gap-md" style="max-width:820px;">
-    <p><strong>Правило:</strong> начинай с простого (JSON/Sheets). Переходи на Supabase когда: больше 500 записей, медленно, или бот падает из-за лимитов.</p>
-  </div>
-</div>
-
-<!-- 29. RAG — ЧТО ЭТО -->
+<!-- 28. RAG — ЧТО ЭТО -->
 <div class="slide" data-day="День 2">
   <div class="label">Продвинутый уровень</div>
   <h2>RAG — дай AI доступ к своим документам</h2>
@@ -1048,32 +1017,11 @@
   </div>
 </div>
 
-<!-- 32. ПРАКТИКА -->
-<div class="slide" data-day="День 2">
-  <div class="label">Основной блок дня</div>
-  <h2>Практика — строим свои проекты</h2>
-  <div class="two-col gap-sm">
-    <div>
-      <div class="col-head" style="margin-bottom:14px;">30 минут — работаем</div>
-      <ul>
-        <li>Каждый работает над <strong>своим проектом</strong></li>
-        <li>Ника и Глеб тоже что-то строят — показывают как выглядит рабочий процесс</li>
-        <li>Застрял — пиши вопрос в чат</li>
-      </ul>
-    </div>
-    <div>
-      <div class="col-head" style="margin-bottom:14px;">35 минут — разбираем</div>
-      <ul>
-        <li>Несколько участников <strong>показывают экран</strong></li>
-        <li>Что получилось, где застряли — разбираем вместе</li>
-        <li>Если что-то крутое — останавливаемся, смотрим подробно</li>
-        <li class="check">Вопросы — в чат или вслух</li>
-      </ul>
-    </div>
-  </div>
-  <div class="box purple gap-md" style="max-width:820px;">
-    <p>Не знаешь с чего начать? Открой Claude: <strong>«Помоги мне написать ТЗ для [идея] и скажи с чего начать»</strong></p>
-  </div>
+<!-- 31. ПРАКТИКА -->
+<div class="slide divider" data-day="День 2">
+  <div class="label" style="text-align:center;">Основной блок дня</div>
+  <h2>Практика</h2>
+  <p class="subtitle">Открываем свои проекты и строим прямо сейчас — вместе.<br>Создаём ботов, агентов, скиллы — что угодно. Застрял — разбираем на всю группу.</p>
 </div>
 
 <!-- 25. ПОКАЗ ПРОЕКТОВ -->
@@ -1126,7 +1074,7 @@
 <div class="nav">
   <button onclick="toggleFullscreen()" title="На весь экран" style="font-size:12px;">⛶</button>
   <button onclick="prev()">←</button>
-  <span class="slide-counter" id="counter">1 / 36</span>
+  <span class="slide-counter" id="counter">1 / 35</span>
   <button onclick="next()">→</button>
 </div>
 
