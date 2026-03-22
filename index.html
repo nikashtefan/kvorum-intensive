@@ -891,7 +891,7 @@
         <li><strong>/save</strong> — сохранить саммари сессии</li>
         <li><strong>/deploy</strong> — задеплоить проект</li>
         <li><strong>/idea</strong> — оценить бизнес-идею</li>
-        <li class="arrow">Ты вызываешь <strong>сама</strong> когда нужно</li>
+        <li class="arrow">Ты вызываешь <strong>сам</strong> когда нужно</li>
         <li class="arrow">Как кнопка — нажал, получил результат</li>
       </ul>
     </div>
@@ -931,93 +931,13 @@
       <ul style="gap:8px;">
         <li><strong>Глобальный</strong> (~/.claude/CLAUDE.md) — для всех проектов</li>
         <li><strong>Проектный</strong> (.claude/CLAUDE.md) — для конкретного репо</li>
-        <li><strong>settings.json</strong> — разрешения, режимы, хуки</li>
       </ul>
       <p style="margin-top:12px; font-size:14px; color:rgba(0,0,0,0.5);">CLAUDE.md = онбординг для AI, как README для человека</p>
     </div>
   </div>
 </div>
 
-<!-- 28. RAG — ЧТО ЭТО -->
-<div class="slide" data-day="День 2">
-  <div class="label">Продвинутый уровень</div>
-  <h2>RAG — дай AI доступ к своим документам</h2>
-  <div class="big-quote gap-sm" style="margin-bottom:24px;">
-    Без RAG: Claude знает только то, на чём обучен. Твои файлы ему недоступны.<br>
-    С RAG: Claude ищет ответ в ТВОИХ документах и отвечает точно.
-  </div>
-  <div class="steps gap-sm">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-body"><strong>Загрузка документов</strong><span>PDF, Word, заметки, переписки — всё что есть</span></div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-body"><strong>Нарезка + Embeddings</strong><span>Текст режется на кусочки → каждый превращается в числа (вектор). Похожие по смыслу тексты = похожие числа</span></div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body"><strong>Вопрос → поиск → ответ</strong><span>Вопрос тоже превращается в числа → ищутся похожие кусочки → Claude отвечает с точным контекстом</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- 30. RAG — КОГДА НУЖЕН -->
-<div class="slide" data-day="День 2">
-  <div class="label">RAG · Применение</div>
-  <h2>Когда что использовать — полная картина</h2>
-  <div class="cards gap-sm">
-    <div class="card">
-      <div class="name">Обычный бот-скрипт</div>
-      <div class="desc">Делает одно и то же по расписанию. Рассылка, парсинг, уведомления.</div>
-      <div class="example">→ фиксированные действия, не думает</div>
-    </div>
-    <div class="card">
-      <div class="name">RAG</div>
-      <div class="desc">«Ответь на вопрос по нашим документам». Поиск по базе знаний, FAQ, внутренняя wiki.</div>
-      <div class="example">→ много документов, нужны точные ответы</div>
-    </div>
-    <div class="card">
-      <div class="name">Agent SDK</div>
-      <div class="desc">«Сам ходи, ищи, решай что делать». Автономная работа, цепочка решений.</div>
-      <div class="example">→ сложные задачи, принятие решений</div>
-    </div>
-    <div class="card accent">
-      <div class="name">RAG + Agent SDK</div>
-      <div class="desc">Агент ищет по документам И принимает решения. Полноценный AI-ассистент.</div>
-      <div class="example">→ поддержка клиентов, консалтинг, аналитика</div>
-    </div>
-  </div>
-</div>
-
-<!-- 31. КЕЙС ЕГОРА -->
-<div class="slide" data-day="День 2">
-  <div class="label">Кейс участника</div>
-  <h2>Разбор: ассистент для консалтинговой команды</h2>
-  <div class="two-col gap-sm">
-    <div class="box" style="background:rgba(255,240,200,0.5); border-color:rgba(200,170,80,0.3);">
-      <div class="box-title">Запрос Егора (@Petrov88)</div>
-      <ul style="gap:8px;">
-        <li>Ассистент команды консультантов — <strong>хранит контекст клиента и проекта</strong></li>
-        <li>Агент по анализу обращений — <strong>первая линия поддержки клиента</strong></li>
-      </ul>
-    </div>
-    <div class="box purple">
-      <div class="box-title">Что для этого нужно</div>
-      <ul style="gap:8px;">
-        <li><strong>RAG</strong> — поиск по документам клиентов (договоры, переписки, протоколы встреч)</li>
-        <li><strong>Agent SDK</strong> — агент сам решает: ответить или передать консультанту</li>
-        <li><strong>Supabase</strong> — хранение векторов (vector search) + данные клиентов</li>
-        <li><strong>Telegram-бот</strong> — интерфейс для команды</li>
-      </ul>
-    </div>
-  </div>
-  <div class="box gap-md" style="max-width:820px;">
-    <p><strong>Как это работает:</strong> Консультант спрашивает «Какие KPI мы согласовали с Альфой?» → RAG ищет по протоколам встреч → находит нужный документ → Claude отвечает с точной информацией.</p>
-  </div>
-</div>
-
-<!-- 31. ПРАКТИКА -->
+<!-- 28. ПРАКТИКА -->
 <div class="slide divider" data-day="День 2">
   <div class="label" style="text-align:center;">Основной блок дня</div>
   <h2>Практика</h2>
@@ -1074,7 +994,7 @@
 <div class="nav">
   <button onclick="toggleFullscreen()" title="На весь экран" style="font-size:12px;">⛶</button>
   <button onclick="prev()">←</button>
-  <span class="slide-counter" id="counter">1 / 35</span>
+  <span class="slide-counter" id="counter">1 / 32</span>
   <button onclick="next()">→</button>
 </div>
 
