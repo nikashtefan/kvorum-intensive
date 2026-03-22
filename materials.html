@@ -260,22 +260,78 @@
 <h3>🎥 Запись</h3>
 <div class="callout blue">
   <span class="callout-icon">🎬</span>
-  <p>Видео — скоро будет здесь</p>
+  <p><a href="https://drive.google.com/file/d/1L9a4gCieen0KDflAO_VMqKu97OTKtoIh/view?usp=sharing" target="_blank">Смотреть запись второго дня</a></p>
 </div>
 
-<h3>📋 Программа дня</h3>
-<ul>
-  <li>Разбор домашнего задания</li>
-  <li>AI-агенты — что это и где применять</li>
-  <li>Практика — строим проекты</li>
-  <li>Показ результатов</li>
-  <li>Личная система обучения через AI</li>
-</ul>
+<h3>📋 Выжимка</h3>
 
-<div class="callout yellow">
-  <span class="callout-icon">📦</span>
-  <p>Выжимка и материалы появятся после занятия</p>
-</div>
+<details>
+  <summary>Что происходило</summary>
+  <div class="toggle-content">
+    <ul>
+      <li>Разбор домашних заданий участников</li>
+      <li>Совместное создание AI-бота новостей в реальном времени</li>
+      <li>Практика: участник создавал бота-автопостера для Telegram-канала</li>
+      <li>Обсуждение скиллов, субагентов и паттернов работы с Claude</li>
+      <li>Лестница освоения AI-инструментов, советы по дальнейшему обучению</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>Разбор домашки</summary>
+  <div class="toggle-content">
+    <ul>
+      <li><strong>Антон:</strong> подключил Claude к своим продуктам, собрал скрипт для генерации и обрезки рекламных креативов</li>
+      <li><strong>Егор:</strong> прошёл настройку самостоятельно ночью — "вьетнамские флешбэки" от тех же шагов</li>
+      <li><strong>Глеб:</strong> работал в консоли (Claude CLI), показал свой пайплайн — спецификация → дизайн → разработка</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>Что делали на практике</summary>
+  <div class="toggle-content">
+    <p><strong>AI News Bot (Ника):</strong> Telegram-бот, который раз в неделю собирает AI-новости, суммаризирует топ-5 на русском со ссылками. Практические новости для обычных пользователей.</p>
+    <ul>
+      <li>Зарегистрировали прокси-API (ProxyAPI) — 200 руб.</li>
+      <li>Создали бота через BotFather</li>
+      <li>Задеплоили на Railway: GitHub → переменные окружения → деплой</li>
+      <li>Итеративно правили: стикеры, упрощение языка</li>
+    </ul>
+    <p><strong>Telegram-автопостер (Антон):</strong> бот для еженедельной генерации постов с картинкой для канала (~800 подписчиков)</p>
+  </div>
+</details>
+
+<details>
+  <summary>Ключевые моменты</summary>
+  <div class="toggle-content">
+    <ul>
+      <li><strong>Правила в CLAUDE.md</strong> — задайте "всегда задавай уточняющие вопросы перед выполнением". Работает глобально или для конкретного проекта</li>
+      <li><strong>Останавливайте Claude</strong> — если побежал кодить, скажите "стой" или нажмите Escape, попросите сначала обсудить план</li>
+      <li><strong>Безопасность ключей</strong> — используйте переменные окружения, не вставляйте API-ключи в код</li>
+      <li><strong>Скиллы</strong> — повторяемые команды через <code>/имя</code>. Примеры: <code>/deploy</code>, <code>/save</code>, <code>/research</code></li>
+      <li><strong>Субагенты</strong> — автоматические подпроцессы (дебаг, уточнение, проверка кода). Claude запускает сам</li>
+      <li><strong>Не бойтесь ошибок</strong> — кидайте скриншоты ошибок в чат Claude, просите разобраться</li>
+      <li><strong>Доступ из России</strong> — ProxyAPI (от 200 руб.), VPN, Яндекс-сервисы</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>Инструменты которые использовали</summary>
+  <div class="toggle-content">
+    <ul>
+      <li><strong>Claude Code (Cursor)</strong> — основной инструмент</li>
+      <li><strong>BotFather</strong> — создание Telegram-ботов</li>
+      <li><strong>ProxyAPI</strong> — прокси для LLM API из России (оплата в рублях)</li>
+      <li><strong>Railway</strong> — деплой ботов, автодеплой из GitHub</li>
+      <li><strong>GitHub</strong> — хранение кода</li>
+      <li><strong>Supabase</strong> — база данных</li>
+      <li><strong>DALL-E / Яндекс Арт</strong> — генерация картинок</li>
+    </ul>
+  </div>
+</details>
 
 </div><!-- end section-day2 -->
 
