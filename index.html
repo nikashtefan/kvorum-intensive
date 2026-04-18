@@ -219,11 +219,11 @@
     <div style="display:flex; flex-direction:column; gap:10px;">
       <div class="box purple">
         <div class="box-title">День 1 — сегодня</div>
-        <p>Разбираем инструменты · Как правильно ставить задачу LLM · Вайбкодим кейс вместе · ДЗ</p>
+        <p>Как устроена LLM · Архитектура + Cursor · Практика вместе · Принципы промптинга · ДЗ</p>
       </div>
       <div class="box green">
         <div class="box-title">День 2 — завтра</div>
-        <p>Разбор ДЗ · Агенты · Практика · Ваши проекты</p>
+        <p>Разбор ДЗ · Агенты и скиллы · Инструменты · Практика</p>
       </div>
     </div>
   </div>
@@ -250,60 +250,37 @@
   </div>
 </div>
 
-<!-- 4a. КЕЙС — DEAL CONTROL (Глеб) -->
+<!-- 4. КЕЙСЫ — МЫ НАВАЙБКОДИЛИ -->
 <div class="slide" data-day="День 1">
-  <div class="label">Примеры · Кейс 1</div>
+  <div class="label">Примеры</div>
   <h2>Что можно построить: мы навайбкодили</h2>
-  <div class="two-col gap-sm">
-    <div class="card accent" style="padding:22px 24px; display:flex; flex-direction:column;">
-      <div class="name" style="font-size:18px; margin-bottom:10px;"><a href="https://b2b-agent-deal-contr-ock2.bolt.host" target="_blank" style="color:#5b4cc7; text-decoration:none; border-bottom:1px dashed rgba(91,76,199,0.3);">Deal Control</a></div>
-      <div class="desc" style="font-size:15px; margin-bottom:12px;">CRM для риэлторов — трекинг сделок, напоминания, отчёты без Excel</div>
-      <div class="example" style="font-size:13px;">→ Cursor + Supabase</div>
-      <div style="margin-top:auto; padding-top:14px; font-size:12px; font-weight:600; color:#5b4cc7; border-top:1px solid rgba(91,76,199,0.15);">Демо: Глеб</div>
+  <div style="display:flex; flex-direction:column; gap:12px; max-width:1100px;">
+    <div style="display:flex; gap:12px;">
+      <div class="card accent" style="flex:1; padding:20px 24px; display:flex; flex-direction:column;">
+        <div class="name" style="font-size:17px; margin-bottom:8px;"><a href="https://b2b-agent-deal-contr-ock2.bolt.host" target="_blank" style="color:#5b4cc7; text-decoration:none; border-bottom:1px dashed rgba(91,76,199,0.3);">Deal Control</a></div>
+        <div class="desc" style="font-size:14px; margin-bottom:10px;">CRM для риэлторов — трекинг сделок, напоминания, отчёты без Excel</div>
+        <div class="example" style="font-size:12px;">→ Cursor + Supabase</div>
+        <div style="margin-top:auto; padding-top:12px; font-size:11px; font-weight:600; color:#5b4cc7; border-top:1px solid rgba(91,76,199,0.15);">Демо: Глеб</div>
+      </div>
+      <div class="card accent" style="flex:1; padding:20px 24px; display:flex; flex-direction:column;">
+        <div class="name" style="font-size:17px; margin-bottom:8px;"><a href="https://literarybot-production.up.railway.app/login" target="_blank" style="color:#5b4cc7; text-decoration:none; border-bottom:1px dashed rgba(91,76,199,0.3);">Telegram-бот для школы</a></div>
+        <div class="desc" style="font-size:14px; margin-bottom:10px;">Система для учителей и учеников с отдельной админ-панелью для управления</div>
+        <div class="example" style="font-size:12px;">→ Cursor + Railway · <a href="https://t.me/literary_3bot" target="_blank" style="color:#7c6aff;">@literary_3bot</a></div>
+        <div style="margin-top:auto; padding-top:12px; font-size:11px; font-weight:600; color:#5b4cc7; border-top:1px solid rgba(91,76,199,0.15);">Демо: Ника</div>
+      </div>
     </div>
-    <div style="display:flex; flex-direction:column; gap:10px;">
-      <div class="card">
+    <div style="display:flex; gap:10px;">
+      <div class="card" style="flex:1;">
         <div class="name"><a href="https://getsalary.netlify.app/" target="_blank" style="color:#1a1a2e; text-decoration:none; border-bottom:1px dashed rgba(0,0,0,0.25);">Salary Report</a></div>
         <div class="desc">Инструмент анализа зарплат — загружаешь данные, получаешь аналитику</div>
         <div class="example">→ Cursor + Python</div>
       </div>
-      <div class="card">
+      <div class="card" style="flex:1;">
         <div class="name"><a href="https://nikashtefan.github.io/kvorum-landing/demo/" target="_blank" style="color:#1a1a2e; text-decoration:none; border-bottom:1px dashed rgba(0,0,0,0.25);">AI Support Bot</a></div>
         <div class="desc">Бот который отвечает на вопросы клиентов на основе базы знаний</div>
         <div class="example">→ Claude API + Telegram</div>
       </div>
-      <div class="card">
-        <div class="name"><a href="https://nikashtefan.github.io/kvorum-landing/" target="_blank" style="color:#1a1a2e; text-decoration:none; border-bottom:1px dashed rgba(0,0,0,0.25);">Лендинг Кворум</a></div>
-        <div class="desc">Полноценный лендинг с анимациями, секциями, формой записи</div>
-        <div class="example">→ Cursor + Vercel</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 4b. КЕЙС — ЛИТБОТ (Ника) -->
-<div class="slide" data-day="День 1">
-  <div class="label">Примеры · Кейс 2</div>
-  <h2>Что можно построить: мы навайбкодили</h2>
-  <div class="two-col gap-sm">
-    <div class="card accent" style="padding:22px 24px; display:flex; flex-direction:column;">
-      <div class="name" style="font-size:18px; margin-bottom:10px;"><a href="https://literarybot-production.up.railway.app/login" target="_blank" style="color:#5b4cc7; text-decoration:none; border-bottom:1px dashed rgba(91,76,199,0.3);">Telegram-бот для школы</a></div>
-      <div class="desc" style="font-size:15px; margin-bottom:12px;">Система для учителей и учеников с отдельной админ-панелью для управления</div>
-      <div class="example" style="font-size:13px;">→ Cursor + Railway · <a href="https://t.me/literary_3bot" target="_blank" style="color:#7c6aff;">@literary_3bot</a></div>
-      <div style="margin-top:auto; padding-top:14px; font-size:12px; font-weight:600; color:#5b4cc7; border-top:1px solid rgba(91,76,199,0.15);">Демо: Ника</div>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:10px;">
-      <div class="card">
-        <div class="name"><a href="https://getsalary.netlify.app/" target="_blank" style="color:#1a1a2e; text-decoration:none; border-bottom:1px dashed rgba(0,0,0,0.25);">Salary Report</a></div>
-        <div class="desc">Инструмент анализа зарплат — загружаешь данные, получаешь аналитику</div>
-        <div class="example">→ Cursor + Python</div>
-      </div>
-      <div class="card">
-        <div class="name"><a href="https://nikashtefan.github.io/kvorum-landing/demo/" target="_blank" style="color:#1a1a2e; text-decoration:none; border-bottom:1px dashed rgba(0,0,0,0.25);">AI Support Bot</a></div>
-        <div class="desc">Бот который отвечает на вопросы клиентов на основе базы знаний</div>
-        <div class="example">→ Claude API + Telegram</div>
-      </div>
-      <div class="card">
+      <div class="card" style="flex:1;">
         <div class="name"><a href="https://nikashtefan.github.io/kvorum-landing/" target="_blank" style="color:#1a1a2e; text-decoration:none; border-bottom:1px dashed rgba(0,0,0,0.25);">Лендинг Кворум</a></div>
         <div class="desc">Полноценный лендинг с анимациями, секциями, формой записи</div>
         <div class="example">→ Cursor + Vercel</div>
@@ -325,10 +302,10 @@
 <div class="slide divider" data-day="День 1">
   <div class="label" style="text-align:center;">Блок 2</div>
   <h2 style="font-size:42px;">🧠 Как устроена LLM</h2>
-  <p class="subtitle">6 принципов, которые объясняют почему AI ведёт себя так, а не иначе</p>
+  <p class="subtitle">Понимаем как работает модель — чтобы взаимодействовать с ней правильно, а не просто заучить правила</p>
 </div>
 
-<!-- LLM-1: ПРЕДСКАЗАНИЕ + КОНТЕКСТ -->
+<!-- LLM-1: ПРЕДСКАЗАНИЕ -->
 <div class="slide" data-day="День 1">
   <div class="label">Как устроена LLM · Основа</div>
   <h2>LLM предсказывает следующее слово</h2>
@@ -408,14 +385,14 @@
   </div>
 </div>
 
-<!-- LLM-4: ТОКЕНЫ + ТЕМПЕРАТУРА -->
+<!-- LLM-4: ТОКЕНЫ -->
 <div class="slide" data-day="День 1">
   <div class="label">Как устроена LLM · Механика</div>
-  <h2>Токены и температура</h2>
+  <h2>Токены — единица «мышления»</h2>
   <div class="two-col gap-sm" style="max-width:1100px;">
     <div>
       <div class="box" style="margin-bottom:14px;">
-        <div class="box-title">Токены — единица «мышления»</div>
+        <div class="box-title">Что такое токен</div>
         <p>Модель работает не с буквами и не со словами, а с <strong>кусочками слов — токенами.</strong> «Привет» = 1-2 токена. «Кибербезопасность» = 3-4 токена. Русский язык «дороже» английского — больше токенов на тот же смысл.</p>
       </div>
       <div class="box">
@@ -425,17 +402,14 @@
     </div>
     <div>
       <div class="box purple" style="margin-bottom:14px;">
-        <div class="box-title">Температура — ползунок случайности</div>
-        <p>Модель видит <strong>список вариантов</strong> продолжения с вероятностями. Температура определяет, насколько модель отклоняется от самого вероятного:</p>
+        <div class="box-title">Как модель генерирует ответ</div>
+        <p>Предсказывает следующий токен → выбирает один из вариантов → предсказывает следующий → и так до конца ответа. Поэтому генерация идёт «слово за словом».</p>
       </div>
-      <div class="box green" style="margin-bottom:14px;">
-        <div class="box-title">Низкая температура</div>
-        <p>Всегда берёт самый вероятный вариант. <strong>Предсказуемо, стабильно, но однообразно.</strong> Для фактов, кода, анализа.</p>
+      <div class="box" style="margin-bottom:14px;">
+        <div class="box-title">Attention — как модель понимает связи</div>
+        <p>При генерации каждого токена модель определяет, какие предыдущие токены сейчас важны. Благодаря этому понимает, что «она» относится к «кошка», а не к «дверь».</p>
       </div>
-      <div class="box orange">
-        <div class="box-title">Высокая температура</div>
-        <p>Чаще выбирает неожиданные варианты. <strong>Разнообразно, креативно, но менее надёжно.</strong> Для идей, брейншторма, текстов.</p>
-      </div>
+      <p style="font-size:13px; color:rgba(0,0,0,0.35);">Ещё есть параметр <strong>температура</strong> — влияет на случайность ответов. В обычных чатах вы его не настраиваете.</p>
     </div>
   </div>
 </div>
@@ -447,393 +421,184 @@
 </div>
 
 <!-- ══════════════════════════════════════════════ -->
-<!--  БЛОК 3 — ИНСТРУМЕНТЫ                         -->
+<!--  БЛОК 3 — АРХИТЕКТУРА + CURSOR                 -->
 <!-- ══════════════════════════════════════════════ -->
 
 <div class="slide divider" data-day="День 1">
   <div class="label" style="text-align:center;">Блок 3</div>
-  <h2 style="font-size:42px;">🛠 Инструменты</h2>
-  <p class="subtitle">Пайплайн, инструменты, настройка</p>
+  <h2 style="font-size:42px;">🗂 Архитектура + Cursor</h2>
+  <p class="subtitle">Как правильно организовать проект с нуля — и почему именно так</p>
 </div>
 
-<!-- 5a. ПАЙПЛАЙН -->
+<!-- СТРУКТУРА ПАПОК -->
 <div class="slide" data-day="День 1">
-  <div class="label">Как всё работает вместе</div>
-  <h2>От идеи до готового продукта</h2>
-  <div style="display:flex; flex-direction:column; align-items:center; gap:28px; margin-top:20px;">
-    <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center;">
-      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">💡 Идея</div>
-      <div class="pipe-arrow" style="font-size:20px;">→</div>
-      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">📄 ТЗ</div>
-      <div class="pipe-arrow" style="font-size:20px;">→</div>
-      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">🛠 Разработка</div>
-      <div class="pipe-arrow" style="font-size:20px;">→</div>
-      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">💾 Данные</div>
-      <div class="pipe-arrow" style="font-size:20px;">→</div>
-      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">🚀 Запуск</div>
+  <div class="label">Архитектура · Как организован проект</div>
+  <h2>Структура папок в Cursor</h2>
+  <div class="two-col gap-sm" style="max-width:1100px;">
+    <div style="font-family:'SF Mono','Fira Code',monospace; background:#1a1a2e; color:#e0dfe6; border-radius:14px; padding:28px 32px; font-size:14px; line-height:2.2;">
+      <div style="color:rgba(255,255,255,0.3); margin-bottom:4px;">мой-проект/</div>
+      <div>├── <span style="color:#7c6aff; font-weight:600;">CLAUDE.md</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgba(255,255,255,0.28); font-size:12px;">← инструкция для Claude</span></div>
+      <div>├── .claude/</div>
+      <div>│ &nbsp; ├── <span style="color:#ff6eb4; font-weight:600;">agents/</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgba(255,255,255,0.28); font-size:12px;">← автономные помощники</span></div>
+      <div>│ &nbsp; ├── <span style="color:#ff9a5c; font-weight:600;">skills/</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgba(255,255,255,0.28); font-size:12px;">← команды /deploy /save</span></div>
+      <div>│ &nbsp; └── <span style="color:#4ade80; font-weight:600;">hooks/</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgba(255,255,255,0.28); font-size:12px;">← автоматика на событиях</span></div>
+      <div>├── src/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgba(255,255,255,0.28); font-size:12px;">← код проекта</span></div>
+      <div>└── README.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgba(255,255,255,0.28); font-size:12px;">← документация</span></div>
     </div>
-    <p style="font-size:16px; color:rgba(0,0,0,0.45); text-align:center; max-width:700px;">На каждом этапе — свой инструмент. Дальше разберём каждый.</p>
-  </div>
-</div>
-
-<!-- 5b. КАРТА ИНСТРУМЕНТОВ -->
-<div class="slide" data-day="День 1">
-  <div class="label">Инструменты</div>
-  <h2>Какие инструменты существуют</h2>
-  <div class="two-col" style="max-width:1100px; margin-bottom:28px;">
-    <div class="box orange">
-      <div class="box-title">⚡ Replit / Bolt — собрать лендинг за 10 минут</div>
-      <p><strong>Всё в браузере</strong>, без установки. Идеально чтобы <strong>моментально собрать прототип.</strong></p>
-    </div>
-    <div class="box green">
-      <div class="box-title">🧠 Claude / Cursor — максимально кастомизировать под свой запрос</div>
-      <p>Работаешь <strong>пошагово</strong>, полный <strong>контроль</strong> над файлами. Сложная логика, бэкенд, боты.</p>
-    </div>
-  </div>
-  <div style="display:grid; grid-template-columns:130px 1fr; gap:14px; max-width:1100px; row-gap:20px;">
-    <div style="font-size:12px; font-weight:600; color:#e8732a; text-transform:uppercase; letter-spacing:0.08em; display:flex; align-items:center;">Путь Replit</div>
-    <div style="display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr; gap:12px; align-items:center;">
-      <div class="pipe-step" style="text-align:center;">📝 <strong>ChatGPT / Claude</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">описание задачи, ТЗ</span></div>
-      <div class="pipe-arrow">→</div>
-      <div class="pipe-step" style="text-align:center;">⚡ <strong>Replit / Bolt</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">код + UI + хостинг в одном</span></div>
-      <div class="pipe-arrow">→</div>
-      <div class="pipe-step" style="text-align:center;">💾 <strong>Supabase / Sheets</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">база данных</span></div>
-      <div class="pipe-arrow">→</div>
-      <div class="pipe-step" style="text-align:center;">🚀 <strong>Встроенный хостинг</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">уже включён</span></div>
-    </div>
-    <div style="font-size:12px; font-weight:600; color:#5b4cc7; text-transform:uppercase; letter-spacing:0.08em; display:flex; align-items:center;">Путь Claude</div>
-    <div style="display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:12px; align-items:center;">
-      <div class="pipe-step" style="background:linear-gradient(135deg, rgba(124,106,255,0.1), rgba(180,120,255,0.06)); border-color:rgba(124,106,255,0.2); text-align:center;">🧠 <strong>Claude</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">ТЗ + сразу реализация</span></div>
-      <div class="pipe-arrow">→</div>
-      <div class="pipe-step" style="text-align:center;">💾 <strong>Supabase / Sheets</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">база данных</span></div>
-      <div class="pipe-arrow">→</div>
-      <div class="pipe-step" style="text-align:center;">🚀 <strong>Vercel / Railway</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">публикация</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- 6. CLAUDE + CURSOR -->
-<div class="slide" data-day="День 1">
-  <div class="label">Инструменты · Claude / Cursor</div>
-  <h2>Claude в Cursor: как работают вместе</h2>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:1100px; align-items:start;">
-    <div style="display:flex; flex-direction:column; gap:14px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
       <div class="box purple">
-        <div class="box-title">🧠 Claude — это AI-модель</div>
-        <p>Языковая модель от Anthropic. Умеет думать, писать код, составлять ТЗ, объяснять ошибки. Но сама по себе — это просто чат или терминал. <strong>Работать с проектом в терминале неудобно.</strong></p>
+        <div class="box-title">CLAUDE.md — первое что читает Claude</div>
+        <p>Кто ты, для чего проект, на каком языке общаться, что нельзя делать. Загружается автоматически в каждую сессию.</p>
+      </div>
+      <div class="box">
+        <div class="box-title">agents/ и skills/</div>
+        <p><strong>Skills</strong> — ты вызываешь сам через /команду.<br><strong>Agents</strong> — Claude запускает сам когда нужен специалист.</p>
       </div>
       <div class="box green">
-        <div class="box-title">📝 Cursor — это редактор кода</div>
-        <p>Визуальный редактор: видишь файлы, папки, что изменилось. <strong>Своей AI-модели у Cursor нет</strong> — он подключает чужие (Claude, GPT). По сути Cursor — это удобная обёртка.</p>
-      </div>
-      <div class="box orange">
-        <div class="box-title">💡 Что мы делаем</div>
-        <p><strong>Разворачиваем Claude внутри Cursor.</strong> Получаем лучшую модель + удобный интерфейс. Платим подписку Claude ($20–100/мес) напрямую Anthropic — без наценки.</p>
+        <div class="box-title">Почему именно так?</div>
+        <p>Это не просто папки — это <strong>система памяти и поведения</strong> твоего AI. Настроил один раз — работает во всех проектах.</p>
       </div>
     </div>
-    <div style="display:flex; flex-direction:column; gap:14px;">
-      <img src="images/claude-cursor.png" class="zoomable" style="width:100%; border-radius:10px; border:1px solid rgba(0,0,0,0.1); object-fit:contain; cursor:zoom-in;" alt="Claude в Cursor">
-      <div class="box">
-        <div class="box-title">💰 Почему не платить через Cursor напрямую?</div>
-        <p>Cursor — посредник. Берёт $20/мес за редактор + ещё платишь за модель с наценкой. <strong>Лимиты, за Opus доплата.</strong><br><br>Через подписку Claude — те же возможности, но дешевле и без ограничений.</p>
-      </div>
-    </div>
-  </div>
-  <div style="margin-top:16px; display:flex; justify-content:space-between; align-items:center; max-width:1100px;">
-    <p style="font-size:14px; color:rgba(0,0,0,0.45);">📩 Пришлём инструкцию как развернуть Claude в Cursor — в чат после занятия</p>
   </div>
 </div>
 
-<!-- 8. REPLIT / BOLT / LOVABLE -->
+<!-- CLAUDE В CURSOR — упрощённый -->
 <div class="slide" data-day="День 1">
-  <div class="label">Инструменты · Replit / Bolt / Lovable</div>
-  <h2>Replit / Bolt / Lovable: всё в браузере</h2>
-  <div class="box orange gap-sm" style="max-width:1100px;">
-    <p><strong>Всё в браузере, без установки.</strong> Описываешь задачу — получаешь результат. Идеально чтобы быстро проверить идею.</p>
-  </div>
-  <div class="three-col gap-sm" style="max-width:1100px;">
-    <div class="box" style="height:100%;">
-      <div class="box-title">Replit</div>
-      <p>Универсальный — сайты, боты, бэкенд</p>
+  <div class="label">Архитектура · Инструмент</div>
+  <h2>Claude в Cursor — зачем и почему</h2>
+  <div class="two-col gap-sm" style="max-width:1000px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="box purple">
+        <div class="box-title">🧠 Claude — модель. Cursor — редактор.</div>
+        <p>Cursor сам по себе не думает — он подключает внешние модели. Мы используем Claude: лучшая для кода. Cursor = удобная обёртка + работа с файлами.</p>
+      </div>
+      <div class="box green">
+        <div class="box-title">💡 Что делаем на интенсиве</div>
+        <p><strong>Разворачиваем Claude внутри Cursor.</strong> $20/мес напрямую Anthropic — без наценок. Инструкцию пришлём в чат, остальное показываем вживую.</p>
+      </div>
     </div>
-    <div class="box" style="height:100%;">
-      <div class="box-title">Bolt.new</div>
-      <p>Лендинг или прототип за 2–5 минут</p>
+    <div class="box" style="align-self:flex-start;">
+      <div class="box-title">Как это работает</div>
+      <div style="font-size:14px; line-height:2.4; color:rgba(0,0,0,0.6);">
+        <div>Ты пишешь задачу в Cursor</div>
+        <div style="color:#7c6aff; font-size:16px;">↓</div>
+        <div>Cursor собирает контекст (файлы, правила)</div>
+        <div style="color:#7c6aff; font-size:16px;">↓</div>
+        <div>Отправляет Claude</div>
+        <div style="color:#7c6aff; font-size:16px;">↓</div>
+        <div>Claude отвечает → Cursor применяет</div>
+      </div>
     </div>
-    <div class="box" style="height:100%;">
-      <div class="box-title">Lovable</div>
-      <p>Приложения с пользователями и данными</p>
-    </div>
-  </div>
-  <div class="box purple gap-sm" style="max-width:1100px;">
-    <p>Проект вырос? <strong>Переносишь в Cursor</strong> для полного контроля.</p>
   </div>
 </div>
 
-<!-- КЕЙС НА СРАВНЕНИИ — ЖИВОЕ ДЕМО -->
+<!-- LLM-0: 4 СЛОЯ — СХЕМА -->
 <div class="slide" data-day="День 1">
-  <div class="label">Практика · Живое сравнение</div>
-  <h2>Одна задача — два подхода</h2>
-  <p style="font-size:15px; color:rgba(0,0,0,0.4); margin-bottom:22px;">Собираем один и тот же лендинг двумя способами — смотрим разницу в реальном времени</p>
-  <div class="two-col gap-sm" style="max-width:1100px;">
-    <div class="box orange" style="display:flex; flex-direction:column;">
-      <div class="box-title">⚡ Bolt — быстро</div>
-      <table style="max-width:100%; margin-top:8px;">
-        <tr><td>Как начать</td><td>Открыть bolt.new → описать задачу</td></tr>
-        <tr><td>Первый результат</td><td><strong>1–3 мин</strong></td></tr>
-        <tr><td>UI</td><td>Красивый из коробки</td></tr>
-        <tr><td>Контроль</td><td>Ограниченный</td></tr>
-        <tr><td>Цена</td><td>Растёт по токенам</td></tr>
-      </table>
-      <div style="margin-top:auto; padding-top:14px; font-size:12px; font-weight:600; color:#e8732a; border-top:1px solid rgba(232,115,42,0.15);">Демо: Глеб</div>
+  <div class="label">Как устроена LLM · Архитектура</div>
+  <h2>Из чего состоит AI-инструмент</h2>
+  <div style="display:flex; flex-direction:column; gap:8px; max-width:860px; margin-top:4px;">
+    <div style="background:rgba(59,130,246,0.08); border:1px solid rgba(59,130,246,0.25); border-radius:12px; padding:14px 20px; display:flex; align-items:center; gap:16px;">
+      <div style="width:26px; height:26px; border-radius:50%; background:#3b82f6; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#fff; flex-shrink:0;">1</div>
+      <div style="flex:1;">
+        <div style="font-weight:700; font-size:15px; color:#1a1a2e; margin-bottom:2px;">Интерфейс</div>
+        <div style="font-size:13px; color:rgba(0,0,0,0.5);">Окно где ты пишешь и видишь ответ. Cursor, веб-чат, терминал — это интерфейсы. Не думают, только передают.</div>
+      </div>
+      <div style="display:flex; gap:6px; flex-shrink:0;">
+        <span style="background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.1); border-radius:6px; padding:3px 10px; font-size:11px; color:rgba(0,0,0,0.5);">Cursor</span>
+        <span style="background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.1); border-radius:6px; padding:3px 10px; font-size:11px; color:rgba(0,0,0,0.5);">Claude.ai</span>
+      </div>
     </div>
-    <div class="box green" style="display:flex; flex-direction:column;">
-      <div class="box-title">🧠 Claude — с контролем</div>
-      <table style="max-width:100%; margin-top:8px;">
-        <tr><td>Как начать</td><td>Написать ТЗ → Claude собирает код</td></tr>
-        <tr><td>Первый результат</td><td><strong>5–10 мин</strong></td></tr>
-        <tr><td>UI</td><td>Полностью кастомный</td></tr>
-        <tr><td>Контроль</td><td>Полный — видишь и правишь всё</td></tr>
-        <tr><td>Цена</td><td>$20/мес фиксировано</td></tr>
-      </table>
-      <div style="margin-top:auto; padding-top:14px; font-size:12px; font-weight:600; color:#22a95c; border-top:1px solid rgba(34,169,92,0.15);">Демо: Ника</div>
+    <div style="text-align:center; color:rgba(0,0,0,0.2); font-size:13px; padding:2px 0;">↓ запрос</div>
+    <div style="background:rgba(168,85,247,0.08); border:1px solid rgba(168,85,247,0.25); border-radius:12px; padding:14px 20px; display:flex; align-items:center; gap:16px;">
+      <div style="width:26px; height:26px; border-radius:50%; background:#a855f7; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#fff; flex-shrink:0;">2</div>
+      <div style="flex:1;">
+        <div style="font-weight:700; font-size:15px; color:#1a1a2e; margin-bottom:2px;">Оркестратор</div>
+        <div style="font-size:13px; color:rgba(0,0,0,0.5);">«Менеджер» системы. Собирает контекст, файлы, правила → формирует запрос для модели → выполняет её команды (читать файл, редактировать, запускать код).</div>
+      </div>
+      <div style="display:flex; gap:6px; flex-shrink:0;">
+        <span style="background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.1); border-radius:6px; padding:3px 10px; font-size:11px; color:rgba(0,0,0,0.5);">Claude Code</span>
+        <span style="background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.1); border-radius:6px; padding:3px 10px; font-size:11px; color:rgba(0,0,0,0.5);">Cursor AI</span>
+      </div>
     </div>
+    <div style="text-align:center; color:rgba(0,0,0,0.2); font-size:13px; padding:2px 0;">↓ запрос к модели</div>
+    <div style="background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.25); border-radius:12px; padding:14px 20px; display:flex; align-items:center; gap:16px;">
+      <div style="width:26px; height:26px; border-radius:50%; background:#ec4899; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#fff; flex-shrink:0;">3</div>
+      <div style="flex:1;">
+        <div style="font-weight:700; font-size:15px; color:#1a1a2e; margin-bottom:2px;">Модель (LLM)</div>
+        <div style="font-size:13px; color:rgba(0,0,0,0.5);">Нейросеть, которая предсказывает следующий токен. Не видит файлы напрямую — получает только текст от оркестратора.</div>
+      </div>
+      <div style="display:flex; gap:6px; flex-shrink:0;">
+        <span style="background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.1); border-radius:6px; padding:3px 10px; font-size:11px; color:rgba(0,0,0,0.5);">Claude</span>
+        <span style="background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.1); border-radius:6px; padding:3px 10px; font-size:11px; color:rgba(0,0,0,0.5);">GPT-4</span>
+        <span style="background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.1); border-radius:6px; padding:3px 10px; font-size:11px; color:rgba(0,0,0,0.5);">Gemini</span>
+      </div>
+    </div>
+    <div style="text-align:center; color:rgba(0,0,0,0.2); font-size:13px; padding:2px 0;">↓ вызов инструментов</div>
+    <div style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.25); border-radius:12px; padding:14px 20px; display:flex; align-items:center; gap:16px;">
+      <div style="width:26px; height:26px; border-radius:50%; background:#22c55e; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#fff; flex-shrink:0;">4</div>
+      <div style="flex:1;">
+        <div style="font-weight:700; font-size:15px; color:#1a1a2e; margin-bottom:2px;">Инструменты (Tools)</div>
+        <div style="font-size:13px; color:rgba(0,0,0,0.5);">Команды которые модель вызывает: читать файлы, редактировать, запускать код, искать в интернете. Без инструментов модель — просто чат.</div>
+      </div>
+    </div>
+  </div>
+  <div class="box purple gap-sm" style="max-width:860px;">
+    <p><strong>Вывод:</strong> когда ты работаешь в Cursor с Claude — ты взаимодействуешь со всеми 4 слоями одновременно. Cursor = интерфейс + оркестратор. Claude = модель. Инструменты — внутри.</p>
   </div>
 </div>
 
-<!-- 9. ДАННЫЕ И ПУБЛИКАЦИЯ -->
+<!-- МЕТАФОРА МЕНЕДЖЕРА -->
 <div class="slide" data-day="День 1">
-  <div class="label">Инструменты · Данные · Публикация</div>
-  <h2>Где хранить данные и как опубликовать</h2>
-  <div class="two-col gap-sm" style="max-width:1100px;">
-    <div style="display:flex; flex-direction:column; gap:14px;">
-      <div class="box">
-        <div class="box-title">Supabase — полноценная база данных</div>
-        <p>Пользователи, авторизация, заявки, история заказов, каталог товаров. Бесплатный tier. Подключается к любому проекту.</p>
+  <div class="label">Архитектура · Как это работает</div>
+  <h2>Ты — лид. Claude — твой PM.</h2>
+  <div style="display:flex; flex-direction:column; gap:10px; max-width:900px; margin-top:8px;">
+    <div style="display:flex; align-items:stretch; gap:12px;">
+      <div style="background:linear-gradient(135deg,rgba(124,106,255,0.1),rgba(180,120,255,0.07)); border:1px solid rgba(124,106,255,0.25); border-radius:12px; padding:16px 24px; flex:1; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div style="font-size:28px; margin-bottom:6px;">👤</div>
+        <div style="font-weight:700; font-size:15px; color:#1a1a2e;">Ты</div>
+        <div style="font-size:12px; color:rgba(0,0,0,0.4); margin-top:2px;">Ставишь задачу</div>
       </div>
-      <div class="box">
-        <div class="box-title">Google Sheets — для простого</div>
-        <p>Список клиентов, расписание, FAQ, прайс-лист. <strong>Бесплатно</strong>, все умеют, легко подключить.</p>
-      </div>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:14px;">
-      <div class="box" style="display:flex; gap:14px;">
-        <div style="flex:1;">
-          <div class="box-title">🚀 Vercel</div>
-          <p>Публикация сайтов. Бесплатно, 2 клика.</p>
-        </div>
-        <div style="flex:1; border-left:1px solid rgba(0,0,0,0.08); padding-left:14px;">
-          <div class="box-title">🤖 Railway</div>
-          <p>Публикация ботов и бэкенда.</p>
-        </div>
+      <div style="display:flex; align-items:center; color:#7c6aff; font-size:22px; flex-shrink:0;">→</div>
+      <div style="background:linear-gradient(135deg,rgba(236,72,153,0.1),rgba(255,110,180,0.06)); border:1px solid rgba(236,72,153,0.25); border-radius:12px; padding:16px 24px; flex:2.5; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div style="font-size:28px; margin-bottom:6px;">🧠</div>
+        <div style="font-weight:700; font-size:15px; color:#1a1a2e;">Агент (Claude Code)</div>
+        <div style="font-size:12px; color:rgba(0,0,0,0.4); margin-top:2px;">PM — сам решает как делать, сам вызывает нужных специалистов</div>
       </div>
     </div>
-  </div>
-</div>
-
-
-<!-- 11. VPN И ОПЛАТА -->
-<div class="slide" data-day="День 1">
-  <div class="label">Важно для России</div>
-  <h2>VPN и оплата</h2>
-  <div class="two-col gap-sm">
-    <div>
-      <div class="col-head" style="margin-bottom:14px;">🔒 Где нужен VPN</div>
-      <table style="max-width:100%;">
-        <tr><td>Cursor</td><td style="color:#22a95c; font-weight:600;">не нужен</td></tr>
-        <tr><td>Claude</td><td style="color:#e8732a; font-weight:600;">нужен</td></tr>
-        <tr><td>ChatGPT</td><td style="color:#e8732a; font-weight:600;">нужен</td></tr>
-        <tr><td>Lovable, v0, Bolt</td><td style="color:rgba(0,0,0,0.5);">может потребоваться</td></tr>
-        <tr><td>Supabase, Vercel</td><td style="color:#22a95c; font-weight:600;">обычно не нужен</td></tr>
-      </table>
-      <div class="box gap-sm" style="margin-top:14px;">
-        <div class="box-title">Бесплатные VPN</div>
-        <p><strong>Outline VPN</strong> — open-source, простой<br>
-        <strong>Amnezia VPN</strong> — российская разработка, хорошо обходит блокировки</p>
+    <div style="text-align:right; color:rgba(0,0,0,0.2); font-size:12px; padding-right:10px;">↓ вызывает по необходимости</div>
+    <div style="display:flex; gap:10px;">
+      <div class="box" style="flex:1; text-align:center; padding:14px 10px;">
+        <div style="font-size:20px; margin-bottom:4px;">🔍</div>
+        <div style="font-weight:600; font-size:13px; color:#1a1a2e;">researcher</div>
+        <div style="font-size:11px; color:rgba(0,0,0,0.4); margin-top:2px;">субагент</div>
+      </div>
+      <div class="box" style="flex:1; text-align:center; padding:14px 10px;">
+        <div style="font-size:20px; margin-bottom:4px;">🐛</div>
+        <div style="font-weight:600; font-size:13px; color:#1a1a2e;">debugger</div>
+        <div style="font-size:11px; color:rgba(0,0,0,0.4); margin-top:2px;">субагент</div>
+      </div>
+      <div class="box" style="flex:1; text-align:center; padding:14px 10px;">
+        <div style="font-size:20px; margin-bottom:4px;">📝</div>
+        <div style="font-weight:600; font-size:13px; color:#1a1a2e;">code-reviewer</div>
+        <div style="font-size:11px; color:rgba(0,0,0,0.4); margin-top:2px;">субагент</div>
       </div>
     </div>
-    <div>
-      <div class="col-head" style="margin-bottom:14px;">💳 Оплата из России</div>
-      <div class="box green" style="margin-bottom:10px;">
-        <div class="box-title">🏆 МТС Платежи — рекомендуем</div>
-        <p>Заходишь на сайт МТС, выбираешь AI-сервис (Claude, ChatGPT, Cursor), оплачиваешь через СБП или картой РФ. <strong>Готово за 15 минут.</strong></p>
-      </div>
-      <div class="box" style="margin-bottom:10px;">
-        <div class="box-title">Сервис-посредник</div>
-        <p>Telegram-бот посредника, рубли через СБП. Комиссия 300–500 руб. Oplatym.ru, Oplatim.com</p>
-      </div>
-      <div class="box">
-        <div class="box-title">Виртуальная карта</div>
-        <p>Выпускается онлайн за 10–30 мин. Плати по миру, Aifory Pro, PST.net</p>
+    <div class="box orange" style="display:flex; align-items:center; gap:12px;">
+      <div style="font-size:20px; flex-shrink:0;">⚡</div>
+      <div>
+        <div style="font-weight:600; font-size:14px; color:#1a1a2e; margin-bottom:3px;">Skills — вызываешь ты сам: <code style="font-size:12px; background:rgba(0,0,0,0.06); padding:2px 7px; border-radius:4px;">/deploy</code> <code style="font-size:12px; background:rgba(0,0,0,0.06); padding:2px 7px; border-radius:4px;">/save</code> <code style="font-size:12px; background:rgba(0,0,0,0.06); padding:2px 7px; border-radius:4px;">/idea</code></div>
+        <div style="font-size:12px; color:rgba(0,0,0,0.45);">Как нажать кнопку — ты контролируешь КОГДА запустить. Субагентов Claude вызывает сам.</div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-<!-- ОТБИВКА — ВОПРОСЫ -->
-<div class="slide divider" data-day="День 1">
-  <h2 style="font-size:36px;">❓ Вопросы?</h2>
-  <p class="subtitle">Давайте разберём что непонятно</p>
 </div>
 
 <!-- ══════════════════════════════════════════════ -->
-<!--  БЛОК 4 — ПРИНЦИПЫ РАБОТЫ С LLM               -->
+<!--  БЛОК 4 — ПРАКТИКА                             -->
 <!-- ══════════════════════════════════════════════ -->
 
 <div class="slide divider" data-day="День 1">
   <div class="label" style="text-align:center;">Блок 4</div>
-  <h2 style="font-size:42px;">🧠 Принципы работы с LLM</h2>
-  <p class="subtitle">Как правильно ставить задачу и получать результат</p>
-</div>
-
-<!-- 6 ПРИНЦИПОВ РАБОТЫ С LLM -->
-<div class="slide" data-day="День 1">
-  <div class="label">Принципы работы с LLM</div>
-  <h2>6 принципов работы с LLM</h2>
-  <div class="steps gap-sm" style="max-width:1100px;">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-body"><strong>Не ставь задачу — определи критерии результата</strong><span>Сначала объясни что такое «хорошо» и что такое «плохо». Дай модели формат ответа — таблица, список, код.</span></div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-body"><strong>Учи модель, а не командуй</strong><span>Давай примеры хорошего и плохого результата. Один пример > 100 слов описания.</span></div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body"><strong>Первый результат всегда плохой — итерируй</strong><span>На 3–4 итерации сходится. Сохраняй хорошие промпты — это твой актив.</span></div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-body"><strong>Проси модель проверять саму себя</strong><span>«Найди ошибки, найди искажения, найди пробелы — исправь». Подробнее — в следующем блоке.</span></div>
-    </div>
-    <div class="step">
-      <div class="step-num">5</div>
-      <div class="step-body"><strong>Ограничения важнее свободы</strong><span>Без ограничений = океан плохих решений. Опиши рамки: объём, аудитория, стиль, анти-примеры.</span></div>
-    </div>
-    <div class="step">
-      <div class="step-num">6</div>
-      <div class="step-body"><strong>Декомпозиция > один большой запрос</strong><span>Разбей сложную задачу на шаги. LLM лучше справляется с цепочкой простых задач, чем с одной огромной. Это ведёт к теме агентов на дне 2.</span></div>
-    </div>
-  </div>
-  <div class="box purple gap-sm" style="max-width:1100px;">
-    <p><strong>Главный вывод:</strong> не проси LLM сделать задачу — научи его понимать, что такое хороший результат. Тогда он сам сделает правильно.</p>
-  </div>
-</div>
-
-<!-- 15. ПРИМЕР — КАК ЭТО ВЫГЛЯДИТ -->
-<div class="slide" data-day="День 1">
-  <div class="label">Принципы работы с LLM · Пример</div>
-  <h2>Как это выглядит на практике</h2>
-  <div class="two-col gap-sm" style="max-width:1100px;">
-    <div style="display:flex; flex-direction:column; gap:14px;">
-      <div class="box">
-        <div class="box-title">❌ Как делают обычно</div>
-        <p style="font-size:16px;">«Сделай мне лендинг»</p>
-      </div>
-      <div class="box" style="opacity:0.6;">
-        <div class="box-title">Результат</div>
-        <p>Что-то похожее на лендинг. Не то что нужно. Переделываешь с нуля.</p>
-      </div>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:14px;">
-      <div class="box green">
-        <div class="box-title">✅ Правильный подход</div>
-        <p style="font-size:14px;">
-          <strong>1. Критерии:</strong> «Хороший лендинг — это: понятный оффер в первом экране, форма заявки, социальное доказательство, мобильная версия»<br><br>
-          <strong>2. Примеры:</strong> «Вот хороший лендинг [ссылка]. Вот плохой [ссылка]. Объясни разницу»<br><br>
-          <strong>3. Ограничения:</strong> «B2B сервис доставки. Аудитория — рестораны. Тёмная тема. Без анимаций»<br><br>
-          <strong>4. Проверка:</strong> «Найди ошибки в том что сделал. Исправь»
-        </p>
-      </div>
-      <div class="box purple">
-        <div class="box-title">💡 Не знаешь с чего начать?</div>
-        <p>Попроси LLM <strong>задать тебе вопросы</strong> — он сам определит что ему нужно. Или запусти <strong>Claude Deep Research</strong> — он разберётся сам.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 16b. PM НАВЫКИ -->
-<div class="slide" data-day="День 1">
-  <div class="label">Принципы работы с LLM</div>
-  <h2>Где выигрывают PM и предприниматели</h2>
-  <div class="box purple gap-sm" style="max-width:820px; margin-bottom:22px;">
-    <p>Ключевая задача в работе с LLM — <strong>понимать какой результат ты хочешь получить.</strong> Это и есть продуктовое мышление.</p>
-  </div>
-  <ul style="max-width:820px;">
-    <li>Разработчики теперь становятся <strong>более продуктовыми</strong> — умение поставить задачу важнее знания синтаксиса</li>
-    <li>Не знаешь как должен выглядеть результат? Попроси LLM: <strong>«найди лучшие практики, объясни образ результата»</strong></li>
-    <li class="arrow">Это базовый уровень. Продуктовые и бизнесовые навыки мультиплицируют эффект от AI</li>
-  </ul>
-  <div class="tags gap-md">
-    <span class="tag purple">Образ результата</span>
-    <span class="tag purple">Постановка задачи</span>
-    <span class="tag purple">Итерация</span>
-    <span class="tag green">PM-навыки</span>
-    <span class="tag green">Бизнес-контекст</span>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════ -->
-<!--  БЛОК 5 — САМОПРОВЕРКА                        -->
-<!-- ══════════════════════════════════════════════ -->
-
-<div class="slide divider" data-day="День 1">
-  <div class="label" style="text-align:center;">Блок 5</div>
-  <h2 style="font-size:42px;">🔍 Как проверять AI</h2>
-  <p class="subtitle">3 уровня верификации — от базовой гигиены до внешней проверки</p>
-</div>
-
-<!-- САМОПРОВЕРКА — 3 УРОВНЯ -->
-<div class="slide" data-day="День 1">
-  <div class="label">Проверка AI · 3 уровня</div>
-  <h2>3 уровня проверки результатов AI</h2>
-  <div class="three-col gap-sm" style="max-width:1100px;">
-    <div class="box green">
-      <div class="box-title">Уровень 1 · Гигиена (всегда)</div>
-      <ul style="gap:8px;">
-        <li><strong>Разреши не знать</strong> — «Если не уверен — скажи прямо. Не додумывай»</li>
-        <li><strong>Уровень уверенности</strong> — «После ответа добавь: Уверенность X/10»</li>
-        <li><strong>Цитируй источник</strong> — «Сначала процитируй из документа, потом делай вывод»</li>
-      </ul>
-    </div>
-    <div class="box purple">
-      <div class="box-title">Уровень 2 · Углублённая (важное)</div>
-      <ul style="gap:8px;">
-        <li><strong>Chain-of-Verification</strong> — «Составь 5 фактов из ответа. Проверь каждый»</li>
-        <li><strong>Адвокат дьявола</strong> — «Найди 3-5 слабых мест в своём ответе»</li>
-        <li><strong>Пошаговая логика</strong> — «Опиши шаги рассуждения, потом дай ответ»</li>
-      </ul>
-    </div>
-    <div class="box orange">
-      <div class="box-title">Уровень 3 · Внешняя (критичное)</div>
-      <ul style="gap:8px;">
-        <li><strong>Второй AI</strong> — вставь ответ из одного AI в другой для проверки</li>
-        <li><strong>Чеклист</strong> — факты верны? Нет преувеличений? Есть ограничения?</li>
-        <li><strong>Проверка ссылок</strong> — попроси источники, проверь 2-3 в Google</li>
-      </ul>
-    </div>
-  </div>
-  <div class="box gap-sm" style="max-width:1100px;">
-    <p><strong>Важно:</strong> AI, проверяющий сам себя, работает ограниченно. Уровень 3 — единственный надёжный метод для критичных решений. Всегда проверяй то, что пойдёт в публикацию.</p>
-  </div>
-</div>
-
-<!-- ОТБИВКА — ВОПРОСЫ -->
-<div class="slide divider" data-day="День 1">
-  <h2 style="font-size:36px;">❓ Вопросы?</h2>
-  <p class="subtitle">Давайте разберём что непонятно</p>
-</div>
-
-<!-- ══════════════════════════════════════════════ -->
-<!--  БЛОК 6 — ПРАКТИКА                             -->
-<!-- ══════════════════════════════════════════════ -->
-
-<div class="slide divider" data-day="День 1">
-  <div class="label" style="text-align:center;">Блок 6</div>
   <h2 style="font-size:42px;">🚀 Практика</h2>
   <p class="subtitle">Общий кейс — делаем все вместе</p>
 </div>
@@ -885,7 +650,136 @@
   </div>
 </div>
 
-<!-- 18. ДЗ -->
+<!-- ══════════════════════════════════════════════ -->
+<!--  БЛОК 5 — ПРИНЦИПЫ РАБОТЫ С LLM               -->
+<!-- ══════════════════════════════════════════════ -->
+
+<div class="slide divider" data-day="День 1">
+  <div class="label" style="text-align:center;">Блок 5</div>
+  <h2 style="font-size:42px;">🧠 Принципы работы с LLM</h2>
+  <p class="subtitle">Как правильно ставить задачу и получать результат</p>
+</div>
+
+<!-- 6 ПРИНЦИПОВ РАБОТЫ С LLM -->
+<div class="slide" data-day="День 1">
+  <div class="label">Принципы работы с LLM</div>
+  <h2>6 принципов работы с LLM</h2>
+  <div class="steps gap-sm" style="max-width:1100px;">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>Не ставь задачу — определи критерии результата</strong><span>Сначала объясни что такое «хорошо» и что такое «плохо». Дай модели формат ответа — таблица, список, код.</span></div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>Учи модель, а не командуй</strong><span>Давай примеры хорошего и плохого результата. Один пример > 100 слов описания.</span></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><strong>Первый результат всегда плохой — итерируй</strong><span>На 3–4 итерации сходится. Сохраняй хорошие промпты — это твой актив.</span></div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body"><strong>Проси модель проверять саму себя</strong><span>«Найди ошибки, найди искажения, найди пробелы — исправь». Подробнее — в следующем блоке.</span></div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body"><strong>Ограничения важнее свободы</strong><span>Без ограничений = океан плохих решений. Опиши рамки: объём, аудитория, стиль, анти-примеры.</span></div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body"><strong>Декомпозиция > один большой запрос</strong><span>Разбей сложную задачу на шаги. LLM лучше справляется с цепочкой простых задач, чем с одной огромной. Это ведёт к теме агентов на дне 2.</span></div>
+    </div>
+  </div>
+  <div class="box purple gap-sm" style="max-width:1100px;">
+    <p><strong>Главный вывод:</strong> не проси LLM сделать задачу — научи его понимать, что такое хороший результат. Тогда он сам сделает правильно.</p>
+  </div>
+</div>
+
+<!-- ПРИМЕР — КАК ЭТО ВЫГЛЯДИТ -->
+<div class="slide" data-day="День 1">
+  <div class="label">Принципы работы с LLM · Пример</div>
+  <h2>Как это выглядит на практике</h2>
+  <div class="two-col gap-sm" style="max-width:1100px;">
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="box">
+        <div class="box-title">❌ Как делают обычно</div>
+        <p style="font-size:16px;">«Сделай мне лендинг»</p>
+      </div>
+      <div class="box" style="opacity:0.6;">
+        <div class="box-title">Результат</div>
+        <p>Что-то похожее на лендинг. Не то что нужно. Переделываешь с нуля.</p>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="box green">
+        <div class="box-title">✅ Правильный подход</div>
+        <p style="font-size:14px;">
+          <strong>1. Критерии:</strong> «Хороший лендинг — это: понятный оффер в первом экране, форма заявки, социальное доказательство, мобильная версия»<br><br>
+          <strong>2. Примеры:</strong> «Вот хороший лендинг [ссылка]. Вот плохой [ссылка]. Объясни разницу»<br><br>
+          <strong>3. Ограничения:</strong> «B2B сервис доставки. Аудитория — рестораны. Тёмная тема. Без анимаций»<br><br>
+          <strong>4. Проверка:</strong> «Найди ошибки в том что сделал. Исправь»
+        </p>
+      </div>
+      <div class="box purple">
+        <div class="box-title">💡 Не знаешь с чего начать?</div>
+        <p>Попроси LLM <strong>задать тебе вопросы</strong> — он сам определит что ему нужно. Или запусти <strong>Claude Deep Research</strong> — он разберётся сам.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  БЛОК 6 — КАК ПРОВЕРЯТЬ AI                    -->
+<!-- ══════════════════════════════════════════════ -->
+
+<div class="slide divider" data-day="День 1">
+  <div class="label" style="text-align:center;">Блок 6</div>
+  <h2 style="font-size:42px;">🔍 Как проверять AI</h2>
+  <p class="subtitle">3 уровня верификации — от базовой гигиены до внешней проверки</p>
+</div>
+
+<!-- САМОПРОВЕРКА — 3 УРОВНЯ -->
+<div class="slide" data-day="День 1">
+  <div class="label">Проверка AI · 3 уровня</div>
+  <h2>3 уровня проверки результатов AI</h2>
+  <div class="three-col gap-sm" style="max-width:1100px;">
+    <div class="box green">
+      <div class="box-title">Уровень 1 · Гигиена (всегда)</div>
+      <ul style="gap:8px;">
+        <li><strong>Разреши не знать</strong> — «Если не уверен — скажи прямо. Не додумывай»</li>
+        <li><strong>Уровень уверенности</strong> — «После ответа добавь: Уверенность X/10»</li>
+        <li><strong>Цитируй источник</strong> — «Сначала процитируй из документа, потом делай вывод»</li>
+      </ul>
+    </div>
+    <div class="box purple">
+      <div class="box-title">Уровень 2 · Углублённая (важное)</div>
+      <ul style="gap:8px;">
+        <li><strong>Chain-of-Verification</strong> — «Составь 5 фактов из ответа. Проверь каждый»</li>
+        <li><strong>Адвокат дьявола</strong> — «Найди 3-5 слабых мест в своём ответе»</li>
+        <li><strong>Пошаговая логика</strong> — «Опиши шаги рассуждения, потом дай ответ»</li>
+      </ul>
+    </div>
+    <div class="box orange">
+      <div class="box-title">Уровень 3 · Внешняя (критичное)</div>
+      <ul style="gap:8px;">
+        <li><strong>Второй AI</strong> — вставь ответ из одного AI в другой для проверки</li>
+        <li><strong>Чеклист</strong> — факты верны? Нет преувеличений? Есть ограничения?</li>
+        <li><strong>Проверка ссылок</strong> — попроси источники, проверь 2-3 в Google</li>
+      </ul>
+    </div>
+  </div>
+  <div class="box gap-sm" style="max-width:1100px;">
+    <p><strong>Важно:</strong> AI, проверяющий сам себя, работает ограниченно. Уровень 3 — единственный надёжный метод для критичных решений. Всегда проверяй то, что пойдёт в публикацию.</p>
+  </div>
+</div>
+
+<!-- ОТБИВКА — ВОПРОСЫ -->
+<div class="slide divider" data-day="День 1">
+  <h2 style="font-size:36px;">❓ Вопросы?</h2>
+  <p class="subtitle">Давайте разберём что непонятно</p>
+</div>
+
+<!-- ДЗ -->
 <div class="slide" data-day="День 1">
   <div class="label">До завтра</div>
   <h2>Домашнее задание</h2>
@@ -912,7 +806,6 @@
   </div>
 </div>
 
-
 <!-- ИТОГИ ДНЯ 1 -->
 <div class="slide divider" data-day="День 1">
   <h2 style="font-size:42px;">Спасибо за первый день!</h2>
@@ -922,10 +815,11 @@
 <!-- ══════════════════════════════════════════════ -->
 <!--  DIVIDER ДЕНЬ 2                                -->
 <!-- ══════════════════════════════════════════════ -->
+
 <div class="slide divider" data-day="">
   <div class="label" style="text-align:center;">22 марта · День 2</div>
   <h2>Практика</h2>
-  <p class="subtitle">Разбор ДЗ · AI-агенты · Строим проекты · Личная система</p>
+  <p class="subtitle">Разбор ДЗ · AI-агенты · Инструменты · Строим проекты</p>
   <div class="num-bg" style="right:auto; left:50%; transform:translateX(-50%);">2</div>
 </div>
 
@@ -933,7 +827,7 @@
 <!--  ДЕНЬ 2                                        -->
 <!-- ══════════════════════════════════════════════ -->
 
-<!-- 21. РАЗБОР ДЗ -->
+<!-- РАЗБОР ДЗ -->
 <div class="slide" data-day="День 2">
   <div class="label">Начало дня</div>
   <h2>Разбор домашнего задания</h2>
@@ -951,7 +845,7 @@
   </div>
 </div>
 
-<!-- 22. АГЕНТЫ — ЧТО ЭТО -->
+<!-- АГЕНТЫ — ЧТО ЭТО -->
 <div class="slide" data-day="День 2">
   <div class="label">Следующий уровень</div>
   <h2>AI-агенты — что это такое</h2>
@@ -979,7 +873,7 @@
   </div>
 </div>
 
-<!-- 23. АГЕНТЫ — ПРИМЕРЫ -->
+<!-- АГЕНТЫ — ПРИМЕРЫ -->
 <div class="slide" data-day="День 2">
   <div class="label">Агенты · Примеры</div>
   <h2>Где агент сэкономит время</h2>
@@ -1017,48 +911,99 @@
   </div>
 </div>
 
-<!-- 24. ИНФРАСТРУКТУРА — АНАЛОГИЯ "КОМПАНИЯ" -->
+<!-- ТИПЫ АГЕНТОВ -->
 <div class="slide" data-day="День 2">
-  <div class="label">Агенты · Как устроено</div>
-  <h2>Инфраструктура AI — как компания</h2>
-  <p style="font-size:15px; color:rgba(0,0,0,0.4); margin-bottom:16px;">Каждый слой = роль в компании. Вместе — полноценная команда.</p>
+  <div class="label">Агенты · Разбираемся</div>
+  <h2>Бот, агент, Agent SDK — в чём разница</h2>
   <div class="cards gap-sm">
     <div class="card">
-      <div class="name">CLAUDE.md</div>
-      <div class="desc"><strong>Должностная инструкция.</strong> Загружается каждую сессию. Определяет кто AI, как себя вести, что важно. Один раз настроил — всегда помнит контекст.</div>
-      <div class="example">→ «культура компании»</div>
+      <div class="name">Чат-бот (ChatGPT, Claude.ai)</div>
+      <div class="desc">Ты спрашиваешь → он отвечает. Без действий, без инструментов. Просто текст.</div>
+      <div class="example">→ вопрос-ответ</div>
     </div>
     <div class="card">
-      <div class="name">Skills (скиллы)</div>
-      <div class="desc"><strong>Регламенты и чек-листы.</strong> Готовые workflow, вызываешь как /команду. Ты решаешь когда вызвать — как нажать кнопку.</div>
-      <div class="example">→ /save, /deploy, /review</div>
+      <div class="name">Бот-скрипт (Telegram-бот)</div>
+      <div class="desc">Выполняет фиксированный набор команд. Делает ровно то, что запрограммировано. Не думает.</div>
+      <div class="example">→ /start, /help, рассылка по расписанию</div>
     </div>
     <div class="card">
-      <div class="name">Agents (агенты)</div>
-      <div class="desc"><strong>PM — сам решает как делать.</strong> Ставишь задачу → агент сам идёт к нужным специалистам, принимает решения, возвращает результат.</div>
-      <div class="example">→ «лид ставит задачу PM»</div>
+      <div class="name">Агент (Claude Code, Cursor)</div>
+      <div class="desc">Сам читает файлы, пишет код, запускает команды, чинит ошибки. Принимает решения в процессе.</div>
+      <div class="example">→ «сделай лендинг» → сам всё делает</div>
     </div>
     <div class="card accent">
-      <div class="name">Subagents (субагенты)</div>
-      <div class="desc"><strong>Команда специалистов.</strong> Агент сам вызывает их когда нужно: ресёрчер, дебаггер, ревьюер. Работают параллельно.</div>
-      <div class="example">→ «PM идёт к аналитику, дизайнеру»</div>
-    </div>
-    <div class="card">
-      <div class="name">Hooks</div>
-      <div class="desc"><strong>Корпоративные правила.</strong> Автоматические проверки: до/после каждого действия. Не зависят от желания сотрудника.</div>
-      <div class="example">→ «запрет пушить в пятницу»</div>
-    </div>
-    <div class="card">
-      <div class="name">MCP Servers</div>
-      <div class="desc"><strong>Интеграции.</strong> Подключение внешних систем — GitHub, Slack, базы данных. AI получает доступ к реальным инструментам.</div>
-      <div class="example">→ «CRM, почта, аналитика»</div>
+      <div class="name">Agent SDK (свой агент)</div>
+      <div class="desc">Ты собираешь своего агента из деталей. Он работает автономно, 24/7, без тебя. Сам решает что делать.</div>
+      <div class="example">→ каждый день сам ищет новости и присылает</div>
     </div>
   </div>
 </div>
 
-<!-- 25. CLAUDE.MD ПОДРОБНЕЕ -->
+<!-- СРАВНЕНИЕ ЗАПРОСА -->
 <div class="slide" data-day="День 2">
-  <div class="label">Инфраструктура · CLAUDE.md</div>
+  <div class="label">Агенты · Сравнение</div>
+  <h2>Один и тот же запрос — разный подход</h2>
+  <p class="subtitle" style="margin-bottom:20px;">Задача: «Хочу получать новости по AI каждый день»</p>
+  <div class="two-col gap-sm">
+    <div class="box">
+      <div class="box-title">Бот-скрипт (простой)</div>
+      <p style="font-size:15px; line-height:1.6;">
+        1. Ходит на 5 заданных сайтов<br>
+        2. Берёт последние статьи<br>
+        3. Отправляет Claude API: «перескажи»<br>
+        4. Шлёт в Telegram<br><br>
+        <strong>Плюс:</strong> просто сделать, предсказуемо<br>
+        <strong>Минус:</strong> не найдёт ничего за пределами списка
+      </p>
+    </div>
+    <div class="box purple">
+      <div class="box-title">Agent SDK (умный)</div>
+      <p style="font-size:15px; line-height:1.6;">
+        1. Сам решает куда идти — Twitter, Reddit, Telegram<br>
+        2. Нашёл интересное → пошёл копать глубже<br>
+        3. Сравнил источники, выкинул мусор<br>
+        4. Сам структурировал и отправил<br><br>
+        <strong>Плюс:</strong> находит неожиданное, адаптируется<br>
+        <strong>Минус:</strong> сложнее сделать, менее предсказуемо
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- СУБАГЕНТЫ И СКИЛЛЫ -->
+<div class="slide" data-day="День 2">
+  <div class="label">Внутри Claude Code</div>
+  <h2>Суб-агенты и скиллы — настройка под себя</h2>
+  <div class="two-col gap-sm">
+    <div>
+      <div class="col-head" style="margin-bottom:14px;">Скиллы (slash-команды)</div>
+      <ul>
+        <li><strong>/save</strong> — сохранить саммари сессии</li>
+        <li><strong>/deploy</strong> — задеплоить проект</li>
+        <li><strong>/idea</strong> — оценить бизнес-идею</li>
+        <li class="arrow">Ты вызываешь <strong>сам</strong> когда нужно</li>
+        <li class="arrow">Как кнопка — нажал, получил результат</li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-head" style="margin-bottom:14px;">Суб-агенты (помощники)</div>
+      <ul>
+        <li><strong>researcher</strong> — ресёрч с источниками</li>
+        <li><strong>debugger</strong> — поиск и исправление багов</li>
+        <li><strong>code-reviewer</strong> — проверка кода</li>
+        <li class="arrow">Claude запускает <strong>сам</strong> под капотом</li>
+        <li class="arrow">Работают параллельно с основной задачей</li>
+      </ul>
+    </div>
+  </div>
+  <div class="box gap-md" style="max-width:820px;">
+    <p><strong>Скилл</strong> = ты контролируешь КОГДА запустить. <strong>Суб-агент</strong> = Claude решает сам когда нужен специалист.</p>
+  </div>
+</div>
+
+<!-- CLAUDE.MD -->
+<div class="slide" data-day="День 2">
+  <div class="label">Настройка Claude Code</div>
   <h2>CLAUDE.md — инструкция для AI</h2>
   <div class="two-col gap-sm">
     <div class="box">
@@ -1072,100 +1017,218 @@
       </ul>
     </div>
     <div class="box purple">
-      <div class="box-title">4 уровня приоритета</div>
+      <div class="box-title">2 уровня настроек</div>
       <ul style="gap:8px;">
-        <li><strong>Организация</strong> — политика компании → высший приоритет</li>
-        <li><strong>Проект</strong> — правила для конкретного проекта</li>
-        <li><strong>Пользователь</strong> (~/.claude/CLAUDE.md) — личные настройки</li>
-        <li><strong>Подпапки</strong> — правила для конкретных файлов</li>
+        <li><strong>Глобальный</strong> (~/.claude/CLAUDE.md) — для всех проектов</li>
+        <li><strong>Проектный</strong> (.claude/CLAUDE.md) — для конкретного репо</li>
       </ul>
       <p style="margin-top:12px; font-size:14px; color:rgba(0,0,0,0.5);">CLAUDE.md = онбординг для AI, как README для человека</p>
     </div>
   </div>
 </div>
 
-<!-- 26. СКИЛЛЫ И СУБАГЕНТЫ — РАЗНИЦА -->
-<div class="slide" data-day="День 2">
-  <div class="label">Инфраструктура · Skills vs Subagents</div>
-  <h2>Скиллы и субагенты — в чём разница</h2>
-  <div class="two-col gap-sm">
-    <div>
-      <div class="col-head" style="margin-bottom:14px;">Скиллы (slash-команды)</div>
-      <ul>
-        <li><strong>/save</strong> — сохранить саммари сессии</li>
-        <li><strong>/deploy</strong> — задеплоить проект</li>
-        <li><strong>/idea</strong> — оценить бизнес-идею</li>
-        <li class="arrow"><strong>ТЫ</strong> вызываешь когда нужно</li>
-        <li class="arrow">Как кнопка — нажал, получил результат</li>
-      </ul>
-    </div>
-    <div>
-      <div class="col-head" style="margin-bottom:14px;">Суб-агенты (помощники)</div>
-      <ul>
-        <li><strong>researcher</strong> — ресёрч с источниками</li>
-        <li><strong>debugger</strong> — поиск и исправление багов</li>
-        <li><strong>code-reviewer</strong> — проверка кода</li>
-        <li class="arrow"><strong>AI</strong> запускает сам, когда видит необходимость</li>
-        <li class="arrow">Работают параллельно с основной задачей</li>
-      </ul>
-    </div>
-  </div>
-  <div class="box gap-md" style="max-width:820px;">
-    <p><strong>Скилл</strong> = ты контролируешь КОГДА запустить (как чек-лист). <strong>Суб-агент</strong> = AI решает сам когда нужен специалист (как PM делегирует команде).</p>
-  </div>
-</div>
+<!-- ══════════════════════════════════════════════ -->
+<!--  БЛОК: ИНСТРУМЕНТЫ (ДЕНЬ 2)                    -->
+<!-- ══════════════════════════════════════════════ -->
 
-<!-- 28. ПРАКТИКА — ЗАГОЛОВОК -->
 <div class="slide divider" data-day="День 2">
-  <div class="label" style="text-align:center;">Основной блок дня</div>
-  <h2>Практика</h2>
-  <p class="subtitle">Общий кейс — все делают, потом обсуждаем.<br>Застрял — разбираем на всю группу.</p>
+  <div class="label" style="text-align:center;">Блок</div>
+  <h2 style="font-size:42px;">🛠 Инструменты</h2>
+  <p class="subtitle">Пайплайн, инструменты, настройка, публикация</p>
 </div>
 
-<!-- 29. ОБЩИЙ КЕЙС ДЕНЬ 2 -->
+<!-- ПАЙПЛАЙН -->
 <div class="slide" data-day="День 2">
-  <div class="label">Практика · Делаем все вместе</div>
-  <h2>Общий кейс — делает каждый</h2>
+  <div class="label">Как всё работает вместе</div>
+  <h2>От идеи до готового продукта</h2>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:28px; margin-top:20px;">
+    <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center;">
+      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">💡 Идея</div>
+      <div class="pipe-arrow" style="font-size:20px;">→</div>
+      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">📄 ТЗ</div>
+      <div class="pipe-arrow" style="font-size:20px;">→</div>
+      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">🛠 Разработка</div>
+      <div class="pipe-arrow" style="font-size:20px;">→</div>
+      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">💾 Данные</div>
+      <div class="pipe-arrow" style="font-size:20px;">→</div>
+      <div class="pipe-step" style="padding:14px 24px; font-size:16px; font-weight:600;">🚀 Запуск</div>
+    </div>
+    <p style="font-size:16px; color:rgba(0,0,0,0.45); text-align:center; max-width:700px;">На каждом этапе — свой инструмент. Дальше разберём каждый.</p>
+  </div>
+</div>
+
+<!-- КАРТА ИНСТРУМЕНТОВ -->
+<div class="slide" data-day="День 2">
+  <div class="label">Инструменты</div>
+  <h2>Какие инструменты существуют</h2>
+  <div class="two-col" style="max-width:1100px; margin-bottom:28px;">
+    <div class="box orange">
+      <div class="box-title">⚡ Replit / Bolt — собрать лендинг за 10 минут</div>
+      <p><strong>Всё в браузере</strong>, без установки. Идеально чтобы <strong>моментально собрать прототип.</strong></p>
+    </div>
+    <div class="box green">
+      <div class="box-title">🧠 Claude / Cursor — максимально кастомизировать под свой запрос</div>
+      <p>Работаешь <strong>пошагово</strong>, полный <strong>контроль</strong> над файлами. Сложная логика, бэкенд, боты.</p>
+    </div>
+  </div>
+  <div style="display:grid; grid-template-columns:130px 1fr; gap:14px; max-width:1100px; row-gap:20px;">
+    <div style="font-size:12px; font-weight:600; color:#e8732a; text-transform:uppercase; letter-spacing:0.08em; display:flex; align-items:center;">Путь Replit</div>
+    <div style="display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr; gap:12px; align-items:center;">
+      <div class="pipe-step" style="text-align:center;">📝 <strong>ChatGPT / Claude</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">описание задачи, ТЗ</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step" style="text-align:center;">⚡ <strong>Replit / Bolt</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">код + UI + хостинг в одном</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step" style="text-align:center;">💾 <strong>Supabase / Sheets</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">база данных</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step" style="text-align:center;">🚀 <strong>Встроенный хостинг</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">уже включён</span></div>
+    </div>
+    <div style="font-size:12px; font-weight:600; color:#5b4cc7; text-transform:uppercase; letter-spacing:0.08em; display:flex; align-items:center;">Путь Claude</div>
+    <div style="display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:12px; align-items:center;">
+      <div class="pipe-step" style="background:linear-gradient(135deg, rgba(124,106,255,0.1), rgba(180,120,255,0.06)); border-color:rgba(124,106,255,0.2); text-align:center;">🧠 <strong>Claude</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">ТЗ + сразу реализация</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step" style="text-align:center;">💾 <strong>Supabase / Sheets</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">база данных</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step" style="text-align:center;">🚀 <strong>Vercel / Railway</strong><br><span style="font-size:11px; color:rgba(0,0,0,0.4);">публикация</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- REPLIT / BOLT / LOVABLE -->
+<div class="slide" data-day="День 2">
+  <div class="label">Инструменты · Replit / Bolt / Lovable</div>
+  <h2>Replit / Bolt / Lovable: всё в браузере</h2>
+  <div class="box orange gap-sm" style="max-width:1100px;">
+    <p><strong>Всё в браузере, без установки.</strong> Описываешь задачу — получаешь результат. Идеально чтобы быстро проверить идею.</p>
+  </div>
+  <div class="three-col gap-sm" style="max-width:1100px;">
+    <div class="box" style="height:100%;">
+      <div class="box-title">Replit</div>
+      <p>Универсальный — сайты, боты, бэкенд</p>
+    </div>
+    <div class="box" style="height:100%;">
+      <div class="box-title">Bolt.new</div>
+      <p>Лендинг или прототип за 2–5 минут</p>
+    </div>
+    <div class="box" style="height:100%;">
+      <div class="box-title">Lovable</div>
+      <p>Приложения с пользователями и данными</p>
+    </div>
+  </div>
+  <div class="box purple gap-sm" style="max-width:1100px;">
+    <p>Проект вырос? <strong>Переносишь в Cursor</strong> для полного контроля.</p>
+  </div>
+</div>
+
+<!-- СРАВНЕНИЕ BOLT VS CLAUDE -->
+<div class="slide" data-day="День 2">
+  <div class="label">Инструменты · Живое сравнение</div>
+  <h2>Одна задача — два подхода</h2>
+  <p style="font-size:15px; color:rgba(0,0,0,0.4); margin-bottom:22px;">Собираем один и тот же лендинг двумя способами — смотрим разницу в реальном времени</p>
   <div class="two-col gap-sm" style="max-width:1100px;">
-    <div>
-      <div class="box purple" style="margin-bottom:14px;">
-        <div class="box-title">Формат (40–60 мин)</div>
-        <p>Один кейс на всех. Применяем инфраструктуру из блока выше: CLAUDE.md, скиллы, агенты.</p>
+    <div class="box orange" style="display:flex; flex-direction:column;">
+      <div class="box-title">⚡ Bolt — быстро</div>
+      <table style="max-width:100%; margin-top:8px;">
+        <tr><td>Как начать</td><td>Открыть bolt.new → описать задачу</td></tr>
+        <tr><td>Первый результат</td><td><strong>1–3 мин</strong></td></tr>
+        <tr><td>UI</td><td>Красивый из коробки</td></tr>
+        <tr><td>Контроль</td><td>Ограниченный</td></tr>
+        <tr><td>Цена</td><td>Растёт по токенам</td></tr>
+      </table>
+      <div style="margin-top:auto; padding-top:14px; font-size:12px; font-weight:600; color:#e8732a; border-top:1px solid rgba(232,115,42,0.15);">Демо: Глеб</div>
+    </div>
+    <div class="box green" style="display:flex; flex-direction:column;">
+      <div class="box-title">🧠 Claude — с контролем</div>
+      <table style="max-width:100%; margin-top:8px;">
+        <tr><td>Как начать</td><td>Написать ТЗ → Claude собирает код</td></tr>
+        <tr><td>Первый результат</td><td><strong>5–10 мин</strong></td></tr>
+        <tr><td>UI</td><td>Полностью кастомный</td></tr>
+        <tr><td>Контроль</td><td>Полный — видишь и правишь всё</td></tr>
+        <tr><td>Цена</td><td>$20/мес фиксировано</td></tr>
+      </table>
+      <div style="margin-top:auto; padding-top:14px; font-size:12px; font-weight:600; color:#22a95c; border-top:1px solid rgba(34,169,92,0.15);">Демо: Ника</div>
+    </div>
+  </div>
+</div>
+
+<!-- ДАННЫЕ И ПУБЛИКАЦИЯ -->
+<div class="slide" data-day="День 2">
+  <div class="label">Инструменты · Данные · Публикация</div>
+  <h2>Где хранить данные и как опубликовать</h2>
+  <div class="two-col gap-sm" style="max-width:1100px;">
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="box">
+        <div class="box-title">Supabase — полноценная база данных</div>
+        <p>Пользователи, авторизация, заявки, история заказов, каталог товаров. Бесплатный tier. Подключается к любому проекту.</p>
       </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body"><strong>Короткое демо (5-7 мин)</strong><span>Показываем как настроить CLAUDE.md и запустить агента</span></div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body"><strong>Все делают самостоятельно (20-30 мин)</strong><span>Каждый у себя — строим проект с применением структуры</span></div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body"><strong>Обсуждение и доработка</strong><span>Скрины в чат, разбираем 2-3 работы, итерируем</span></div>
-        </div>
+      <div class="box">
+        <div class="box-title">Google Sheets — для простого</div>
+        <p>Список клиентов, расписание, FAQ, прайс-лист. <strong>Бесплатно</strong>, все умеют, легко подключить.</p>
       </div>
     </div>
     <div style="display:flex; flex-direction:column; gap:14px;">
-      <div class="box green">
-        <div class="box-title">Что проверяем в кейсе</div>
-        <ul style="gap:8px;">
-          <li class="check">CLAUDE.md — настроили контекст проекта</li>
-          <li class="check">Декомпозиция — разбили задачу на шаги</li>
-          <li class="check">Инструменты — Claude Code / Cursor / Bolt</li>
-          <li class="check">Самопроверка — применили уровень 1-2</li>
-        </ul>
-      </div>
-      <div class="box orange">
-        <div class="box-title">Застрял?</div>
-        <p>Кинь вопрос в чат — разбираем на всю группу. Начни с «Помоги мне написать ТЗ, задай вопросы».</p>
+      <div class="box" style="display:flex; gap:14px;">
+        <div style="flex:1;">
+          <div class="box-title">🚀 Vercel</div>
+          <p>Публикация сайтов. Бесплатно, 2 клика.</p>
+        </div>
+        <div style="flex:1; border-left:1px solid rgba(0,0,0,0.08); padding-left:14px;">
+          <div class="box-title">🤖 Railway</div>
+          <p>Публикация ботов и бэкенда.</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 30. ПОКАЗ ПРОЕКТОВ -->
+<!-- VPN И ОПЛАТА -->
+<div class="slide" data-day="День 2">
+  <div class="label">Важно для России</div>
+  <h2>VPN и оплата</h2>
+  <div class="two-col gap-sm">
+    <div>
+      <div class="col-head" style="margin-bottom:14px;">🔒 Где нужен VPN</div>
+      <table style="max-width:100%;">
+        <tr><td>Cursor</td><td style="color:#22a95c; font-weight:600;">не нужен</td></tr>
+        <tr><td>Claude</td><td style="color:#e8732a; font-weight:600;">нужен</td></tr>
+        <tr><td>ChatGPT</td><td style="color:#e8732a; font-weight:600;">нужен</td></tr>
+        <tr><td>Lovable, v0, Bolt</td><td style="color:rgba(0,0,0,0.5);">может потребоваться</td></tr>
+        <tr><td>Supabase, Vercel</td><td style="color:#22a95c; font-weight:600;">обычно не нужен</td></tr>
+      </table>
+      <div class="box gap-sm" style="margin-top:14px;">
+        <div class="box-title">Бесплатные VPN</div>
+        <p><strong>Outline VPN</strong> — open-source, простой<br>
+        <strong>Amnezia VPN</strong> — российская разработка, хорошо обходит блокировки</p>
+      </div>
+    </div>
+    <div>
+      <div class="col-head" style="margin-bottom:14px;">💳 Оплата из России</div>
+      <div class="box green" style="margin-bottom:10px;">
+        <div class="box-title">🏆 МТС Платежи — рекомендуем</div>
+        <p>Заходишь на сайт МТС, выбираешь AI-сервис (Claude, ChatGPT, Cursor), оплачиваешь через СБП или картой РФ. <strong>Готово за 15 минут.</strong></p>
+      </div>
+      <div class="box" style="margin-bottom:10px;">
+        <div class="box-title">Сервис-посредник</div>
+        <p>Telegram-бот посредника, рубли через СБП. Комиссия 300–500 руб. Oplatym.ru, Oplatim.com</p>
+      </div>
+      <div class="box">
+        <div class="box-title">Виртуальная карта</div>
+        <p>Выпускается онлайн за 10–30 мин. Плати по миру, Aifory Pro, PST.net</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  БЛОК: ПРАКТИКА ДЕНЬ 2                         -->
+<!-- ══════════════════════════════════════════════ -->
+
+<div class="slide divider" data-day="День 2">
+  <div class="label" style="text-align:center;">Финальный блок</div>
+  <h2 style="font-size:42px;">🚀 Практика</h2>
+  <p class="subtitle">Кто хочет — показывает свой проект.<br>Разбираем 2–3 работы вместе.</p>
+</div>
+
+<!-- ПОКАЗ ПРОЕКТОВ -->
 <div class="slide" data-day="День 2">
   <div class="label">Результаты</div>
   <h2>Показываем что получилось</h2>
@@ -1180,7 +1243,7 @@
   </div>
 </div>
 
-<!-- 26. ЛИЧНАЯ СИСТЕМА -->
+<!-- ЛИЧНАЯ СИСТЕМА -->
 <div class="slide" data-day="День 2">
   <div class="label">Как учиться дальше</div>
   <h2>Личная система обучения через AI</h2>
@@ -1204,7 +1267,7 @@
   </div>
 </div>
 
-<!-- 27. ФИНАЛ -->
+<!-- ФИНАЛ -->
 <div class="slide divider" data-day="">
   <div class="label" style="text-align:center;">Готово</div>
   <h2>Что дальше</h2>
@@ -1215,7 +1278,7 @@
 <div class="nav">
   <button onclick="toggleFullscreen()" title="На весь экран" style="font-size:12px;">⛶</button>
   <button onclick="prev()">←</button>
-  <span class="slide-counter" id="counter">1 / 33</span>
+  <span class="slide-counter" id="counter">1 / 1</span>
   <button onclick="next()">→</button>
 </div>
 
