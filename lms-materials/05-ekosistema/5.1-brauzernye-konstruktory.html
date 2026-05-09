@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5.1 Brauzernye Konstruktory</title>
+  
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #d4d4d4;
+    background: #191919;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 1.4em 0 0.3em;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  h1:first-child { margin-top: 0; }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 1.6em 0 0.3em;
+    color: #ffffff;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #2e2e2e;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1.4em 0 0.2em;
+    color: #d4d4d4;
+  }
+
+  p { margin: 0.6em 0; }
+
+  a {
+    color: #6ab0e8;
+    text-decoration: underline;
+    text-decoration-color: rgba(106, 176, 232, 0.3);
+    text-underline-offset: 2px;
+  }
+
+  a:hover { text-decoration-color: #6ab0e8; }
+
+  ul, ol {
+    margin: 0.5em 0;
+    padding-left: 1.6em;
+  }
+
+  li {
+    margin: 0.25em 0;
+    padding-left: 0.2em;
+  }
+
+  li::marker { color: #555; }
+
+  strong {
+    font-weight: 600;
+    color: #f0f0f0;
+  }
+
+  em { font-style: italic; color: #aaa; }
+
+  code {
+    background: #2a2a2a;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.88em;
+    font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+    color: #e8a87c;
+  }
+
+  pre {
+    background: #212121;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 1em 0;
+    overflow-x: auto;
+    border: 1px solid #2e2e2e;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    color: #c9d1d9;
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #2e2e2e;
+    margin: 2em 0;
+  }
+
+  blockquote {
+    border-left: 3px solid #444;
+    padding: 4px 0 4px 16px;
+    margin: 0.8em 0;
+    color: #888;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+
+  th, td {
+    border: 1px solid #2e2e2e;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  th {
+    background: #222;
+    font-weight: 600;
+    color: #e8e8e8;
+  }
+
+  tr:hover td { background: #202020; }
+
+  h3 code { background: none; color: inherit; padding: 0; font-size: inherit; }
+
+  .meta {
+    color: #555;
+    font-size: 0.85em;
+    margin-bottom: 2em;
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1 id="bolt-replit-lovable">Браузерные конструкторы: Bolt / Replit / Lovable</h1>
+<p><em>Экосистема · ≈ 4 мин</em></p>
+<h2 id="_1">Что это</h2>
+<p>AI-конструкторы в браузере. Без установки. Без терминала. Открыл вкладку, написал «сделай мне сайт» — получил работающее приложение с базой и публичной ссылкой за 20 минут.</p>
+<p>Это <strong>«Claude Code + хостинг + база + деплой»</strong> в одном окне для тех, кому не хочется заморачиваться с инфраструктурой.</p>
+<h2 id="claude-code">Когда брать конструктор, а не Claude Code</h2>
+<p><strong>🟢 Конструктор лучше:</strong><br />
+- Быстрый прототип за 20 минут<br />
+- Не хочется поднимать локальное окружение<br />
+- Делишься ссылкой нетехнической команде<br />
+- Простой CRUD, лендинг, форма<br />
+- Разовая поделка</p>
+<p><strong>🔴 Claude Code лучше:</strong><br />
+- Сложная задача, упрёшься в ограничения<br />
+- Нужна гибкость со стеком<br />
+- Нестандартное API / интеграция<br />
+- Проект растёт — переехать на свой код потом сложно</p>
+<h2 id="_2">Сравнение</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Bolt.new</strong></th>
+<th><strong>Replit</strong></th>
+<th><strong>Lovable</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Заточен под</td>
+<td>Фронтенд</td>
+<td>Любой стек, бэкенд</td>
+<td>Полное приложение</td>
+</tr>
+<tr>
+<td>База данных</td>
+<td>Снаружи</td>
+<td>Своя</td>
+<td>Supabase 1 кнопкой</td>
+</tr>
+<tr>
+<td>Для не-технаря</td>
+<td>Просто</td>
+<td>Сложновато</td>
+<td>Самый простой</td>
+</tr>
+<tr>
+<td>Когда брать</td>
+<td>Лендинг, демо</td>
+<td>Бот, API, скрипт</td>
+<td>Приложение с БД и логином</td>
+</tr>
+<tr>
+<td>Цена</td>
+<td>от $20/мес</td>
+<td>от $20/мес</td>
+<td>от $25/мес</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Одна задача — два подхода</h2>
+<p>«Лендинг для онлайн-курса с формой записи в Google Sheets»:</p>
+<ul>
+<li><strong>Через Claude Code:</strong> ~1 час. Свой код, бесплатный хостинг, можешь править что угодно.</li>
+<li><strong>Через Lovable:</strong> ~20 минут. Ноль настройки. Но $25/мес и привязка к платформе.</li>
+</ul>
+<p>Обе работают. Выбор зависит от того, <strong>сколько ты планируешь жить с проектом</strong>.</p>
+<h2 id="-">Чек-лист готовности</h2>
+<ul>
+<li>[ ] Помню, под что заточен каждый: Bolt — фронт, Replit — бэкенд, Lovable — приложения</li>
+<li>[ ] Понимаю, когда лучше браузер, когда лучше Claude Code</li>
+<li>[ ] Хотя бы зашёл в один из них и попробовал «сделай мне сайт про X»</li>
+</ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.2 Kak Ustroena Llm</title>
+  
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #d4d4d4;
+    background: #191919;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 1.4em 0 0.3em;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  h1:first-child { margin-top: 0; }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 1.6em 0 0.3em;
+    color: #ffffff;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #2e2e2e;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1.4em 0 0.2em;
+    color: #d4d4d4;
+  }
+
+  p { margin: 0.6em 0; }
+
+  a {
+    color: #6ab0e8;
+    text-decoration: underline;
+    text-decoration-color: rgba(106, 176, 232, 0.3);
+    text-underline-offset: 2px;
+  }
+
+  a:hover { text-decoration-color: #6ab0e8; }
+
+  ul, ol {
+    margin: 0.5em 0;
+    padding-left: 1.6em;
+  }
+
+  li {
+    margin: 0.25em 0;
+    padding-left: 0.2em;
+  }
+
+  li::marker { color: #555; }
+
+  strong {
+    font-weight: 600;
+    color: #f0f0f0;
+  }
+
+  em { font-style: italic; color: #aaa; }
+
+  code {
+    background: #2a2a2a;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.88em;
+    font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+    color: #e8a87c;
+  }
+
+  pre {
+    background: #212121;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 1em 0;
+    overflow-x: auto;
+    border: 1px solid #2e2e2e;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    color: #c9d1d9;
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #2e2e2e;
+    margin: 2em 0;
+  }
+
+  blockquote {
+    border-left: 3px solid #444;
+    padding: 4px 0 4px 16px;
+    margin: 0.8em 0;
+    color: #888;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+
+  th, td {
+    border: 1px solid #2e2e2e;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  th {
+    background: #222;
+    font-weight: 600;
+    color: #e8e8e8;
+  }
+
+  tr:hover td { background: #202020; }
+
+  h3 code { background: none; color: inherit; padding: 0; font-size: inherit; }
+
+  .meta {
+    color: #555;
+    font-size: 0.85em;
+    margin-bottom: 2em;
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1 id="llm-4">Как устроена LLM — 4 принципа</h1>
+<p><em>Основа · ≈ 5 мин</em></p>
+<h2 id="_1">Зачем это знать</h2>
+<p>Когда понимаешь, как модель работает — её странности перестают удивлять. Каждый принцип ниже даёт конкретный приём, который ты будешь использовать каждый день.</p>
+<h2 id="1-llm">Принцип 1. LLM предсказывает следующее слово</h2>
+<p>Модель не «думает». Она выучила, какие слова обычно идут за какими.</p>
+<p>Когда пишешь «Столица Франции —», модель <strong>не знает</strong>, что это Париж. Она видела тысячи текстов, где после этих слов шло «Париж».</p>
+<p><strong>Промпт — это не команда. Это начало текста, которое модель продолжает.</strong></p>
+<p>→ Стиль и тон промпта задают стиль ответа. Начал плохо — продолжит плохо.</p>
+<h2 id="2">Принцип 2. Контекстное окно</h2>
+<p>У модели <strong>нет долговременной памяти</strong>. Каждый раз модель получает <strong>весь текст разговора целиком</strong> — это и есть «окно».</p>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>Окно</th>
+<th>Страниц</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Sonnet 4</td>
+<td>200k токенов</td>
+<td>~500</td>
+</tr>
+<tr>
+<td>Claude Opus 4.7 (1M)</td>
+<td>1M токенов</td>
+<td>~2500</td>
+</tr>
+<tr>
+<td>ChatGPT-4o</td>
+<td>128k токенов</td>
+<td>~300</td>
+</tr>
+</tbody>
+</table>
+<p>Окно закончилось → старые сообщения <strong>обрезаются</strong>. Модель буквально перестаёт видеть начало разговора.</p>
+<p>→ Длинные чаты «тупеют» — это не баг, а ограничение окна. На сложной задаче открывай новый чат. В Claude Code: <code>/context</code> (посмотреть), <code>/clear</code> (сбросить), <code>/compact</code> (сжать).</p>
+<h2 id="3">Принцип 3. Роль и контекст важнее команды</h2>
+<p>«Senior маркетолог в EdTech, объясни...» работает заметно лучше, чем «напиши хороший текст».</p>
+<p>Модель ищет в обучающих данных паттерны, <strong>похожие на запрос</strong>. Дал роль — подбирает примеры из текстов таких людей. Не дал — берёт усреднённый интернет.</p>
+<p><strong>Три рычага:</strong> роль · контекст · формат. Без них — усреднённый ответ. С ними — то, что нужно. Подробнее в блоке <strong>2.1 «Бриф вместо промпта»</strong>.</p>
+<h2 id="4">Принцип 4. Галлюцинации — свойство, не баг</h2>
+<p>Модель не проверяет факты. Она <strong>проверяет, похоже ли это на правильный ответ</strong>. «Уверенность» — тоже выученный паттерн. Модель <strong>не знает, что не знает</strong>.</p>
+<p>Опасные зоны: цифры и даты · цитаты · ссылки (URL правдоподобный, но не существует) · API и библиотеки.</p>
+<p>→ Никогда не используй ответ AI без проверки в зонах высокой стоимости ошибки. Методики — в блоке <strong>2.3 «3 уровня проверки AI»</strong>.</p>
+<h2 id="_2">Бонус: токены</h2>
+<p>Модель работает с <strong>токенами</strong> — кусочками слов. «Привет» = 1-2 токена, «Работоспособность» = 3-4. Русский «дороже» английского в 2-3 раза. Окно меряется в токенах, не в словах.</p>
+<p>Посмотреть токенизацию — <a href="https://tiktokenizer.vercel.app">tiktokenizer.vercel.app</a>.</p>
+<h2 id="-">Чек-лист готовности</h2>
+<ul>
+<li>[ ] Могу объяснить, почему модель «галлюцинирует»: предсказывает, не знает</li>
+<li>[ ] Понимаю, почему длинные чаты «тупеют»</li>
+<li>[ ] Помню три рычага: роль · контекст · формат</li>
+<li>[ ] Знаю, что русский «дороже» английского по токенам</li>
+</ul>
+  </div>
+</body>
+</html>

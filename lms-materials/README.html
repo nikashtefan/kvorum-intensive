@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Readme</title>
+  
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #d4d4d4;
+    background: #191919;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 1.4em 0 0.3em;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  h1:first-child { margin-top: 0; }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 1.6em 0 0.3em;
+    color: #ffffff;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #2e2e2e;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1.4em 0 0.2em;
+    color: #d4d4d4;
+  }
+
+  p { margin: 0.6em 0; }
+
+  a {
+    color: #6ab0e8;
+    text-decoration: underline;
+    text-decoration-color: rgba(106, 176, 232, 0.3);
+    text-underline-offset: 2px;
+  }
+
+  a:hover { text-decoration-color: #6ab0e8; }
+
+  ul, ol {
+    margin: 0.5em 0;
+    padding-left: 1.6em;
+  }
+
+  li {
+    margin: 0.25em 0;
+    padding-left: 0.2em;
+  }
+
+  li::marker { color: #555; }
+
+  strong {
+    font-weight: 600;
+    color: #f0f0f0;
+  }
+
+  em { font-style: italic; color: #aaa; }
+
+  code {
+    background: #2a2a2a;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.88em;
+    font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+    color: #e8a87c;
+  }
+
+  pre {
+    background: #212121;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 1em 0;
+    overflow-x: auto;
+    border: 1px solid #2e2e2e;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    color: #c9d1d9;
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #2e2e2e;
+    margin: 2em 0;
+  }
+
+  blockquote {
+    border-left: 3px solid #444;
+    padding: 4px 0 4px 16px;
+    margin: 0.8em 0;
+    color: #888;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+
+  th, td {
+    border: 1px solid #2e2e2e;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  th {
+    background: #222;
+    font-weight: 600;
+    color: #e8e8e8;
+  }
+
+  tr:hover td { background: #202020; }
+
+  h3 code { background: none; color: inherit; padding: 0; font-size: inherit; }
+
+  .meta {
+    color: #555;
+    font-size: 0.85em;
+    margin-bottom: 2em;
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1 id="lms">LMS — материалы интенсива (целевая структура)</h1>
+<p>Это новая структура курса в LMS. 19 блоков в 7 разделах. 12 блоков перенесены из текущего LMS как есть, 7 — добавлены новые (отмечены ⭐).</p>
+<h2 id="_1">Структура</h2>
+<h3 id="0-pre-work">0. Перед стартом — pre-work до интенсива</h3>
+<ul>
+<li><a href="00-pre-start/0.1-ustanovka-claude-code.md">0.1 Установка Claude Code</a> — было <code>starter-install</code></li>
+<li><a href="00-pre-start/0.2-oplata-claude.md">0.2 Оплата Claude Pro/Max из России</a> — было <code>starter-payment</code></li>
+</ul>
+<h3 id="1">1. Основы — зачем и как это работает</h3>
+<ul>
+<li>⭐ <a href="01-osnovy/1.1-chto-takoe-vibekoding.md">1.1 Что такое вайбкодинг и где он экономит время</a></li>
+<li>⭐ <a href="01-osnovy/1.2-kak-ustroena-llm.md">1.2 Как устроена LLM — 4 принципа</a></li>
+</ul>
+<h3 id="2-ai">2. Методики работы с AI</h3>
+<ul>
+<li><a href="02-metodiki/2.1-brief-vmesto-prompta.md">2.1 Бриф вместо промпта</a> — было <code>core-1-brief</code></li>
+<li><a href="02-metodiki/2.2-workflow-plan-execute-verify.md">2.2 Workflow: План → Выполнение → Верификация</a> — было <code>core-4-workflow</code></li>
+<li>⭐ <a href="02-metodiki/2.3-3-urovnya-proverki-ai.md">2.3 3 уровня проверки результата AI</a></li>
+<li><a href="02-metodiki/2.4-biblioteka-shablonov.md">2.4 Библиотека шаблонов промптов</a> — было <code>reference-1-prompts</code></li>
+</ul>
+<h3 id="3-claude-code-cursor">3. Главный инструмент — Claude Code в Cursor</h3>
+<ul>
+<li>⭐ <a href="03-claude-code-cursor/3.1-cursor-vs-claude-code.md">3.1 Cursor vs Claude Code: что когда использовать</a></li>
+<li><a href="03-claude-code-cursor/3.2-claude-md.md">3.2 CLAUDE.md — память проекта</a> — было <code>core-2-claude-md</code></li>
+<li><a href="03-claude-code-cursor/3.3-skills-mcp-subagents.md">3.3 Инструменты Claude Code: skills, MCP, суб-агенты</a> — было <code>core-3-tools</code></li>
+</ul>
+<h3 id="4">4. Практика на своих задачах</h3>
+<ul>
+<li><a href="04-praktika/4.1-mini-project.md">4.1 Мини-проект пошагово</a> — было <code>practice-1-mini-project</code></li>
+<li><a href="04-praktika/4.2-uluchshenie-koda.md">4.2 Улучшение существующего кода</a> — было <code>practice-2-iteration</code></li>
+<li><a href="04-praktika/4.3-otladka.md">4.3 Отладка с агентом и типичные ошибки</a> — было <code>core-5-debugging</code></li>
+</ul>
+<h3 id="5">5. Экосистема — что ещё бывает</h3>
+<ul>
+<li>⭐ <a href="05-ekosistema/5.1-brauzernye-konstruktory.md">5.1 Браузерные конструкторы: Bolt / Replit / Lovable</a></li>
+<li>⭐ <a href="05-ekosistema/5.2-hranenie-i-publikatsiya.md">5.2 Хранение данных и публикация</a></li>
+</ul>
+<h3 id="6">6. После интенсива</h3>
+<ul>
+<li><a href="06-posle/6.1-tipichnye-problemy.md">6.1 Типичные проблемы и решения</a> — было <code>reference-2-troubleshoot</code></li>
+<li>⭐ <a href="06-posle/6.2-lichnaya-sistema-obucheniya.md">6.2 Личная система обучения через AI</a></li>
+<li><a href="06-posle/6.3-ssylki.md">6.3 Ссылки и дополнительные материалы</a> — было <code>reference-3-resources</code></li>
+</ul>
+<h2 id="_2">Что изменилось</h2>
+<table>
+<thead>
+<tr>
+<th>Было</th>
+<th>Стало</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12 блоков, 4 категории (Старт / Основа / Практика / Справочник)</td>
+<td>19 блоков, 7 разделов</td>
+</tr>
+<tr>
+<td>Только Claude Code</td>
+<td>Cursor + Claude Code в связке</td>
+</tr>
+<tr>
+<td>Нет теории про LLM</td>
+<td>Раздел 1 «Основы» — что такое вайбкодинг + 4 принципа LLM</td>
+</tr>
+<tr>
+<td>Проверка AI разбросана по блокам</td>
+<td>Отдельный блок 2.3 «3 уровня проверки»</td>
+</tr>
+<tr>
+<td>Нет про экосистему вокруг</td>
+<td>Раздел 5 — браузерные конструкторы, хостинг, БД</td>
+</tr>
+<tr>
+<td>Нет про развитие после интенсива</td>
+<td>Блок 6.2 «Личная система обучения через AI»</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slug">Маппинг старых slug → новых файлов</h2>
+<table>
+<thead>
+<tr>
+<th>Старый slug в LMS</th>
+<th>Новое расположение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>starter-install</code></td>
+<td><code>00-pre-start/0.1-ustanovka-claude-code.md</code></td>
+</tr>
+<tr>
+<td><code>starter-payment</code></td>
+<td><code>00-pre-start/0.2-oplata-claude.md</code></td>
+</tr>
+<tr>
+<td><code>core-1-brief</code></td>
+<td><code>02-metodiki/2.1-brief-vmesto-prompta.md</code></td>
+</tr>
+<tr>
+<td><code>core-4-workflow</code></td>
+<td><code>02-metodiki/2.2-workflow-plan-execute-verify.md</code></td>
+</tr>
+<tr>
+<td><code>reference-1-prompts</code></td>
+<td><code>02-metodiki/2.4-biblioteka-shablonov.md</code></td>
+</tr>
+<tr>
+<td><code>core-2-claude-md</code></td>
+<td><code>03-claude-code-cursor/3.2-claude-md.md</code></td>
+</tr>
+<tr>
+<td><code>core-3-tools</code></td>
+<td><code>03-claude-code-cursor/3.3-skills-mcp-subagents.md</code></td>
+</tr>
+<tr>
+<td><code>practice-1-mini-project</code></td>
+<td><code>04-praktika/4.1-mini-project.md</code></td>
+</tr>
+<tr>
+<td><code>practice-2-iteration</code></td>
+<td><code>04-praktika/4.2-uluchshenie-koda.md</code></td>
+</tr>
+<tr>
+<td><code>core-5-debugging</code></td>
+<td><code>04-praktika/4.3-otladka.md</code></td>
+</tr>
+<tr>
+<td><code>reference-2-troubleshoot</code></td>
+<td><code>06-posle/6.1-tipichnye-problemy.md</code></td>
+</tr>
+<tr>
+<td><code>reference-3-resources</code></td>
+<td><code>06-posle/6.3-ssylki.md</code></td>
+</tr>
+</tbody>
+</table>
+<p>7 файлов <strong>без старого slug</strong> — это новые блоки, надо завести в LMS.</p>
+<h2 id="_3">Инструкция для Глеба</h2>
+<h3 id="lms_1">Что нужно сделать в LMS</h3>
+<ol>
+<li><strong>Завести 7 новых блоков</strong> (отмечены ⭐). Предложение по slug:</li>
+<li><code>intro-1-vibe-coding</code> (1.1)</li>
+<li><code>intro-2-llm-basics</code> (1.2)</li>
+<li><code>core-6-verification</code> (2.3)</li>
+<li><code>core-0-cursor-vs-claude</code> (3.1)</li>
+<li><code>ecosystem-1-browser-builders</code> (5.1)</li>
+<li><code>ecosystem-2-hosting</code> (5.2)</li>
+<li>
+<p><code>growth-1-learning-system</code> (6.2)</p>
+</li>
+<li>
+<p><strong>Перенумеровать существующие 12 блоков</strong> в новой иерархии. Текст самих блоков менять не надо — только их порядок и категорию.</p>
+</li>
+<li>
+<p><strong>Перегруппировать категории</strong> в админке:</p>
+</li>
+<li>
+<p>Старые категории «Старт / Основа / Практика / Справочник» → новые «Перед стартом / Основы / Методики / Claude Code в Cursor / Практика / Экосистема / После интенсива»</p>
+</li>
+<li>
+<p><strong>На время теста потока 1</strong> — открыть все 19 блоков сразу (Ника просила).</p>
+</li>
+</ol>
+<h3 id="12">Содержимое 12 старых блоков</h3>
+<p>Тексты в новых файлах извлечены <strong>из текущего LMS</strong> (через RSC payload <code>/course/&lt;slug&gt;</code>). Это <strong>точная копия</strong> того, что сейчас лежит в LMS — ничего не дописывал. Если в LMS будут правки текста — их можно сразу вносить, не сверяясь с этими файлами.</p>
+<p>В файлах сохранены:<br />
+- заголовки (H1, H2, H3)<br />
+- списки и нумерация<br />
+- блоки кода<br />
+- таблицы<br />
+- картинки/диаграммы (как <code>![alt](path)</code>)<br />
+- чек-листы готовности (в конце каждого блока)</p>
+<p>Чего нет в файлах: компонентов LMS (кнопки «отметить пройденным», интерактивные чек-листы) — это техническая обвязка LMS, на уровне контента ничего не теряется.</p>
+<h3 id="7">Содержимое 7 новых блоков</h3>
+<p>Написаны Никой+Claude по материалам:<br />
+- <code>feedback-and-changes.md</code> (план доработок интенсива)<br />
+- Презентация интенсива (<code>kvorum-intensive/index.html</code>)<br />
+- Метафоры и кейсы из обсуждений в чате</p>
+<p>Можно использовать как есть. Можно перед публикацией пройтись текстом, поменять примеры под свой опыт.</p>
+<h3 id="_4">Метаданные блоков</h3>
+<p>В каждом файле под H1 курсивом стоит мета вида <code>_Основа · ≈ 8 мин_</code>. Это:<br />
+- категория (Старт / Основа / Методика / Практика / Справочник / Экосистема / После интенсива)<br />
+- примерное время на чтение</p>
+<p>Можно использовать для отображения в карточке блока.</p>
+<h2 id="_5">Технические детали извлечения</h2>
+<p>Содержимое существующих блоков получено через:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>https://lms.kvorum-edu.ru/course/&lt;slug&gt;<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Cookie: kvorum_session=&lt;JWT&gt;&quot;</span>
+</code></pre></div>
+
+<p>Затем из HTML вытащен RSC payload и собраны все markdown-фрагменты по каждому блоку.</p>
+<p>Извлечённые «сырые» файлы лежат в <code>_extracted/</code> — можно сравнить с финальными файлами в новой структуре, разницы нет (только переименование).</p>
+<h2 id="_6">Открытые вопросы</h2>
+<ol>
+<li><strong>Slug для новых блоков</strong> — выше предложил, но ты решай.</li>
+<li><strong>«Бот-помощник» из лендинга v3</strong> (еженедельная сводка AI-новостей) — сейчас в LMS его нет. Если делаем — нужен ли отдельный блок про это?</li>
+<li><strong>Видео День 1 / День 2</strong> — сейчас прикреплены к потоку, не к блокам. Возможно, имеет смысл прикрепить кусочки записи к соответствующим теоретическим блокам (1.1, 1.2, 3.1).</li>
+</ol>
+<p>Дальше — обсуждаем с Никой.</p>
+  </div>
+</body>
+</html>

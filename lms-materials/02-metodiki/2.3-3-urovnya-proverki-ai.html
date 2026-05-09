@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.3 3 Urovnya Proverki Ai</title>
+  
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #d4d4d4;
+    background: #191919;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 1.4em 0 0.3em;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  h1:first-child { margin-top: 0; }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 1.6em 0 0.3em;
+    color: #ffffff;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #2e2e2e;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1.4em 0 0.2em;
+    color: #d4d4d4;
+  }
+
+  p { margin: 0.6em 0; }
+
+  a {
+    color: #6ab0e8;
+    text-decoration: underline;
+    text-decoration-color: rgba(106, 176, 232, 0.3);
+    text-underline-offset: 2px;
+  }
+
+  a:hover { text-decoration-color: #6ab0e8; }
+
+  ul, ol {
+    margin: 0.5em 0;
+    padding-left: 1.6em;
+  }
+
+  li {
+    margin: 0.25em 0;
+    padding-left: 0.2em;
+  }
+
+  li::marker { color: #555; }
+
+  strong {
+    font-weight: 600;
+    color: #f0f0f0;
+  }
+
+  em { font-style: italic; color: #aaa; }
+
+  code {
+    background: #2a2a2a;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.88em;
+    font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+    color: #e8a87c;
+  }
+
+  pre {
+    background: #212121;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 1em 0;
+    overflow-x: auto;
+    border: 1px solid #2e2e2e;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    color: #c9d1d9;
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #2e2e2e;
+    margin: 2em 0;
+  }
+
+  blockquote {
+    border-left: 3px solid #444;
+    padding: 4px 0 4px 16px;
+    margin: 0.8em 0;
+    color: #888;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+
+  th, td {
+    border: 1px solid #2e2e2e;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  th {
+    background: #222;
+    font-weight: 600;
+    color: #e8e8e8;
+  }
+
+  tr:hover td { background: #202020; }
+
+  h3 code { background: none; color: inherit; padding: 0; font-size: inherit; }
+
+  .meta {
+    color: #555;
+    font-size: 0.85em;
+    margin-bottom: 2em;
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1 id="3-ai">3 уровня проверки результата AI</h1>
+<p><em>Основа · ≈ 5 мин</em></p>
+<h2 id="_1">Зачем</h2>
+<p>AI часто отвечает уверенно — и часто неправильно. Самая опасная зона — когда ответ выглядит профессионально (цифры на месте, ссылки красивые, формулировки уверенные), а половина — выдумка.</p>
+<p>Проверка — не паранойя. Часть workflow, как тестирование в коде.</p>
+<h2 id="1">Уровень 1. Гигиена — встраивай всегда</h2>
+<p>Ловит 60-70% мелких косяков. Дописывай в каждый промпт.</p>
+<p><strong>Разреши не знать:</strong></p>
+<div class="codehilite"><pre><span></span><code>Если на каком-то шаге не уверен — скажи прямо «не знаю»,
+не додумывай.
+</code></pre></div>
+
+<p><strong>Уровень уверенности:</strong></p>
+<div class="codehilite"><pre><span></span><code>После ответа добавь строку: Уверенность X/10. Объясни почему.
+</code></pre></div>
+
+<p><strong>Цитируй источник</strong> (когда работаешь с документом):</p>
+<div class="codehilite"><pre><span></span><code>Сначала приведи дословную цитату, потом сделай вывод.
+</code></pre></div>
+
+<h2 id="2">Уровень 2. Углублённая — для важных решений</h2>
+<p>Деньги, время команды, тексты для клиентов. +5-10 минут.</p>
+<p><strong>Chain-of-Verification:</strong></p>
+<div class="codehilite"><pre><span></span><code>Составь 5 ключевых фактов из ответа. По каждому ответь:
+откуда я это знаю · может ли быть иначе · насколько уверен.
+</code></pre></div>
+
+<p><strong>Адвокат дьявола:</strong></p>
+<div class="codehilite"><pre><span></span><code>Найди 3-5 слабых мест в этом ответе. С чем можно не согласиться?
+</code></pre></div>
+
+<p><strong>Пошаговая логика:</strong></p>
+<div class="codehilite"><pre><span></span><code>Прежде чем дать ответ — опиши шаги рассуждения. Каждый шаг
+отдельной строкой. В конце — вывод.
+</code></pre></div>
+
+<h2 id="3">Уровень 3. Внешняя — для критичных</h2>
+<p>Юр. документ, мед. совет, факты для публикации, важная аналитика.</p>
+<p>⚠️ <strong>AI, проверяющий сам себя — работает ограниченно.</strong> Если модель ошиблась в первый раз, она с большой вероятностью повторит ту же ошибку при self-check. Уровни 1 и 2 ловят явные косяки, но не системные галлюцинации.</p>
+<p><strong>Второй AI:</strong></p>
+<div class="codehilite"><pre><span></span><code>Вот ответ от Claude по моему вопросу: [...]
+Найди фактические ошибки, неточности, пропущенный контекст.
+</code></pre></div>
+
+<p><strong>Чек-лист по фактам:</strong> цифры в первоисточнике? · цитаты существуют? · ссылки открываются и подтверждают? · «всегда / никогда / все» корректны? · упущенный контекст?</p>
+<p><strong>Проверка ссылок</strong> (самая частая дыра): проси модель давать источники в формате <code>название · автор · год · URL · что говорит по теме</code>. Открой 2-3, проверь. Хоть одна не существует — отбрасывай весь список.</p>
+<h2 id="_2">Какой уровень выбирать</h2>
+<table>
+<thead>
+<tr>
+<th>Задача</th>
+<th>Уровень</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Брейнсторм, идеи, варианты</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Черновик письма / соцсетей</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Код, который сам запустишь</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Обоснование решения для команды</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Стратегия, аналитика, цифры для презентации</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Юр / мед / фин документ</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Публикация в СМИ</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Решение, которое нельзя откатить</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Уровень 1 кажется тривиальным — поэтому его пропускают. Именно из-за этого получают «правдоподобный мусор». <strong>Привычка: одна фраза из уровня 1 в каждом промпте, где важна точность.</strong></p>
+<h2 id="-">Чек-лист готовности</h2>
+<ul>
+<li>[ ] Помню три приёма уровня 1: разреши не знать · уверенность 0-10 · цитируй источник</li>
+<li>[ ] Хотя бы один встроил в свой стандартный промпт</li>
+<li>[ ] Понимаю: для уровня 3 нужен второй источник или человек, не self-check</li>
+<li>[ ] Был хотя бы один случай, когда AI признался «не знаю» благодаря моей фразе</li>
+</ul>
+  </div>
+</body>
+</html>

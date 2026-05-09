@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>LMS — материалы интенсива</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  :root {
+    --canvas: #fafaf7;
+    --ink: #1a1a1a;
+    --ink-48: #7a7a78;
+    --hairline: #e5e5e0;
+    --primary: #d97757;
+    --bg-code: #1a1a1a;
+    --new: #fff7ed;
+    --new-border: #fed7aa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--canvas);
+    color: var(--ink);
+    display: flex;
+    min-height: 100vh;
+  }
+  aside {
+    width: 320px;
+    background: #fff;
+    border-right: 1px solid var(--hairline);
+    padding: 24px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  aside h1 {
+    font-size: 16px;
+    margin: 0 0 4px 0;
+    color: var(--primary);
+  }
+  aside .subtitle {
+    font-size: 12px;
+    color: var(--ink-48);
+    margin-bottom: 24px;
+  }
+  aside .section {
+    margin-bottom: 18px;
+  }
+  aside .section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-48);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  aside li {
+    margin-bottom: 2px;
+  }
+  aside a {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.4;
+    transition: background 80ms;
+  }
+  aside a:hover {
+    background: #f3f3ee;
+  }
+  aside a.active {
+    background: rgba(217, 119, 87, 0.1);
+    color: var(--primary);
+    font-weight: 500;
+  }
+  aside .new-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-size: 9px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 4px;
+    vertical-align: middle;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  main {
+    flex: 1;
+    padding: 48px 64px;
+    max-width: 880px;
+  }
+  .new-banner {
+    background: var(--new);
+    border: 1px solid var(--new-border);
+    color: #9a3412;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 24px;
+    display: none;
+  }
+  .new-banner.show { display: block; }
+  article h1 {
+    font-size: 36px;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  article h2 {
+    font-size: 22px;
+    margin: 36px 0 12px 0;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  article h3 {
+    font-size: 17px;
+    margin: 24px 0 8px 0;
+  }
+  article em {
+    color: var(--ink-48);
+    font-size: 13px;
+    font-style: normal;
+  }
+  article p {
+    line-height: 1.6;
+    font-size: 15.5px;
+    margin: 14px 0;
+  }
+  article ul, article ol {
+    line-height: 1.6;
+    font-size: 15.5px;
+    padding-left: 24px;
+  }
+  article li { margin: 6px 0; }
+  article code {
+    background: rgba(0,0,0,0.06);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 13.5px;
+    font-family: 'SF Mono', Menlo, monospace;
+  }
+  article pre {
+    background: var(--bg-code);
+    color: white;
+    padding: 18px 22px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.6;
+    font-family: 'SF Mono', Menlo, monospace;
+  }
+  article pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+  }
+  article table {
+    border-collapse: collapse;
+    margin: 16px 0;
+    width: 100%;
+    font-size: 14px;
+  }
+  article th, article td {
+    border-bottom: 1px solid var(--hairline);
+    padding: 8px 12px;
+    text-align: left;
+  }
+  article th {
+    background: #f3f3ee;
+    font-weight: 600;
+  }
+  article blockquote {
+    border-left: 3px solid var(--primary);
+    margin: 16px 0;
+    padding: 4px 16px;
+    color: var(--ink-48);
+  }
+  article hr {
+    border: none;
+    border-top: 1px solid var(--hairline);
+    margin: 32px 0;
+  }
+  .home-page {
+    display: block;
+  }
+  .home-page h1 { color: var(--primary); }
+  .home-page .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0 40px;
+  }
+  .home-page .stat {
+    background: white;
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 18px;
+  }
+  .home-page .stat-num {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+  }
+  .home-page .stat-label {
+    font-size: 13px;
+    color: var(--ink-48);
+    margin-top: 6px;
+  }
+  .loading {
+    color: var(--ink-48);
+    font-size: 14px;
+  }
+  @media (max-width: 900px) {
+    body { flex-direction: column; }
+    aside { width: 100%; height: auto; position: static; }
+    main { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+<aside>
+  <h1>Кворум LMS</h1>
+  <div class="subtitle">19 блоков · целевая структура</div>
+
+  <div class="section">
+    <div class="section-title">0. Перед стартом</div>
+    <ul id="nav"></ul>
+  </div>
+</aside>
+
+<main>
+  <div class="new-banner" id="new-banner">⭐ Новый блок — добавлен в эту итерацию</div>
+  <article id="content">
+    <div class="home-page">
+      <h1>Кворум LMS — материалы</h1>
+      <p>Целевая структура курса. <strong>19 блоков</strong> в <strong>7 разделах</strong>. Из них <strong>12</strong> — текст уже есть в текущей LMS, <strong>7</strong> — новые (отмечены ⭐).</p>
+      <div class="stat-grid">
+        <div class="stat"><div class="stat-num">19</div><div class="stat-label">всего блоков</div></div>
+        <div class="stat"><div class="stat-num">7</div><div class="stat-label">⭐ новых</div></div>
+        <div class="stat"><div class="stat-num">12</div><div class="stat-label">из текущей LMS</div></div>
+      </div>
+      <p>Выбери блок слева. Этот превью — для сверки контента перед заливкой в LMS.</p>
+      <h2>Что в каждом разделе</h2>
+      <ul>
+        <li><strong>0. Перед стартом</strong> — pre-work до интенсива (установка + оплата)</li>
+        <li><strong>1. Основы</strong> ⭐ — что такое вайбкодинг, как устроена LLM</li>
+        <li><strong>2. Методики</strong> — бриф, workflow, проверка, шаблоны</li>
+        <li><strong>3. Claude Code в Cursor</strong> — Cursor vs CC, CLAUDE.md, инструменты</li>
+        <li><strong>4. Практика</strong> — мини-проект, улучшение кода, отладка</li>
+        <li><strong>5. Экосистема</strong> ⭐ — конструкторы, хостинг и БД</li>
+        <li><strong>6. После интенсива</strong> — FAQ, личное обучение, ссылки</li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<script>
+const STRUCTURE = [
+  {
+    title: "0. Перед стартом",
+    items: [
+      { num: "0.1", title: "Установка Claude Code", path: "00-pre-start/0.1-ustanovka-claude-code.md" },
+      { num: "0.2", title: "Оплата Claude Pro/Max", path: "00-pre-start/0.2-oplata-claude.md" },
+    ]
+  },
+  {
+    title: "1. Основы",
+    items: [
+      { num: "1.1", title: "Что такое вайбкодинг", path: "01-osnovy/1.1-chto-takoe-vibekoding.md", isNew: true },
+      { num: "1.2", title: "Как устроена LLM", path: "01-osnovy/1.2-kak-ustroena-llm.md", isNew: true },
+    ]
+  },
+  {
+    title: "2. Методики",
+    items: [
+      { num: "2.1", title: "Бриф вместо промпта", path: "02-metodiki/2.1-brief-vmesto-prompta.md" },
+      { num: "2.2", title: "Workflow: План→Выполнение→Верификация", path: "02-metodiki/2.2-workflow-plan-execute-verify.md" },
+      { num: "2.3", title: "3 уровня проверки AI", path: "02-metodiki/2.3-3-urovnya-proverki-ai.md", isNew: true },
+      { num: "2.4", title: "Библиотека шаблонов промптов", path: "02-metodiki/2.4-biblioteka-shablonov.md" },
+    ]
+  },
+  {
+    title: "3. Claude Code в Cursor",
+    items: [
+      { num: "3.1", title: "Cursor vs Claude Code", path: "03-claude-code-cursor/3.1-cursor-vs-claude-code.md", isNew: true },
+      { num: "3.2", title: "CLAUDE.md — память проекта", path: "03-claude-code-cursor/3.2-claude-md.md" },
+      { num: "3.3", title: "Инструменты: skills, MCP, суб-агенты", path: "03-claude-code-cursor/3.3-skills-mcp-subagents.md" },
+    ]
+  },
+  {
+    title: "4. Практика",
+    items: [
+      { num: "4.1", title: "Мини-проект пошагово", path: "04-praktika/4.1-mini-project.md" },
+      { num: "4.2", title: "Улучшение существующего кода", path: "04-praktika/4.2-uluchshenie-koda.md" },
+      { num: "4.3", title: "Отладка с агентом", path: "04-praktika/4.3-otladka.md" },
+    ]
+  },
+  {
+    title: "5. Экосистема",
+    items: [
+      { num: "5.1", title: "Bolt / Replit / Lovable", path: "05-ekosistema/5.1-brauzernye-konstruktory.md", isNew: true },
+      { num: "5.2", title: "Хранение данных и публикация", path: "05-ekosistema/5.2-hranenie-i-publikatsiya.md", isNew: true },
+    ]
+  },
+  {
+    title: "6. После интенсива",
+    items: [
+      { num: "6.1", title: "Типичные проблемы", path: "06-posle/6.1-tipichnye-problemy.md" },
+      { num: "6.2", title: "Личная система обучения", path: "06-posle/6.2-lichnaya-sistema-obucheniya.md", isNew: true },
+      { num: "6.3", title: "Ссылки и дополнительные материалы", path: "06-posle/6.3-ssylki.md" },
+    ]
+  },
+];
+
+function renderNav() {
+  const aside = document.querySelector("aside");
+  // Replace existing nav with full structure
+  const sections = aside.querySelectorAll(".section");
+  sections.forEach(s => s.remove());
+
+  STRUCTURE.forEach(section => {
+    const div = document.createElement("div");
+    div.className = "section";
+    div.innerHTML = `<div class="section-title">${section.title}</div>`;
+    const ul = document.createElement("ul");
+    section.items.forEach(item => {
+      const li = document.createElement("li");
+      const newBadge = item.isNew ? '<span class="new-badge">new</span>' : '';
+      li.innerHTML = `<a href="#${item.path}" data-path="${item.path}" data-isnew="${!!item.isNew}">${item.num} ${item.title}${newBadge}</a>`;
+      ul.appendChild(li);
+    });
+    div.appendChild(ul);
+    aside.appendChild(div);
+  });
+}
+
+async function loadBlock(path, isNew) {
+  const content = document.getElementById("content");
+  const banner = document.getElementById("new-banner");
+  banner.classList.toggle("show", isNew);
+  content.innerHTML = '<div class="loading">Загружаю...</div>';
+  try {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const md = await res.text();
+    content.innerHTML = marked.parse(md);
+    window.scrollTo(0, 0);
+    document.querySelectorAll("aside a").forEach(a => {
+      a.classList.toggle("active", a.dataset.path === path);
+    });
+  } catch (e) {
+    content.innerHTML = '<p style="color:#c00">Ошибка загрузки: ' + e.message + '</p>';
+  }
+}
+
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("aside a");
+  if (a) {
+    e.preventDefault();
+    const path = a.dataset.path;
+    const isNew = a.dataset.isnew === "true";
+    history.replaceState(null, "", "#" + path);
+    loadBlock(path, isNew);
+  }
+});
+
+renderNav();
+if (location.hash) {
+  const path = location.hash.slice(1);
+  const item = STRUCTURE.flatMap(s => s.items).find(i => i.path === path);
+  if (item) loadBlock(item.path, !!item.isNew);
+}
+</script>
+</body>
+</html>

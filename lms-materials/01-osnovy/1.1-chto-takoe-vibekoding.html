@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.1 Chto Takoe Vibekoding</title>
+  
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #d4d4d4;
+    background: #191919;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 1.4em 0 0.3em;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  h1:first-child { margin-top: 0; }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 1.6em 0 0.3em;
+    color: #ffffff;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #2e2e2e;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1.4em 0 0.2em;
+    color: #d4d4d4;
+  }
+
+  p { margin: 0.6em 0; }
+
+  a {
+    color: #6ab0e8;
+    text-decoration: underline;
+    text-decoration-color: rgba(106, 176, 232, 0.3);
+    text-underline-offset: 2px;
+  }
+
+  a:hover { text-decoration-color: #6ab0e8; }
+
+  ul, ol {
+    margin: 0.5em 0;
+    padding-left: 1.6em;
+  }
+
+  li {
+    margin: 0.25em 0;
+    padding-left: 0.2em;
+  }
+
+  li::marker { color: #555; }
+
+  strong {
+    font-weight: 600;
+    color: #f0f0f0;
+  }
+
+  em { font-style: italic; color: #aaa; }
+
+  code {
+    background: #2a2a2a;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.88em;
+    font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+    color: #e8a87c;
+  }
+
+  pre {
+    background: #212121;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 1em 0;
+    overflow-x: auto;
+    border: 1px solid #2e2e2e;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    color: #c9d1d9;
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #2e2e2e;
+    margin: 2em 0;
+  }
+
+  blockquote {
+    border-left: 3px solid #444;
+    padding: 4px 0 4px 16px;
+    margin: 0.8em 0;
+    color: #888;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+
+  th, td {
+    border: 1px solid #2e2e2e;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  th {
+    background: #222;
+    font-weight: 600;
+    color: #e8e8e8;
+  }
+
+  tr:hover td { background: #202020; }
+
+  h3 code { background: none; color: inherit; padding: 0; font-size: inherit; }
+
+  .meta {
+    color: #555;
+    font-size: 0.85em;
+    margin-bottom: 2em;
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1 id="_1">Что такое вайбкодинг и где он экономит время</h1>
+<p><em>Основа · ≈ 3 мин</em></p>
+<h2 id="_2">Суть</h2>
+<p>Вайбкодинг — не «AI пишет код за тебя». Это другой способ работы:</p>
+<ul>
+<li>Ты — заказчик и ревьюер</li>
+<li>AI — исполнитель</li>
+<li>Между вами — бриф, план, верификация</li>
+</ul>
+<p>Ты не пишешь код руками. Но и не «надеешься, что AI сделает». Ставишь задачу как сильному подрядчику. AI читает файлы, понимает стек, пишет код, запускает команды, проверяет, исправляет. Ты получаешь готовый результат и проверяешь.</p>
+<h2 id="claude-pm">Метафора: ты — лид, Claude — твой PM</h2>
+<table>
+<thead>
+<tr>
+<th>Роль</th>
+<th>В команде</th>
+<th>В Claude Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Заказчик</td>
+<td>Ты</td>
+<td>Ты</td>
+</tr>
+<tr>
+<td>PM, понимает целиком</td>
+<td>Продакт-менеджер</td>
+<td><strong>Claude</strong></td>
+</tr>
+<tr>
+<td>Команда специалистов</td>
+<td>Аналитик, дизайнер, маркетолог</td>
+<td><strong>Суб-агенты</strong></td>
+</tr>
+<tr>
+<td>Регламенты и чек-листы</td>
+<td>Внутренние документы</td>
+<td><strong>Skills</strong></td>
+</tr>
+<tr>
+<td>Доступ к системам</td>
+<td>Notion, БД, CRM</td>
+<td><strong>MCP</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Ты не управляешь подзадачами руками. Ставишь задачу — Claude сам решает, кого позвать.</p>
+<h2 id="_3">Где экономит, где нет</h2>
+<table>
+<thead>
+<tr>
+<th>🟢 Экономит</th>
+<th>🔴 Не экономит</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Прототипы и MVP</td>
+<td>Уникальная креативная работа</td>
+</tr>
+<tr>
+<td>Внутренние инструменты, дашборды, формы</td>
+<td>Задачи с большим неявным контекстом</td>
+</tr>
+<tr>
+<td>Разовые скрипты — парсинг, выгрузки</td>
+<td>Критические решения без верификации (мед/юр/фин)</td>
+</tr>
+<tr>
+<td>Текстовая рутина — черновики, саммари</td>
+<td>Когда важен сам процесс, а не результат</td>
+</tr>
+<tr>
+<td>Отладка, объяснение чужого кода</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="-">Чек-лист готовности</h2>
+<ul>
+<li>[ ] Могу объяснить метафору «лид + PM» другому</li>
+<li>[ ] Выписал 3 задачи с прошлой недели, где AI сэкономил бы час+</li>
+<li>[ ] Понимаю: AI — подрядчик, не гугл; моя роль — ставить задачу и проверять</li>
+</ul>
+  </div>
+</body>
+</html>

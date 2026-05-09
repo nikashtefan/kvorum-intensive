@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.1 Cursor Vs Claude Code</title>
+  
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #d4d4d4;
+    background: #191919;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 1.4em 0 0.3em;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  h1:first-child { margin-top: 0; }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 1.6em 0 0.3em;
+    color: #ffffff;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #2e2e2e;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1.4em 0 0.2em;
+    color: #d4d4d4;
+  }
+
+  p { margin: 0.6em 0; }
+
+  a {
+    color: #6ab0e8;
+    text-decoration: underline;
+    text-decoration-color: rgba(106, 176, 232, 0.3);
+    text-underline-offset: 2px;
+  }
+
+  a:hover { text-decoration-color: #6ab0e8; }
+
+  ul, ol {
+    margin: 0.5em 0;
+    padding-left: 1.6em;
+  }
+
+  li {
+    margin: 0.25em 0;
+    padding-left: 0.2em;
+  }
+
+  li::marker { color: #555; }
+
+  strong {
+    font-weight: 600;
+    color: #f0f0f0;
+  }
+
+  em { font-style: italic; color: #aaa; }
+
+  code {
+    background: #2a2a2a;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.88em;
+    font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+    color: #e8a87c;
+  }
+
+  pre {
+    background: #212121;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 1em 0;
+    overflow-x: auto;
+    border: 1px solid #2e2e2e;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    color: #c9d1d9;
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #2e2e2e;
+    margin: 2em 0;
+  }
+
+  blockquote {
+    border-left: 3px solid #444;
+    padding: 4px 0 4px 16px;
+    margin: 0.8em 0;
+    color: #888;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+
+  th, td {
+    border: 1px solid #2e2e2e;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  th {
+    background: #222;
+    font-weight: 600;
+    color: #e8e8e8;
+  }
+
+  tr:hover td { background: #202020; }
+
+  h3 code { background: none; color: inherit; padding: 0; font-size: inherit; }
+
+  .meta {
+    color: #555;
+    font-size: 0.85em;
+    margin-bottom: 2em;
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1 id="cursor-vs-claude-code">Cursor vs Claude Code: что когда использовать</h1>
+<p><em>Основа · ≈ 4 мин</em></p>
+<h2 id="_1">Зачем</h2>
+<p>На интенсиве работаем в связке Cursor + Claude Code. Это не «или-или», а два инструмента под разные задачи.</p>
+<h2 id="_2">Что есть что</h2>
+<p><strong>Cursor</strong> — редактор кода (форк VS Code) с встроенным AI. Ты ведёшь, AI помогает: автокомплит, правки с предпросмотром, чат сбоку. Видишь каждое изменение.</p>
+<p><strong>Claude Code</strong> — CLI-агент от Anthropic. Запускается командой <code>claude</code> в терминале. Ты ставишь задачу — агент сам читает файлы, пишет код, запускает команды, проверяет, исправляет. Видишь финальный diff.</p>
+<p>В одной фразе: <strong>Cursor — ассистент при тебе. Claude Code — подрядчик, которому делегируешь.</strong></p>
+<h2 id="_3">Когда что брать</h2>
+<table>
+<thead>
+<tr>
+<th>Cursor</th>
+<th>Claude Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ты ведёшь, AI помогает</td>
+<td>AI ведёт, ты проверяешь</td>
+</tr>
+<tr>
+<td>Малые точечные правки</td>
+<td>Многофайловые задачи</td>
+</tr>
+<tr>
+<td>Понять чужой код</td>
+<td>«Сделай Х под ключ»</td>
+</tr>
+<tr>
+<td>Автокомплит во время печати</td>
+<td>Запуск тестов / команд / деплой</td>
+</tr>
+</tbody>
+</table>
+<p><strong>🟢 Cursor:</strong> правка одного файла · понять чужой код · точечная фича.<br />
+<strong>🟢 Claude Code:</strong> многофайловая задача · «сделай Х под ключ» · черновик целой фичи.</p>
+<h2 id="_4">Они работают вместе</h2>
+<p>В реальной работе переключаешься между ними весь день:</p>
+<ol>
+<li>Открыл проект в <strong>Cursor</strong></li>
+<li>Большая задача → зовёшь <strong>Claude Code в терминале</strong> (<code>claude</code>)</li>
+<li>Возвращаешься в Cursor — смотришь diff, правишь руками одну деталь</li>
+<li>Опять зовёшь Claude Code на следующую задачу</li>
+</ol>
+<p>Cursor визуализирует. Claude Code делает. Связка покрывает весь спектр.</p>
+<h2 id="claudemd">CLAUDE.md — один файл для обоих</h2>
+<p><code>CLAUDE.md</code> (см. блок <strong>3.2</strong>) — память и инструкции для AI. Читается обоими: и Claude Code, и Cursor. Пишешь один файл — оба инструмента видят твой контекст.</p>
+<h2 id="-">Чек-лист готовности</h2>
+<ul>
+<li>[ ] Установлены оба: Cursor и Claude Code, общий аккаунт Anthropic</li>
+<li>[ ] Хотя бы раз открыл Claude Code (<code>claude</code>) — увидел интерфейс</li>
+<li>[ ] Понимаю, какие задачи беру в Cursor, какие — в Claude Code</li>
+<li>[ ] Знаю, что CLAUDE.md видят оба инструмента</li>
+</ul>
+  </div>
+</body>
+</html>
