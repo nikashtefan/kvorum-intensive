@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Воркшоп: PRD и лендинг вашего продукта</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #f6f4f1;
+    color: #1a1a2e;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ── SLIDES ── */
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 100px;
+    gap: 16px;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(124,106,255,0.12) 0%, rgba(255,140,100,0.06) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .slide::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,160,200,0.1) 0%, rgba(120,180,255,0.05) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .slide > * { position: relative; z-index: 1; }
+
+  /* Dark slide */
+  .slide.dark {
+    background: #1a1a2e;
+    color: #fff;
+  }
+  .slide.dark::before {
+    background: radial-gradient(circle, rgba(124,106,255,0.15) 0%, rgba(255,110,180,0.08) 50%, transparent 70%);
+  }
+  .slide.dark::after {
+    background: radial-gradient(circle, rgba(255,110,180,0.1) 0%, transparent 70%);
+  }
+
+  /* Divider slide */
+  .slide.divider {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .slide.divider h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .slide.divider .subtitle {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .slide.divider::before {
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(124,106,255,0.1) 0%, rgba(255,140,100,0.05) 40%, transparent 70%);
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: fixed; bottom: 22px; right: 28px;
+    display: flex; align-items: center; gap: 10px; z-index: 100;
+  }
+  .nav button {
+    background: rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: #1a1a2e; width: 34px; height: 34px;
+    border-radius: 50%; cursor: pointer; font-size: 14px;
+    transition: background 0.2s;
+  }
+  .nav button:hover { background: rgba(0,0,0,0.12); }
+  .slide-counter { font-size: 12px; color: rgba(0,0,0,0.3); font-variant-numeric: tabular-nums; }
+
+  .progress {
+    position: fixed; top: 0; left: 0;
+    height: 3px; background: linear-gradient(90deg, #7c6aff, #ff6eb4, #ff9a5c);
+    transition: width 0.3s ease; z-index: 100;
+  }
+
+  .block-badge {
+    position: fixed; top: 20px; right: 28px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(0,0,0,0.25); z-index: 100;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .label {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #7c6aff; margin-bottom: 14px;
+  }
+  h1 { font-size: 52px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; max-width: 860px; }
+  h2 { font-size: 36px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; max-width: 820px; }
+  h3 { font-size: 20px; font-weight: 600; line-height: 1.3; margin-bottom: 8px; }
+  .subtitle { font-size: 18px; color: rgba(0,0,0,0.45); margin-top: 12px; max-width: 680px; line-height: 1.55; }
+  .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+
+  /* Dark text */
+  .slide.dark .label { color: rgba(255,255,255,0.4); }
+  .slide.dark .subtitle { color: rgba(255,255,255,0.45); }
+  .slide.dark h2, .slide.dark h3 { color: #fff; }
+
+  /* ── HERO META ── */
+  .hero-meta {
+    display: flex; gap: 36px; margin-top: 32px;
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .hero-meta-item .value {
+    font-size: 32px; font-weight: 700; color: #7c6aff;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  }
+  .hero-meta-item .desc { font-size: 13px; color: rgba(0,0,0,0.35); }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-block;
+    background: rgba(124,106,255,0.1);
+    border: 1px solid rgba(124,106,255,0.25);
+    color: #7c6aff;
+    font-size: 13px; font-weight: 600;
+    padding: 6px 16px; border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  /* ── CARDS ── */
+  .cards-grid {
+    display: grid; gap: 14px; max-width: 1000px;
+  }
+  .cards-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .cards-grid.two { grid-template-columns: repeat(2, 1fr); }
+
+  .card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 22px 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card .card-icon { font-size: 24px; margin-bottom: 10px; }
+  .card .card-title { font-size: 15px; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
+  .card .card-text { font-size: 13px; color: rgba(0,0,0,0.5); line-height: 1.55; }
+  .card.accent {
+    background: linear-gradient(135deg, rgba(124,106,255,0.06), rgba(255,110,180,0.04));
+    border-color: rgba(124,106,255,0.2);
+  }
+
+  /* Dark cards */
+  .card.dark-card {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.1);
+  }
+  .card.dark-card .card-title { color: #fff; }
+  .card.dark-card .card-text { color: rgba(255,255,255,0.55); }
+
+  /* ── PROGRAM BLOCK ── */
+  .program-block {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    position: relative;
+    overflow: hidden;
+    max-width: 700px;
+  }
+  .program-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, #7c6aff, #ff6eb4);
+    border-radius: 4px 0 0 4px;
+  }
+  .program-num {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 48px; font-weight: 800;
+    color: rgba(124,106,255,0.08);
+    position: absolute; top: 12px; right: 20px; line-height: 1;
+  }
+  .program-label {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #7c6aff; margin-bottom: 6px;
+  }
+  .program-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; max-width: 80%; }
+  .program-desc { font-size: 14px; color: rgba(0,0,0,0.45); line-height: 1.55; max-width: 80%; margin-bottom: 12px; }
+  .program-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .tag {
+    display: inline-block;
+    background: rgba(124,106,255,0.08);
+    border: 1px solid rgba(124,106,255,0.2);
+    border-radius: 100px;
+    padding: 3px 12px; font-size: 11px;
+    color: #7c6aff; font-weight: 500;
+  }
+  .tag.green { background: rgba(34,169,92,0.08); border-color: rgba(34,169,92,0.2); color: #1a8a4a; }
+  .tag.orange { background: rgba(232,115,42,0.08); border-color: rgba(232,115,42,0.2); color: #c05a1a; }
+  .tag.pink { background: rgba(255,110,180,0.12); border-color: rgba(255,110,180,0.25); color: #ff6eb4; }
+
+  /* ── TABLE ── */
+  table { width: 100%; max-width: 920px; border-collapse: collapse; }
+  th { text-align: left; font-size: 11px; font-weight: 600; color: rgba(0,0,0,0.35); text-transform: uppercase; letter-spacing: 0.08em; padding: 0 14px 10px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
+  td { padding: 10px 14px 10px 0; font-size: 14px; color: rgba(0,0,0,0.55); border-bottom: 1px solid rgba(0,0,0,0.06); vertical-align: top; line-height: 1.5; }
+  td:first-child { color: #1a1a2e; font-weight: 500; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+
+  /* Dark table */
+  .slide.dark th { color: rgba(255,255,255,0.3); border-bottom-color: rgba(255,255,255,0.1); }
+  .slide.dark td { color: rgba(255,255,255,0.55); border-bottom-color: rgba(255,255,255,0.06); }
+  .slide.dark td:first-child { color: #fff; }
+
+  /* ── CODE BLOCK ── */
+  .code-block {
+    background: #1a1a2e; color: #e0e0e0;
+    border-radius: 12px; padding: 20px 24px;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 12px; line-height: 1.7;
+    max-width: 600px;
+  }
+  .code-block .comment { color: rgba(255,255,255,0.3); }
+  .code-block .hl { color: #7c6aff; }
+  .code-block .or { color: #ff9a5c; }
+
+  /* ── STEPS ── */
+  .steps { display: flex; flex-direction: column; max-width: 800px; }
+  .step {
+    display: grid; grid-template-columns: 30px 1fr; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.06); align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: linear-gradient(135deg, rgba(124,106,255,0.15), rgba(255,110,180,0.1));
+    border: 1px solid rgba(124,106,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: #7c6aff; flex-shrink: 0; margin-top: 2px;
+  }
+  .step-body strong { display: block; font-size: 15px; color: #1a1a2e; margin-bottom: 2px; }
+  .step-body span { font-size: 13px; color: rgba(0,0,0,0.4); line-height: 1.5; }
+
+  .slide.dark .step { border-bottom-color: rgba(255,255,255,0.06); }
+  .slide.dark .step-body strong { color: #fff; }
+  .slide.dark .step-body span { color: rgba(255,255,255,0.4); }
+  .slide.dark .step-num { background: linear-gradient(135deg, rgba(255,110,180,0.2), rgba(124,106,255,0.15)); border-color: rgba(255,110,180,0.4); color: #ff6eb4; }
+
+  /* ── QUOTE ── */
+  .big-quote {
+    font-size: 20px; font-weight: 600; line-height: 1.5;
+    max-width: 700px; border-left: 3px solid #7c6aff;
+    padding-left: 20px; margin-top: 24px;
+  }
+  .slide.dark .big-quote { color: #fff; border-left-color: #ff6eb4; }
+
+  /* ── NUM BG ── */
+  .num-bg {
+    position: absolute; right: 60px; bottom: 36px;
+    font-size: 140px; font-weight: 800;
+    color: rgba(124,106,255,0.05);
+    line-height: 1; pointer-events: none; user-select: none; z-index: 0;
+  }
+  .slide.dark .num-bg { color: rgba(255,255,255,0.03); }
+
+  /* ── TWO COL LAYOUT ── */
+  .two-col-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+    width: 100%; max-width: 1000px; align-items: start;
+  }
+
+  /* ── LIST in dark ── */
+  .slide.dark ul { list-style: none; }
+  .slide.dark li {
+    position: relative; padding-left: 20px;
+    font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7;
+  }
+  .slide.dark li::before {
+    content: '—'; position: absolute; left: 0; color: #ff6eb4;
+  }
+  .slide.dark li strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="block-badge" id="blockBadge"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  1. TITLE                              -->
+<!-- ═══════════════════════════════════════ -->
+<div class="slide active" data-block="" style="align-items: center; text-align: center;">
+  <div class="badge">Воркшоп #1 из 7</div>
+  <h1 style="max-width: 700px;">PRD и лендинг<br>твоего продукта</h1>
+  <p class="subtitle" style="text-align: center; margin: 16px auto 0;">Познакомишься с Claude Code, напишешь PRD голосом<br>и соберёшь работающий лендинг — за одно занятие</p>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  2. РЕЗУЛЬТАТ                          -->
+<!-- ═══════════════════════════════════════ -->
+<div class="slide" data-block="">
+  <div class="label">Результат</div>
+  <h2>Что ты заберёшь после воркшопа</h2>
+  <div class="cards-grid two" style="margin-top: 8px; max-width: 800px;">
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <div class="card-title">Знакомство с Claude Code</div>
+      <div class="card-text">Создание и редактирование файлов через агентский режим — без кода и технических знаний.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📄</div>
+      <div class="card-title">PRD через голосовое интервью</div>
+      <div class="card-text">Напишешь продуктовые требования голосом — Claude задаёт вопросы, ты отвечаешь, он генерирует PRD.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <div class="card-title">Лендинг из PRD</div>
+      <div class="card-text">Сгенерируешь текст и дизайн лендинга прямо из PRD — готовый к показу.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎙️</div>
+      <div class="card-title">Быстрая доработка голосом</div>
+      <div class="card-text">Научишься дорабатывать результат голосом — как будто диктуешь ассистенту.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  3. БЛОК 1 — DIVIDER                  -->
+<!-- ═══════════════════════════════════════ -->
+<div class="slide divider" data-block="Блок 1 · Claude Code">
+  <div class="label">Блок 1 · 30 мин</div>
+  <h2>Знакомство с Claude Code</h2>
+  <p class="subtitle">Что такое агентский режим, голосовой ввод и CLAUDE.md</p>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  4. ЧАТ vs АГЕНТ                      -->
+<!-- ═══════════════════════════════════════ -->
+<div class="slide" data-block="Блок 1 · Claude Code">
+  <h2>Claude Code — не чат, а агент</h2>
+  <p class="subtitle" style="margin-top: 0;"><strong style="color: #1a1a2e;">Обычный чат:</strong> вопрос → ответ.</p>
+  <p class="subtitle" style="margin-top: 4px; margin-bottom: 20px;"><strong style="color: #7c6aff;">Агент:</strong> задача → сам читает → редактирует → проверяет → результат.</p>
+
+  <div class="cards-grid two" style="max-width: 800px;">
+    <div class="card">
+      <div class="card-title">💬 Чаты (вопрос → ответ)</div>
+      <div class="card-text" style="margin-bottom: 8px;">Ты спрашиваешь — модель отвечает текстом. Код нужно копировать вручную. Нет доступа к твоим файлам.</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+        <span class="tag" style="font-size: 11px;">ChatGPT</span>
+        <span class="tag" style="font-size: 11px;">Claude.ai</span>
+        <span class="tag" style="font-size: 11px;">Gemini</span>
+        <span class="tag" style="font-size: 11px;">Perplexity</span>
+      </div>
+    </div>
+    <div class="card accent">
+      <div class="card-title">🤖 Агенты (задача → результат)</div>
+      <div class="card-text" style="margin-bottom: 8px;">Ты описываешь задачу голосом — агент сам создаёт файлы, вносит правки, запускает команды. Видишь результат в реальном времени.</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+        <span class="tag" style="font-size: 11px; background: rgba(124,106,255,0.12); border-color: rgba(124,106,255,0.25); color: #5b4cc7;">Claude Code</span>
+        <span class="tag" style="font-size: 11px; background: rgba(124,106,255,0.12); border-color: rgba(124,106,255,0.25); color: #5b4cc7;">Cursor Agent</span>
+        <span class="tag" style="font-size: 11px; background: rgba(124,106,255,0.12); border-color: rgba(124,106,255,0.25); color: #5b4cc7;">Windsurf</span>
+        <span class="tag" style="font-size: 11px; background: rgba(124,106,255,0.12); border-color: rgba(124,106,255,0.25); color: #5b4cc7;">Bolt / Lovable</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="big-quote" style="margin-top: 28px;">
+    Диктуешь голосом → Claude слушает → сам вносит изменения. Как ассистент, который сидит за твоим компьютером.
+  </div>
+  <div class="num-bg">01</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  5. CLAUDE.md                          -->
+<!-- ═══════════════════════════════════════ -->
+<div class="slide" data-block="Блок 1 · Claude Code">
+  <div class="two-col-layout">
+    <div>
+      <h2 style="margin-bottom: 12px;">CLAUDE.md</h2>
+      <p class="subtitle" style="margin-top: 0;">Файл-инструкция, который Claude читает при каждом запуске. Контекст проекта, стиль, ограничения.</p>
+      <p class="subtitle" style="margin-top: 8px;"><strong style="color: #1a1a2e;">Аналогия:</strong> должностная инструкция для нового сотрудника.</p>
+
+      <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="background: #fff; border: 1px solid rgba(124,106,255,0.2); border-radius: 12px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+          <div style="font-size: 12px; font-weight: 600; color: #7c6aff; margin-bottom: 6px;">Глобальный — для всех проектов</div>
+          <div style="font-size: 13px; color: rgba(0,0,0,0.55); line-height: 1.6;">
+            Твои общие правила: язык, стиль, как обращаться.<br>
+            Скажи Claude: <em style="color: #5b4cc7;">«создай глобальный CLAUDE.md с моими правилами»</em>
+          </div>
+        </div>
+        <div style="background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+          <div style="font-size: 12px; font-weight: 600; color: rgba(0,0,0,0.45); margin-bottom: 6px;">Проектный — для конкретного проекта</div>
+          <div style="font-size: 13px; color: rgba(0,0,0,0.55); line-height: 1.6;">
+            Контекст именно этого проекта: аудитория, тон, ограничения.<br>
+            Создай <code style="font-family: monospace; background: rgba(0,0,0,0.04); padding: 2px 6px; border-radius: 4px;">CLAUDE.md</code> в папке проекта — или попроси Claude.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <span class="comment"># CLAUDE.md — пример</span><br><br>
+      <span class="hl">## Проект</span><br>
+      Лендинг для курса по вайбкодингу.<br>
+      Аудитория: продакты, маркетологи.<br><br>
+      <span class="hl">## Стиль</span><br>
+      Минималистичный. Тёмная тема.<br>
+      Язык — на «ты».<br><br>
+      <span class="hl">## Ограничения</span><br>
+      <span class="or">НЕ</span> используй «инновационный».<br>
+      <span class="or">НЕ</span> добавляй анимации.<br>
+      Тексты — на русском.
+    </div>
+  </div>
+  <div class="num-bg">01</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  6. БЛОК 2 — DIVIDER                  -->
+<!-- ═══════════════════════════════════════ -->
+<div class="slide divider dark" data-block="Блок 2 · PRD">
+  <div class="label" style="color: #ff6eb4;">Блок 2 · 60 мин</div>
+  <h2>PRD через голосовое интервью</h2>
+  <p class="subtitle">Что такое PRD, как его правильно писать<br>и почему это меняет результат работы с AI</p>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  7. ЧТО ТАКОЕ PRD + КАК ПИСАТЬ        -->
+<!-- ═══════════════════════════════════════ -->
+<div class="slide dark" data-block="Блок 2 · PRD">
+  <h2 style="margin-bottom: 12px;">Что такое PRD</h2>
+  <p class="subtitle" style="margin-top: 0; margin-bottom: 24px;">Документ с требованиями к продукту. Без PRD — AI генерирует «что-то». С PRD — именно то, что тебе нужно.</p>
+
+  <table style="max-width: 800px;">
+    <thead>
+      <tr><th>Раздел</th><th>Что содержит</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>JTBD</td><td><strong style="color: #ff6eb4;">Когда</strong> [триггер + контекст] → <strong style="color: #ff6eb4;">хочу</strong> [ожидаемый результат] → <strong style="color: #ff6eb4;">чтобы</strong> [желаемое преображение]</td></tr>
+      <tr><td>Текущее решение</td><td>Чем люди закрывают эту работу сейчас и почему не устраивает</td></tr>
+      <tr><td>Наше решение</td><td>Что делает продукт, ключевые фичи (scope)</td></tr>
+      <tr><td>User flow</td><td>Путь пользователя по шагам</td></tr>
+      <tr><td>Метрики</td><td>Как понять что работа выполнена — конкретные KPI</td></tr>
+      <tr><td>Дизайн и стиль</td><td>Тон, визуал, референсы</td></tr>
+      <tr><td>Non-goals</td><td>Что НЕ входит — защита от scope creep</td></tr>
+    </tbody>
+  </table>
+  <div class="num-bg">02</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  8. ПРИНЦИПЫ PRD = LLM                -->
+<!-- ═══════════════════════════════════════ -->
+<div class="slide dark" data-block="Блок 2 · PRD">
+  <h2>Принципы хорошего PRD = принципы работы с LLM</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Критерии результата > абстрактная задача</strong>
+        <span>PRD — это и есть критерии. Без PRD ты говоришь AI «сделай красивый лендинг» — и получаешь что-то абстрактное. С PRD — конкретную страницу под твою аудиторию, с нужной структурой и тоном</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Ограничения важнее свободы</strong>
+        <span>Non-goals в PRD = ограничения для AI. «Не делай анимации, не используй стоковые фразы, максимум 5 секций» — чем точнее рамки, тем меньше AI додумывает за тебя и тем ближе результат к тому, что ты хочешь</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Декомпозиция > один запрос</strong>
+        <span>Одна огромная задача «сделай мне продукт» — плохо. PRD разбивает идею на блоки: сначала JTBD, потом фичи, потом user flow. AI обрабатывает каждый блок отдельно — точнее и предсказуемее</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Учи модель, а не командуй</strong>
+        <span>«Сделай как на этом сайте» + ссылка на референс работает лучше, чем 200 слов описания. Примеры, референсы, тон голоса в PRD — учат модель понимать что ты хочешь, а не угадывать</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Итерируй — первый результат всегда сырой</strong>
+        <span>PRD — живой документ, а не финальный спек. Надиктовал первую версию → посмотрел что получилось → поправил голосом → снова посмотрел. На 3-4 итерации результат сходится</span>
+      </div>
+    </div>
+  </div>
+  <div class="num-bg">02</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  9. ПРАКТИКА — ГОЛОСОМ                -->
+<!-- ═══════════════════════════════════════ -->
+<div class="slide dark" data-block="Блок 2 · PRD">
+  <h2>Практика: пишем PRD голосом</h2>
+  <p class="subtitle" style="margin-top: 0; margin-bottom: 8px;">Всё делается через голосовой ввод — диктуешь, как будто разговариваешь с PM</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Надиктуй идею продукта</strong>
+        <span>Расскажи голосом: что за продукт, для кого, какую проблему решает. Claude сам задаст уточняющие вопросы</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Отвечай на вопросы голосом</strong>
+        <span>Аудитория, боли, фичи, ограничения — отвечаешь как в обычном разговоре, Claude записывает и структурирует</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Получи готовый PRD</strong>
+        <span>Claude собирает ответы в структурированный .md документ — проблема, аудитория, JTBD, фичи, non-goals, метрики</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Дорабатывай голосом</strong>
+        <span>«Добавь секцию про монетизацию», «убери фичу Х из скоупа», «переформулируй проблему» — итерируешь пока не будет то что надо</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="big-quote" style="margin-top: 28px; font-size: 18px;">
+    Каждый участник пишет PRD своего продукта голосом. Потом — разбор 2-3 работ в группе.
+  </div>
+  <div class="num-bg">02</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  NAV                                  -->
+<!-- ═══════════════════════════════════════ -->
+<div class="nav">
+  <button onclick="go(-1)">‹</button>
+  <span class="slide-counter" id="counter"></span>
+  <button onclick="go(1)">›</button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let cur = 0;
+
+function show(n) {
+  slides[cur].classList.remove('active');
+  cur = Math.max(0, Math.min(n, slides.length - 1));
+  slides[cur].classList.add('active');
+
+  document.getElementById('progress').style.width =
+    ((cur / (slides.length - 1)) * 100) + '%';
+  document.getElementById('counter').textContent =
+    (cur + 1) + ' / ' + slides.length;
+
+  const block = slides[cur].dataset.block || '';
+  document.getElementById('blockBadge').textContent = block;
+
+  const isDark = slides[cur].classList.contains('dark');
+  document.querySelectorAll('.nav button').forEach(b => {
+    b.style.background = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.06)';
+    b.style.borderColor = isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.1)';
+    b.style.color = isDark ? '#fff' : '#1a1a2e';
+  });
+  document.querySelector('.slide-counter').style.color =
+    isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)';
+  document.getElementById('blockBadge').style.color =
+    isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.25)';
+}
+
+function go(d) { show(cur + d); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+  if (e.key === 'Home') { e.preventDefault(); show(0); }
+  if (e.key === 'End') { e.preventDefault(); show(slides.length - 1); }
+});
+
+let touchStartX = 0;
+document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+document.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) go(diff > 0 ? 1 : -1);
+});
+
+show(0);
+</script>
+
+</body>
+</html>
